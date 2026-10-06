@@ -325,9 +325,18 @@
   const statTable = (rows) =>
     rows?.length ? `<dl class="stat-table">${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>` : "";
 
+  // ヒーローの顔アイコン（クリックでそのヒーローへ。名前は小さく下に添える）
+  function face(id, cls = "") {
+    const c = OW.heroes[id]?.color || "var(--line)";
+    const inner = `${avatar(id, "face-img")}<span class="face-name">${esc(heroName(id))}</span>`;
+    return OW.heroes[id]
+      ? `<a class="face ${cls}" href="#/${id}" title="${esc(heroName(id))}" style="--c:${c}">${inner}</a>`
+      : `<span class="face ${cls}" title="${esc(heroName(id))}" style="--c:${c}">${inner}</span>`;
+  }
+
   function renderOverview(h) {
     const latest = h.patches[0];
-    const mu = (arr) => arr.slice(0, 3).map((m) => heroName(m.hero)).join("、");
+    const mu = (arr) => `<div class="face-row">${arr.map((m) => face(m.hero)).join("")}</div>`;
     return `
       ${h.playstyle ? `<p class="core">${esc(h.playstyle.core)} <a href="#/${h.id}/playstyle">立ち回りを見る →</a></p>` : ""}
       <div class="two-col">
@@ -336,9 +345,11 @@
       </div>
       <h2 class="sec">ひと目でわかる相性</h2>
       <div class="two-col">
-        <div class="box"><h3>得意な相手</h3><p>${esc(mu(h.matchups.strong))}</p></div>
-        <div class="box"><h3>苦手な相手</h3><p>${esc(mu(h.matchups.weak))}</p></div>
+        <div class="box good"><h3>得意な相手</h3>${mu(h.matchups.strong)}</div>
+        <div class="box bad"><h3>苦手な相手</h3>${mu(h.matchups.weak)}</div>
+        <div class="box"><h3>相性の良い味方</h3>${mu(h.matchups.synergy)}</div>
       </div>
+      <p><a href="#/${h.id}/matchups">相性の理由を見る →</a></p>
       ${latest ? `<h2 class="sec">直近の調整</h2>
       ${renderPatchItem(latest)}
       <p><a href="#/${h.id}/patches">パッチ履歴をすべて見る →</a></p>` : ""}`;
@@ -475,19 +486,20 @@
     const all = [...h.matchups.strong, ...h.matchups.weak].map((m) => m.rating || 0);
     const max = Math.max(...all, 1);
     const card = (m) => {
-      const name = OW.heroes[m.hero] ? `<a href="#/${m.hero}">${esc(heroName(m.hero))}</a>` : esc(heroName(m.hero));
       const rate = m.rating != null ? `+${m.rating.toFixed(1)}` : "—";
       const bar = m.rating != null ? `<div class="bar"><i style="width:${(m.rating / max) * 100}%"></i></div>` : `<div class="bar"></div>`;
       return `
         <div class="mu">
-          <div class="mu-top">
-            <span class="role-badge">${OW.roles[heroRole(m.hero)].short}</span>
-            <span class="mu-name">${name}</span>
-            <span class="basis">${m.basis === "data" ? "統計" : "定石"}</span>
-            ${m.rating !== undefined ? `<span class="mu-rate">${rate}</span>` : ""}
+          ${face(m.hero, "mu-face")}
+          <div class="mu-body">
+            <div class="mu-top">
+              <span class="role-badge">${OW.roles[heroRole(m.hero)].short}</span>
+              <span class="basis">${m.basis === "data" ? "統計" : "定石"}</span>
+              ${m.rating !== undefined ? `<span class="mu-rate">${rate}</span>` : ""}
+            </div>
+            ${m.rating !== undefined ? bar : ""}
+            <p>${esc(m.reason)}</p>
           </div>
-          ${m.rating !== undefined ? bar : ""}
-          <p>${esc(m.reason)}</p>
         </div>`;
     };
     return `

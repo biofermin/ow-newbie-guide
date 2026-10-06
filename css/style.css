@@ -365,7 +365,21 @@ h2.sec:first-child { margin-top: 0; }
   padding: 14px 16px; border-radius: var(--radius); background: var(--panel); border: 1px solid var(--line);
   margin-bottom: 10px;
 }
+.mu { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 14px; align-items: start; }
+.mu-body { min-width: 0; }
 .mu-top { display: flex; align-items: center; gap: 10px; }
+
+/* 顔アイコン */
+.face-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.face { display: block; width: 72px; text-align: center; text-decoration: none; color: var(--text); }
+.face-img {
+  display: block; width: 64px; height: 64px; margin: 0 auto; border-radius: 10px; object-fit: cover; object-position: center top;
+  border: 2px solid color-mix(in srgb, var(--c) 70%, transparent);
+  background: color-mix(in srgb, var(--c) 25%, var(--bg)); transition: transform .12s;
+}
+.face .noimg.face-img { font-size: 24px; }
+a.face:hover .face-img { transform: translateY(-2px); border-color: var(--c); }
+.face-name { display: block; margin-top: 3px; font-size: 10px; letter-spacing: -.02em; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mu-name { font-weight: 700; }
 .mu-name a { text-decoration: none; border-bottom: 1px dashed var(--muted); }
 .role-badge { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; background: var(--panel-2); color: var(--muted); letter-spacing: .06em; }
