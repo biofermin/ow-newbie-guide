@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OW Hero Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/">OW <span>HERO GUIDE</span></a>
+    <nav class="topnav">
+      <a href="#/" data-route="home">ティア表</a>
+      <a href="#/select" data-route="select">ヒーロー選択</a>
+    </nav>
+    <div class="patch" id="patch-info"></div>
+    <button class="menu-btn" id="menu-btn" aria-label="ヒーロー一覧">☰</button>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <input type="search" id="hero-search" placeholder="ヒーロー検索" autocomplete="off">
+      <nav id="hero-nav"></nav>
+    </aside>
+    <main id="view"></main>
+  </div>
+
+  <!-- データ：ヒーローを追加したら data/heroes/<id>.js を作り、meta.js の OW.heroList にIDを足す -->
+  <script src="data/meta.js"></script>
+  <script src="data/portraits.js"></script>
+  <script src="data/stats.js"></script>
+  <script>
+    // file:// でも動くよう、ES Modules ではなく script タグを順番に差し込む
+    (function () {
+      var files = OW.heroList.map(function (id) { return "data/heroes/" + id + ".js"; }).concat(["js/app.js"]);
+      files.forEach(function (src) {
+        var s = document.createElement("script");
+        s.src = src;
+        s.async = false;
+        s.onerror = function () { console.warn("読み込み失敗: " + src); };
+        document.body.appendChild(s);
+      });
+    })();
+  </script>
+</body>
+</html>
