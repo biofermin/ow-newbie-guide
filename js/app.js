@@ -79,9 +79,24 @@
     const { heroId, tab } = parseRoute();
     renderNav(heroId);
     $("#sidebar").classList.remove("open");
-    document.querySelectorAll(".topnav a").forEach((a) =>
-      a.classList.toggle("active", a.dataset.route === (heroId === "select" ? "select" : !heroId ? "home" : ""))
-    );
+    const route = heroId === "select" ? "select" : heroId === "maps" || heroId === "map" ? "maps" : !heroId ? "home" : "";
+    document.querySelectorAll(".topnav a").forEach((a) => a.classList.toggle("active", a.dataset.route === route));
+    if (heroId === "maps" || heroId === "map") {
+      const mapId = location.hash.replace(/^#\/?/, "").split("/")[1];
+      const map = heroId === "map" && OW.maps[mapId];
+      document.documentElement.style.removeProperty("--hero");
+      document.title = `${map ? map.name : "マップ"} | OW Hero Guide`;
+      view.innerHTML = map ? renderMap(map) : renderMapList();
+      bindStatSwitch();
+      if (map) bindRoute(map);
+      view.querySelectorAll("[data-map-mode]").forEach((btn) =>
+        btn.addEventListener("click", () => {
+          mapMode = btn.dataset.mapMode;
+          render();
+        })
+      );
+      return;
+    }
     if (heroId === "select") {
       document.title = "ヒーロー選択 | OW Hero Guide";
       document.documentElement.style.removeProperty("--hero");
@@ -182,6 +197,220 @@
         render();
       })
     );
+  }
+
+  // ---------- maps ----------
+  let mapMode = "all";
+  const mapIds = () => OW.mapList.filter((id) => OW.maps[id]);
+  const mapName = (id) => OW.maps[id]?.name || id;
+  // マップ別の公式統計（選択中のランク/クイック・地域）
+  const mapStatOf = (mapId, heroId) => {
+    const v = OW.mapStats?.maps?.[mapId]?.[statKey]?.[heroId];
+    return v && v[0] != null ? { wr: v[0], pr: v[1], br: v[2] } : null;
+  };
+  const MIN_PICK = 2; // ピック率がこれ未満のヒーローはサンプルが少ないので順位付けから外す
+
+  function renderMapList() {
+    const modes = ["all", ...Object.keys(OW.modes)];
+    const chips = modes
+      .map((m) => `<button class="chip${m === mapMode ? " active" : ""}" data-map-mode="${m}">${m === "all" ? "すべて" : OW.modes[m].label}</button>`)
+      .join("");
+    const groups = Object.keys(OW.modes)
+      .filter((m) => mapMode === "all" || mapMode === m)
+      .map((m) => {
+        const maps = mapIds().map((id) => OW.maps[id]).filter((x) => x.mode === m);
+        if (!maps.length) return "";
+        return `
+          <h2 class="sec">${OW.modes[m].label}<small class="count">${maps.length}</small></h2>
+          <div class="map-grid">${maps
+            .map((x) => {
+              const best = topHeroesOnMap(x.id, 3, "delta");
+              return `
+              <a class="map-card" href="#/map/${x.id}">
+                <div class="map-thumb" style="background-image:url('${esc(x.image)}')"></div>
+                <div class="map-card-body">
+                  <div class="map-card-name">${esc(x.name)}</div>
+                  <div class="map-card-loc">${esc(x.location || "")}</div>
+                  ${best.length ? `<div class="map-card-best"><span>マップ適性</span>${best.map((b) => avatar(b.id, "mini-ava")).join("")}</div>` : ""}
+                </div>
+              </a>`;
+            })
+            .join("")}</div>`;
+      })
+      .join("");
+    return `
+      <div class="home">
+        <h1>MAPS</h1>
+        <p class="lead">マップごとの地形・攻め方・守り方と、公式データから見た「そのマップを得意とするヒーロー」をまとめたガイド。</p>
+        <div class="home-tools"><div class="seg-group">${chips}</div>${renderStatSwitch()}</div>
+        ${groups || `<p class="empty">マップデータがありません。</p>`}
+      </div>`;
+  }
+
+  // mode: "wr" = マップでの勝率順 / "delta" = 全体勝率との差（マップ補正）順 / "worst" = 差が小さい順
+  function topHeroesOnMap(mapId, n, mode = "wr", role = null) {
+    return heroIds()
+      .filter((id) => !role || OW.heroes[id].role === role)
+      .map((id) => {
+        const m = mapStatOf(mapId, id);
+        const all = statOf(id);
+        return m && all && m.pr >= MIN_PICK ? { id, wr: m.wr, pr: m.pr, delta: m.wr - all.wr } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => (mode === "wr" ? b.wr - a.wr : mode === "delta" ? b.delta - a.delta : a.delta - b.delta))
+      .slice(0, n);
+  }
+
+  function statFace(x, kind) {
+    const v = kind === "wr" ? `${x.wr.toFixed(1)}%` : `${x.delta >= 0 ? "+" : ""}${x.delta.toFixed(1)}`;
+    const cls = kind === "wr" ? "" : x.delta >= 0 ? "up" : "down";
+    return `<div class="stat-face">${face(x.id)}<span class="stat-val ${cls}">${v}</span></div>`;
+  }
+
+  function renderMap(m) {
+    const mode = OW.modes[m.mode] || { label: m.mode, attack: "攻撃側", defense: "防衛側" };
+    const roleTop = ROLE_ORDER.map((r) => {
+      const list = topHeroesOnMap(m.id, 3, "wr", r);
+      return `<div class="box"><h3>${OW.roles[r].label}</h3><div class="face-row">${list.map((x) => statFace(x, "wr")).join("") || "<p class='empty'>データ不足</p>"}</div></div>`;
+    }).join("");
+    const up = topHeroesOnMap(m.id, 6, "delta");
+    const down = topHeroesOnMap(m.id, 6, "worst");
+    const listOf = (arr) => `<ul>${arr.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+    return `
+      <header class="map-head" style="background-image:linear-gradient(90deg, rgba(14,17,22,.95) 35%, rgba(14,17,22,.55)), url('${esc(m.image)}')">
+        <div class="tags"><span class="tag role">${mode.label}</span>${m.location ? `<span class="tag">${esc(m.location)}</span>` : ""}</div>
+        <h1>${esc(m.name)}<small>${esc(m.nameEn)}</small></h1>
+        <p class="summary">${esc(m.summary)}</p>
+      </header>
+
+      <h2 class="sec">このマップのヒーロー勝率</h2>
+      <div class="home-tools">${renderStatSwitch()}</div>
+      <p class="mu-legend">${esc(statSource().replace("Hero Statistics（", "Hero Statistics（このマップ・"))}。ピック率${MIN_PICK}%未満のヒーローは除外。</p>
+      <div class="three-col">${roleTop}</div>
+      <div class="two-col" style="margin-top:16px">
+        <div class="box good"><h3>▲ マップ適性が高い</h3><p class="box-note">このマップでの勝率 − 全マップの勝率（ポイント差）</p><div class="face-row">${up.map((x) => statFace(x, "delta")).join("")}</div></div>
+        <div class="box bad"><h3>▼ マップ適性が低い</h3><p class="box-note">このマップでの勝率 − 全マップの勝率（ポイント差）</p><div class="face-row">${down.map((x) => statFace(x, "delta")).join("")}</div></div>
+      </div>
+
+      <h2 class="sec">地形の特徴</h2>
+      <div class="box">${listOf(m.features || [])}</div>
+
+      <h2 class="sec">構成の相性</h2>
+      <div class="perk-grid">${(m.comps || [])
+        .map((c) => `<article class="comp"><h3>${esc(c.name)}<span class="fit fit-${c.fit}">${FIT[c.fit]}</span></h3><p>${esc(c.body)}</p></article>`)
+        .join("")}</div>
+
+      <h2 class="sec">区間ごとの攻略</h2>
+      <div id="route">${renderRoute(m)}</div>
+
+      <div class="two-col" style="margin-top:28px">
+        <div class="box good"><h3>コツ</h3>${listOf(m.tips || [])}</div>
+        <div class="box bad"><h3>よくあるミス</h3><ul class="mistakes">${(m.mistakes || []).map((t) => `<li>${esc(t)}</li>`).join("")}</ul></div>
+      </div>
+      <p style="margin-top:20px"><a href="#/maps">← マップ一覧へ</a></p>
+      <div class="sources">出典：${(m.sources || [])
+        .map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`)
+        .join(" / ")} / 統計：Blizzard公式 Hero Statistics</div>`;
+  }
+
+  // ---------- 区間タブとスクリーンショット ----------
+  let routeSec = 0;
+  let shotIdx = 0;
+  let routeMapId = null;
+  const CIRCLED = ["①", "②", "③", "④", "⑤", "⑥"];
+  const wikiFile = (name) => `https://overwatch.fandom.com/wiki/File:${encodeURIComponent(String(name).replace(/ /g, "_"))}`;
+
+  function renderShots(s) {
+    const shots = s.shots || [];
+    if (!shots.length) return "";
+    const cur = shots[Math.min(shotIdx, shots.length - 1)];
+    const thumbs =
+      shots.length > 1
+        ? `<div class="shot-thumbs">${shots
+            .map((x, i) => `<button class="shot-thumb${x === cur ? " active" : ""}" data-shot="${i}" aria-label="画像${i + 1}"><img src="${esc(x.url)}" alt="" loading="lazy"></button>`)
+            .join("")}</div>`
+        : "";
+    return `
+      <figure class="shot">
+        <button class="shot-main" data-zoom="${esc(cur.url)}" aria-label="拡大表示"><img src="${esc(cur.url)}" alt="${esc(cur.caption || "")}"></button>
+        <figcaption>${esc(cur.caption || "")}</figcaption>
+        ${thumbs}
+        <div class="shot-credit">${
+          cur.file
+            ? `画像：<a href="${esc(wikiFile(cur.file))}" target="_blank" rel="noopener">Overwatch Wiki</a>（ゲーム画面 © Blizzard Entertainment）`
+            : esc(cur.credit || "ゲーム画面 © Blizzard Entertainment")
+        }</div>
+      </figure>`;
+  }
+
+  function renderRoute(m) {
+    if (routeMapId !== m.id) {
+      routeMapId = m.id;
+      routeSec = 0;
+      shotIdx = 0;
+    }
+    const secs = m.sections || [];
+    const mode = OW.modes[m.mode] || { attack: "攻撃側", defense: "防衛側" };
+    const s = secs[routeSec];
+    if (!s) return "";
+    const listOf = (arr) => `<ul>${arr.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>`;
+    const tabs = secs
+      .map(
+        (x, i) =>
+          `<button class="route-tab${i === routeSec ? " active" : ""}" data-route-sec="${i}">${CIRCLED[i] || i + 1} ${esc(x.title)}${
+            x.shots?.length ? ` <span class="tab-cam" title="画像あり">📷</span>` : ""
+          }</button>`
+      )
+      .join("");
+    const fig = renderShots(s);
+    return `
+      <div class="route-tabs">${tabs}</div>
+      <div class="route-body${fig ? "" : " no-fig"}">
+        ${fig}
+        <article class="map-sec">
+          <h3>${CIRCLED[routeSec] || ""} ${esc(s.title)}${s.sub ? `<small>${esc(s.sub)}</small>` : ""}</h3>
+          ${s.attack?.length ? `<div class="side side-atk"><h4>${mode.attack}</h4>${listOf(s.attack)}</div>` : ""}
+          ${s.defense?.length ? `<div class="side side-def"><h4>${mode.defense}</h4>${listOf(s.defense)}</div>` : ""}
+        </article>
+      </div>`;
+  }
+
+  function bindRoute(m) {
+    const box = $("#route");
+    if (!box) return;
+    const rerender = () => {
+      box.innerHTML = renderRoute(m);
+      bindRoute(m);
+    };
+    box.querySelectorAll("[data-route-sec]").forEach((el) =>
+      el.addEventListener("click", () => {
+        routeSec = Number(el.dataset.routeSec);
+        shotIdx = 0;
+        rerender();
+      })
+    );
+    box.querySelectorAll("[data-shot]").forEach((el) =>
+      el.addEventListener("click", () => {
+        shotIdx = Number(el.dataset.shot);
+        rerender();
+      })
+    );
+    box.querySelectorAll("[data-zoom]").forEach((el) => el.addEventListener("click", () => openLightbox(el.dataset.zoom)));
+  }
+
+  function openLightbox(src) {
+    const lb = document.createElement("div");
+    lb.className = "lightbox";
+    // 拡大時は元サイズに近い画像を使う（Wiki サムネイルの幅指定を外す）
+    lb.innerHTML = `<img src="${esc(src.replace(/\/scale-to-width-down\/\d+/, ""))}" alt="">`;
+    const close = () => {
+      lb.remove();
+      document.removeEventListener("keydown", onKey);
+    };
+    const onKey = (e) => e.key === "Escape" && close();
+    lb.addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+    document.body.appendChild(lb);
   }
 
   // ---------- hero select (ゲーム内のヒーロー選択画面風) ----------
@@ -470,16 +699,32 @@
         .join("")}</div>
       ${p.defense ? `<p class="callout">${esc(p.defense)}</p>` : ""}
 
-      ${p.maps?.best?.length ? `
-      <h2 class="sec">マップ</h2>
-      <div class="two-col">
-        <div class="box good"><h3>勝率が高いマップ</h3><ul class="maps">${p.maps.best.map((m) => mapRow(m, "up")).join("")}</ul></div>
-        <div class="box bad"><h3>勝率が低いマップ</h3><ul class="maps">${p.maps.worst.map((m) => mapRow(m, "down")).join("")}</ul></div>
-      </div>
-      <p class="mu-legend" style="margin-top:8px">勝率：${esc(OW.meta.statsSource)}。${esc(p.maps.tip)}</p>` : ""}
+      ${renderHeroMaps(h, p)}
 
       <h2 class="sec">よくあるミス</h2>
       <div class="box bad"><ul class="mistakes">${p.mistakes.map((m) => `<li>${esc(m)}</li>`).join("")}</ul></div>`;
+  }
+
+  // 公式のマップ別勝率から、このヒーローの得意・苦手マップを出す（データが無ければ解説のみ）
+  function renderHeroMaps(h, p) {
+    const rows = OW.mapList
+      .map((id) => ({ id, s: mapStatOf(id, h.id) }))
+      .filter((x) => x.s)
+      .sort((a, b) => b.s.wr - a.s.wr);
+    const tip = p.maps?.tip ? `<p class="mu-legend" style="margin-top:8px">傾向（counterwatch の統計をもとにした解説）：${esc(p.maps.tip)}</p>` : "";
+    if (!rows.length) return tip ? `<h2 class="sec">マップ</h2>${tip}` : "";
+    const row = (x, cls) => {
+      const name = OW.maps[x.id] ? `<a href="#/map/${x.id}">${esc(mapName(x.id))}</a>` : esc(mapName(x.id));
+      return `<li class="${cls}"><span>${name}</span><b>${x.s.wr.toFixed(1)}%</b></li>`;
+    };
+    return `
+      <h2 class="sec">マップ</h2>
+      <div class="two-col">
+        <div class="box good"><h3>勝率が高いマップ</h3><ul class="maps">${rows.slice(0, 3).map((x) => row(x, "up")).join("")}</ul></div>
+        <div class="box bad"><h3>勝率が低いマップ</h3><ul class="maps">${rows.slice(-3).reverse().map((x) => row(x, "down")).join("")}</ul></div>
+      </div>
+      <p class="mu-legend" style="margin-top:8px">勝率：${esc(statSource())}。マップ別はサンプルが少なくぶれやすい点に注意。</p>
+      ${tip}`;
   }
 
   function renderMatchups(h) {

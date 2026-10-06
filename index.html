@@ -16,6 +16,7 @@
     <nav class="topnav">
       <a href="#/" data-route="home">ティア表</a>
       <a href="#/select" data-route="select">ヒーロー選択</a>
+      <a href="#/maps" data-route="maps">マップ</a>
     </nav>
     <div class="patch" id="patch-info"></div>
     <button class="menu-btn" id="menu-btn" aria-label="ヒーロー一覧">☰</button>
@@ -33,10 +34,13 @@
   <script src="data/meta.js"></script>
   <script src="data/portraits.js"></script>
   <script src="data/stats.js"></script>
+  <script src="data/mapstats.js"></script>
   <script>
     // file:// でも動くよう、ES Modules ではなく script タグを順番に差し込む
     (function () {
-      var files = OW.heroList.map(function (id) { return "data/heroes/" + id + ".js"; }).concat(["js/app.js"]);
+      var files = OW.heroList.map(function (id) { return "data/heroes/" + id + ".js"; })
+        .concat(OW.mapList.map(function (id) { return "data/maps/" + id + ".js"; }))
+        .concat(["js/app.js"]);
       files.forEach(function (src) {
         var s = document.createElement("script");
         s.src = src;

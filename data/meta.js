@@ -57,6 +57,33 @@ OW.heroList = [
   "ana", "baptiste", "jetpackcat", "lucio", "zenyatta",
 ];
 
+// マップ（data/maps/<id>.js）。ID は公式統計ページのマップIDと同じ。並び順＝一覧の表示順。
+OW.mapList = [
+  // コントロール
+  "antarctic-peninsula", "busan", "ilios", "lijiang-tower", "nepal", "oasis", "samoa",
+  // エスコート
+  "circuit-royal", "dorado", "havana", "junkertown", "rialto", "route-66", "shambali-monastery", "watchpoint-gibraltar",
+  // ハイブリッド
+  "blizzard-world", "eichenwalde", "hollywood", "kings-row", "midtown", "neon-junction", "numbani", "paraiso",
+  // プッシュ
+  "colosseo", "esperanca", "new-queen-street", "runasapi",
+  // フラッシュポイント
+  "aatlis", "new-junk-city", "suravasa",
+];
+
+OW.modes = {
+  control: { label: "コントロール", attack: "取りに行く側", defense: "確保している側" },
+  escort: { label: "エスコート", attack: "攻撃側", defense: "防衛側" },
+  hybrid: { label: "ハイブリッド", attack: "攻撃側", defense: "防衛側" },
+  push: { label: "プッシュ", attack: "押している側", defense: "押し返す側" },
+  flashpoint: { label: "フラッシュポイント", attack: "取りに行く側", defense: "確保している側" },
+};
+
+OW.maps = {};
+OW.registerMap = function (map) {
+  OW.maps[map.id] = map;
+};
+
 OW.registerHero = function (hero) {
   OW.heroes[hero.id] = hero;
   if (!OW.order.includes(hero.id)) OW.order.push(hero.id);
