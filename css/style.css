@@ -334,6 +334,23 @@ h2.sec:first-child { margin-top: 0; }
 .notes { margin: 10px 0 0; padding-left: 1.2em; font-size: 13px; color: var(--muted); }
 .notes li { margin: 2px 0; }
 
+/* アビリティ欄のパーク表示 */
+.perk-badge {
+  font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 4px; white-space: nowrap;
+  background: color-mix(in srgb, var(--hero) 18%, transparent); color: var(--hero); border: 1px solid color-mix(in srgb, var(--hero) 45%, transparent);
+}
+.ab-perks { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: var(--panel-2); border-left: 3px solid var(--hero); }
+.ab-perks-h { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; font-weight: 700; color: var(--hero); margin-bottom: 6px; }
+.ab-perks-h a { font-weight: 400; color: var(--muted); text-decoration: none; }
+.ab-perks-h a:hover { color: var(--text); }
+.ab-perk { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 8px; align-items: baseline; font-size: 13px; margin: 6px 0; }
+.ab-perk-detail { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.perk-lv { font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
+.perk-minor { background: rgba(90,169,239,.15); color: var(--change); }
+.perk-major { background: rgba(249,158,26,.15); color: var(--orange); }
+.perk-targets { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 8px; font-size: 12px; color: var(--muted); }
+.perk-targets .tag { text-decoration: none; color: var(--hero); }
+
 /* ---------- perks ---------- */
 .perk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
 .perk { padding: 18px 20px; border-radius: var(--radius); background: var(--panel); border: 1px solid var(--line); }

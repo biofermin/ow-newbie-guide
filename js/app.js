@@ -584,18 +584,56 @@
       <p><a href="#/${h.id}/patches">パッチ履歴をすべて見る →</a></p>` : ""}`;
   }
 
-  function renderAbility(a) {
+  const PERK_KIND = { minor: "マイナー", major: "メジャー" };
+  const baseName = (n) => String(n || "").split(/[（(]/)[0].trim();
+
+  // パークの強化対象アビリティ。データの targets を優先し、無ければ説明文にアビリティ名が含まれるかで推定
+  function perkTargets(h, p) {
+    if (Array.isArray(p.targets)) return p.targets;
+    return [...h.passives, ...h.abilities]
+      .filter((a) => {
+        const b = baseName(a.name);
+        return b.length >= 2 && !b.startsWith("サブロール") && p.desc.includes(b);
+      })
+      .map((a) => a.name);
+  }
+
+  function perksFor(h, a) {
+    return ["minor", "major"].flatMap((kind) =>
+      h.perks[kind].filter((p) => perkTargets(h, p).includes(a.name)).map((p) => ({ ...p, kind }))
+    );
+  }
+
+  function renderAbility(a, h) {
     const ult = !!a.ult;
     const right = a.cd ? `CD ${esc(a.cd)}` : ult ? `ULT ${esc(a.ult)}` : "";
     const key = a.key || "P";
+    const perks = h ? perksFor(h, a) : [];
+    const perkBox = perks.length
+      ? `<div class="ab-perks">
+          <div class="ab-perks-h">パークで強化<a href="#/${h.id}/perks">パーク欄で比較 →</a></div>
+          ${perks
+            .map(
+              (p) => `
+            <div class="ab-perk">
+              <span class="perk-lv perk-${p.kind}">${PERK_KIND[p.kind]}</span>
+              <div><b>${esc(p.name)}</b>：${esc(p.desc)}${p.detail ? `<span class="ab-perk-detail">${esc(p.detail)}</span>` : ""}</div>
+            </div>`
+            )
+            .join("")}
+        </div>`
+      : "";
     return `
       <article class="ability">
         <div class="key${ult ? " ult" : ""}${key.length > 5 ? " long" : ""}">${esc(key)}</div>
         <div>
-          <h3>${esc(a.name)}<span class="en">${esc(a.nameEn)}</span>${right ? `<span class="cd">${right}</span>` : ""}</h3>
+          <h3>${esc(a.name)}<span class="en">${esc(a.nameEn)}</span>${
+            perks.length ? `<span class="perk-badge" title="強化できるパークあり">パーク ${perks.length}</span>` : ""
+          }${right ? `<span class="cd">${right}</span>` : ""}</h3>
           <p class="desc">${esc(a.desc)}</p>
           ${statTable(a.stats)}
           ${notes(a.notes)}
+          ${perkBox}
         </div>
       </article>`;
   }
@@ -603,19 +641,45 @@
   function renderAbilities(h) {
     return `
       <h2 class="sec">パッシブ</h2>
-      ${h.passives.map((p) => renderAbility({ ...p, key: p.key || "PASSIVE" })).join("")}
+      ${h.passives.map((p) => renderAbility({ ...p, key: p.key || "PASSIVE" }, h)).join("")}
       <h2 class="sec">アビリティ</h2>
-      ${h.abilities.map(renderAbility).join("")}`;
+      ${h.abilities.map((a) => renderAbility(a, h)).join("")}
+      ${renderOtherPerks(h)}`;
+  }
+
+  // どのアビリティにも属さないパーク（新しい動作の追加・自然回復の強化など）
+  function renderOtherPerks(h) {
+    const others = ["minor", "major"].flatMap((kind) =>
+      h.perks[kind].filter((p) => !perkTargets(h, p).length).map((p) => ({ ...p, kind }))
+    );
+    if (!others.length) return "";
+    return `
+      <h2 class="sec">その他のパーク</h2>
+      <div class="ab-perks">
+        ${others
+          .map(
+            (p) => `
+          <div class="ab-perk">
+            <span class="perk-lv perk-${p.kind}">${PERK_KIND[p.kind]}</span>
+            <div><b>${esc(p.name)}</b>：${esc(p.desc)}${p.detail ? `<span class="ab-perk-detail">${esc(p.detail)}</span>` : ""}</div>
+          </div>`
+          )
+          .join("")}
+      </div>`;
   }
 
   function renderPerks(h) {
-    const perk = (p) => `
+    const perk = (p) => {
+      const t = perkTargets(h, p);
+      return `
       <article class="perk">
         <h3>${esc(p.name)}<small>${esc(p.nameEn)}</small></h3>
+        ${t.length ? `<div class="perk-targets"><span>対象：</span>${t.map((n) => `<a href="#/${h.id}/abilities" class="tag">${esc(n)}</a>`).join("")}</div>` : ""}
         <p class="desc">${esc(p.desc)}</p>
         <p class="detail">${esc(p.detail)}</p>
         <p class="pick"><b>選ぶ場面：</b>${esc(p.pick)}</p>
       </article>`;
+    };
     return `
       <h2 class="sec">マイナーパーク（レベル2）</h2>
       <div class="perk-grid">${h.perks.minor.map(perk).join("")}</div>
