@@ -442,6 +442,13 @@ h2.sec:first-child { margin-top: 0; }
 .tech .ttags { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
 .tech .ttags span { font-size: 11px; color: var(--muted); }
 .tech .ttags span::before { content: "#"; }
+.lv-ニッチ { background: rgba(176,123,240,.15); color: #b07bf0; }
+.tech[hidden] { display: none; }
+.tech-search {
+  width: 100%; padding: 8px 12px; margin: 0 0 14px; border-radius: 8px; font: inherit; font-size: 14px;
+  background: var(--panel); color: var(--text); border: 1px solid var(--line);
+}
+.tech-src { margin-left: auto; font-size: 11px; color: var(--muted); }
 
 /* ---------- playstyle ---------- */
 .core {

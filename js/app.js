@@ -649,13 +649,24 @@
 
   function bindTab(h, tab) {
     if (tab !== "techniques") return;
-    view.querySelectorAll(".chip").forEach((btn) =>
+    view.querySelectorAll(".chip[data-lv]").forEach((btn) =>
       btn.addEventListener("click", () => {
         techFilter = btn.dataset.lv;
         $("#tab-body").innerHTML = renderTechniques(h);
         bindTab(h, tab);
       })
     );
+    // 検索は再描画せず表示／非表示だけ切り替える（入力欄のフォーカスを保つため）
+    $("#tech-search")?.addEventListener("input", (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      let shown = 0;
+      view.querySelectorAll("#tech-list .tech").forEach((el) => {
+        const hit = !q || el.dataset.text.includes(q);
+        el.hidden = !hit;
+        if (hit) shown++;
+      });
+      $("#tech-none").hidden = shown > 0;
+    });
   }
 
   const list = (items) => `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
@@ -796,24 +807,37 @@
       <div class="perk-grid">${h.perks.major.map(perk).join("")}</div>`;
   }
 
+  const TECH_LEVELS = ["基本", "中級", "上級", "ニッチ"];
+
   function renderTechniques(h) {
-    const levels = ["すべて", "基本", "中級", "上級"];
+    const levels = ["すべて", ...TECH_LEVELS];
     if (!levels.includes(techFilter)) techFilter = "すべて";
-    const items = h.techniques.filter((t) => techFilter === "すべて" || t.level === techFilter);
+    const count = (l) => (l === "すべて" ? h.techniques.length : h.techniques.filter((t) => t.level === l).length);
+    // 難度順（基本→ニッチ）に並べる。同じ難度内はデータの順
+    const items = h.techniques
+      .map((t, i) => ({ t, i }))
+      .filter(({ t }) => techFilter === "すべて" || t.level === techFilter)
+      .sort((a, b) => TECH_LEVELS.indexOf(a.t.level) - TECH_LEVELS.indexOf(b.t.level) || a.i - b.i)
+      .map(({ t }) => t);
     return `
       <div class="filter">${levels
-        .map((l) => `<button class="chip${l === techFilter ? " active" : ""}" data-lv="${l}">${l}</button>`)
+        .filter((l) => count(l))
+        .map((l) => `<button class="chip${l === techFilter ? " active" : ""}" data-lv="${l}">${l} ${count(l)}</button>`)
         .join("")}</div>
-      ${items
+      <input type="search" class="tech-search" id="tech-search" placeholder="テクニックを検索（例：キャンセル、確殺、マップ名）" autocomplete="off">
+      <div id="tech-list">${items
         .map(
           (t) => `
-        <article class="tech">
+        <article class="tech" data-text="${esc([t.title, t.body, ...(t.tags || [])].join(" ").toLowerCase())}">
           <h3><span class="lv lv-${t.level}">${t.level}</span>${esc(t.title)}</h3>
           <p>${esc(t.body)}</p>
-          <div class="ttags">${(t.tags || []).map((g) => `<span>${esc(g)}</span>`).join("")}</div>
+          <div class="ttags">${(t.tags || []).map((g) => `<span>${esc(g)}</span>`).join("")}${
+            t.source ? `<a class="tech-src" href="${esc(t.source)}" target="_blank" rel="noopener">出典</a>` : ""
+          }</div>
         </article>`
         )
-        .join("")}`;
+        .join("")}</div>
+      <p class="empty" id="tech-none" hidden>該当するテクニックはありません。</p>`;
   }
 
   const FIT = { best: "◎ 得意", ok: "○ 普通", weak: "△ 苦手" };
