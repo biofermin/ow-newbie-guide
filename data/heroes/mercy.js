@@ -19,7 +19,7 @@ OW.registerHero({
     "自衛手段がブラスターのみで、ダイブに弱い",
     "移動が味方頼み。孤立した味方がいないと逃げられない",
     "範囲回復が乏しく、全体ダメージには追いつけない",
-    "ハック・スタンでGAやリザレクトを止められる",
+    "スタンやEMPのハックでGAやリザレクトを止められる",
   ],
   stats: { winrate: 49.1, pickrate: null, tier: "C" },
 
@@ -332,7 +332,7 @@ OW.registerHero({
       },
     ],
     defense:
-      "敵にソンブラ・レッキング・ボール・トレーサーがいる時は、味方の近くに寄って「1人にならない」ことを最優先にする。ハックされるとGAが使えなくなる。",
+      "敵にソンブラ・レッキング・ボール・トレーサーがいる時は、味方の近くに寄って「1人にならない」ことを最優先にする。ソンブラのEMPでハックされるとGAが使えなくなる。",
     maps: {
       best: [
         { name: "コロッセオ", wr: 50.3 },
@@ -362,7 +362,7 @@ OW.registerHero({
     weak: [
       { hero: "wreckingball", rating: 13.7, reason: "グラップリングで一気に後衛へ到達し、ノックバックでGAの位置取りを崩す。最も不利な相手。", basis: "data" },
       { hero: "dmon", rating: 9.8, reason: "機動力で後衛まで届き、近接火力で低HPのマーシーを落としやすい（統計ベース）。", basis: "data" },
-      { hero: "sombra", rating: 9.3, reason: "ハック中はGAもリザレクトも使えない。逃げ手段を封じられてそのまま倒される。", basis: "data" },
+      { hero: "sombra", rating: 9.3, reason: "ステルスで背後を取られやすく、EMPを受けるとGAもリザレクトも使えず逃げられない。サイバースペースのウィークンで回復量も半減する（S4時点の統計）。", basis: "data" },
       { hero: "vendetta", rating: 7.2, reason: "ダッシュで飛び込んでくる近接フランカー。GAする味方が近くにいないと逃げ切れない。", basis: "data" },
       { hero: "reaper", rating: 6.8, reason: "近距離なら2発で落ちる。ダイア・トリガーで空中にも届く。", basis: "data" },
       { hero: "tracer", rating: 6.3, reason: "裏から張り付かれ、ブラスターでは撃ち合いに勝てない。", basis: "data" },

@@ -341,11 +341,11 @@ OW.registerHero({
       { hero: "pharah", rating: 12.6, reason: "空中のファラにヒットスキャンのブラスターを当てやすく、ホーミングするトーピードも確実に届く。", basis: "data" },
       { hero: "zenyatta", rating: 6.6, reason: "機動力のないゼニヤッタにはトーピードを当てやすく、グライドで側面から詰めて撃ち合える。", basis: "data" },
       { hero: "reinhardt", rating: 6.5, reason: "空中や高所から支援でき、ラインハルトの近接攻撃の届かない位置に居続けられる。", basis: "data" },
-      { hero: "roadhog", rating: 6.4, reason: "大きなヒットボックスにバーストが全弾当たり、空中の不規則な動きでフックの射線も外しやすい。", basis: "data" },
+      { hero: "roadhog", rating: 6.4, reason: "大きなヒットボックスにバーストが全弾当たり、空中の不規則な動きでフックの射線も外しやすい。（S4時点の統計）", basis: "data" },
       { hero: "wuyang", rating: 5.6, reason: "弾速25m/秒の曲射オーブは空中を高速移動するジュノに当てにくい。ヒットスキャンで一方的に削れる。", basis: "data" },
     ],
     weak: [
-      { hero: "sombra", rating: 11.0, reason: "ハックでグライドなどの逃げ手段を封じられ、HP225はソンブラのバーストで落ちやすい。", basis: "data" },
+      { hero: "sombra", rating: 11.0, reason: "ステルスから奇襲され、HP225はマシン・ピストルで削られやすい。サイバースペースのウィークンで回復も半減し、EMPではグライドなどの逃げ手段を封じられる。シーズン5でハックとウイルスはなくなりバースト力は下がった（S4時点の統計）。", basis: "data" },
       { hero: "soldier76", rating: 7.1, reason: "空中で直線的に動くジュノはヒットスキャンの的。ヘリックス・ロケットと合わせて削り切られる。", basis: "data" },
       { hero: "tracer", rating: 7.0, reason: "張り付かれるとバースト式のブラスターが当てにくく、トーピードの照準中は撃てない隙も突かれる。", basis: "data" },
       { hero: "ashe", rating: 6.1, reason: "長距離のヒットスキャンでホバー中や滑空中を狙い撃たれる。", basis: "data" },

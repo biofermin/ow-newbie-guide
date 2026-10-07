@@ -1,4 +1,4 @@
-// ヒーロー画像（公式サイト overwatch.blizzard.com/heroes のポートレートを直接参照。ドクトリンは公式ページ未公開のため Overwatch Wiki）
+// ヒーロー画像（公式サイト overwatch.blizzard.com/heroes のポートレートを直接参照）
 OW.portraits = {
   dmon: "https://d15f34w2p8l1cc.cloudfront.net/overwatch/a46c60b8562fdbd0b8308396d0808f7606fba208bc67cccf3f82fe56d2c73b9d.png",
   ana: "https://d15f34w2p8l1cc.cloudfront.net/overwatch/985b06beae46b7ba3ca87d1512d0fc62ca7f206ceca58ef16fc44d43a1cc84ed.png",
@@ -53,5 +53,5 @@ OW.portraits = {
   wuyang: "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4959500b495b35c0908be2abda56b53f2601b2c5cc39a1cfde8df1bffd38d66d.png",
   zarya: "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9b6f63cc66ddf9d5e0862173c733cc0d2e574c5c89357798d91b93b2f95a7080.png",
   zenyatta: "https://d15f34w2p8l1cc.cloudfront.net/overwatch/7d1546b1541a8afc39353f9337a408d6275a141b0432b7e560ef61579996b0fc.png",
-  doctrine: "https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/19/Doctrine.png/revision/latest/scale-to-width-down/334?cb=20260918043518",
+  doctrine: "https://d15f34w2p8l1cc.cloudfront.net/overwatch/2492a15c575c12314907d0d77501ec337b4d56796bc7f03e5dfb50d415612bae.png",
 };

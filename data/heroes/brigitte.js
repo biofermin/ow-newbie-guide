@@ -346,8 +346,8 @@ OW.registerHero({
   matchups: {
     strong: [
       { hero: "dva", rating: 13.7, reason: "フレイルは近接攻撃なのでディフェンス・マトリックスに消されない。フュージョン・キャノンの小さい弾はアーマーで大きく軽減される。", basis: "data" },
-      { hero: "sombra", rating: 10.0, reason: "フレイルの広い当たり判定で現れた瞬間を捉えやすく、SMGの小さい弾はアーマーで軽減される。ハック中もインスパイアは発動する。", basis: "data" },
-      { hero: "roadhog", rating: 9.1, reason: "フックはバリア・シールドで防げる。巨体にフレイルが当たり続け、インスパイアを維持しやすい。", basis: "data" },
+      { hero: "sombra", rating: 10.0, reason: "フレイルの広い当たり判定で現れた瞬間を捉えやすく、SMGの小さい弾はアーマーで軽減される。EMPでハックされてもインスパイアは発動する（S4時点の統計）。", basis: "data" },
+      { hero: "roadhog", rating: 9.1, reason: "フックはバリア・シールドで防げる。巨体にフレイルが当たり続け、インスパイアを維持しやすい。（S4時点の統計）", basis: "data" },
       { hero: "zarya", rating: 7.9, reason: "ビーム攻撃はアーマーで30%軽減され、近距離の撃ち合いで粘れる（統計ベース）。", basis: "data" },
       { hero: "reaper", rating: 7.6, reason: "ショットガンのペレットはアーマーで軽減され、盾で正面火力を受け止められる。ホイップ・ショットで得意距離から押し出せる。", basis: "data" },
     ],

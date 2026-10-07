@@ -363,7 +363,7 @@ OW.registerHero({
       { hero: "kiriko", rating: 9.2, reason: "近距離に入れば瞬間火力で上回れる。スウィフト・ステップで逃げられる前にコンボを入れ切る。", basis: "data" },
       { hero: "widowmaker", rating: 7.2, reason: "ソアリング・スライスで高所にも届き、近距離に入れば一方的。", basis: "data" },
       { hero: "mercy", rating: 7.2, reason: "空中のマーシーもオーバーヘッドで地面に叩き落とせる。GAで逃げる前に落とし切れる。", basis: "data" },
-      { hero: "sombra", rating: 6.8, reason: "ステルス解除後の近距離戦はヴェンデッタの得意距離。ガードで正面の射撃を受けつつ反撃できる。", basis: "data" },
+      { hero: "sombra", rating: 6.8, reason: "ステルス解除後の近距離戦はヴェンデッタの得意距離。ガードで正面の射撃を受けつつ反撃できる（S4時点の統計）。", basis: "data" },
     ],
     weak: [
       { hero: "torbjorn", rating: 11.9, reason: "タレットが自動で撃ち続けてガードのエネルギーを削り、タレットを斬ってもオンスロートは溜まらない。オーバーロードで近接戦も粘られる。", basis: "data" },

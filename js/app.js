@@ -39,7 +39,10 @@
     const [m, r] = statKey.split("-");
     return `${STAT_MODES[m]}・${STAT_REGIONS[r]}`;
   };
+  // stale：リワーク等で旧データが当てにならないヒーロー（次回の統計更新で解除される）
+  const isStale = (id) => (OW.stats?.stale || []).includes(id);
   const statOf = (id) => {
+    if (isStale(id)) return null;
     const v = OW.stats?.sets?.[statKey]?.[id];
     return v ? { wr: v[0], pr: v[1], br: v[2] } : null;
   };
@@ -48,7 +51,7 @@
     return s ? TIERS.find(([, min]) => s.wr >= min)[0] : null;
   };
   const statSource = () =>
-    `Blizzard公式 Hero Statistics（${statLabel()}・${OW.stats?.input || "PC"}・全ランク帯／最新パッチ開始以降、${fmtDate(OW.stats?.fetched || "")}取得）`;
+    `Blizzard公式 Hero Statistics（${statLabel()}・${OW.stats?.input || "PC"}・全ランク帯／最新パッチ開始以降、${fmtDate(OW.stats?.fetched || "")}取得${OW.stats?.note ? "・" + OW.stats.note : ""}）`;
 
   function renderStatSwitch() {
     const [m, r] = statKey.split("-");
@@ -205,6 +208,7 @@
   const mapName = (id) => OW.maps[id]?.name || id;
   // マップ別の公式統計（選択中のランク/クイック・地域）
   const mapStatOf = (mapId, heroId) => {
+    if (isStale(heroId)) return null;
     const v = OW.mapStats?.maps?.[mapId]?.[statKey]?.[heroId];
     return v && v[0] != null ? { wr: v[0], pr: v[1], br: v[2] } : null;
   };
@@ -282,6 +286,7 @@
         <h1>${esc(m.name)}<small>${esc(m.nameEn)}</small></h1>
         <p class="summary">${esc(m.summary)}</p>
       </header>
+      ${m.notice ? `<div class="notice" style="margin-top:12px">⚠ ${esc(m.notice)}</div>` : ""}
 
       <h2 class="sec">このマップのヒーロー勝率</h2>
       <div class="home-tools">${renderStatSwitch()}</div>
@@ -515,7 +520,13 @@
           ${kpi(s ? s.pr + "%" : null, "ピック率")}
           ${kpi(s && s.br ? s.br + "%" : null, "BAN率")}
         </div>
-        <div class="kpi-src">${s ? `統計：${esc(statSource())}` : "統計：公式データなし（未実装ヒーロー）"}</div>
+        <div class="kpi-src">${
+          s
+            ? `統計：${esc(statSource())}`
+            : isStale(h.id)
+            ? "統計：リワーク直後のため、新パッチの公式データ反映待ち"
+            : "統計：公式データなし（新パッチのデータ待ち）"
+        }</div>
       </header>
       ${h.notice ? `<div class="notice">⚠ ${esc(h.notice)}</div>` : ""}`;
   }

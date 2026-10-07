@@ -2,10 +2,10 @@
 window.OW = window.OW || { heroes: {}, order: [] };
 
 OW.meta = {
-  latestPatch: "2026-09-22",
-  season: "Reign of Talon シーズン4「Heroes of Busan」",
-  seasonStart: "2026-08-11",
-  updated: "2026-10-06",
+  latestPatch: "2026-10-06",
+  season: "Reign of Talon シーズン5「A Grim Doctrine」",
+  seasonStart: "2026-10-06",
+  updated: "2026-10-07",
   // 相性・デュオ・マップ勝率の出典（勝率・ピック率・Tier は data/stats.js の公式データ）
   statsSource: "counterwatch.gg（5v5・全ランク・2026/10/5時点。集計期間は非公開）",
 };
@@ -34,7 +34,7 @@ OW.names = {
 OW.heroRoles = {
   ana: "support", baptiste: "support", brigitte: "support", jetpackcat: "support", juno: "support",
   kiriko: "support", lifeweaver: "support", lucio: "support", mercy: "support", mizuki: "support",
-  moira: "support", wuyang: "support", zenyatta: "support", illari: "support", doctrine: "support",
+  moira: "support", wuyang: "support", zenyatta: "support", illari: "support", doctrine: "support", sombra: "support",
   dmon: "tank", dva: "tank", domina: "tank", doomfist: "tank", hazard: "tank", junkerqueen: "tank",
   mauga: "tank", orisa: "tank", ramattra: "tank", reinhardt: "tank", roadhog: "tank", sigma: "tank",
   winston: "tank", wreckingball: "tank", zarya: "tank",
@@ -48,13 +48,13 @@ OW.heroList = [
   "dmon", "domina", "junkerqueen", "ramattra", "reinhardt", "sigma",
   // ダメージ：フランカー / リコン / シャープシューター / スペシャリスト
   "anran", "genji", "reaper", "shion", "tracer", "vendetta", "venture",
-  "echo", "freja", "pharah", "sierra", "sombra",
+  "echo", "freja", "pharah", "sierra",
   "ashe", "cassidy", "hanzo", "sojourn", "widowmaker",
   "bastion", "emre", "junkrat", "mei", "soldier76", "symmetra", "torbjorn",
   // サポート：メディック / サバイバー / タクティシャン
   "kiriko", "lifeweaver", "mercy", "moira",
   "brigitte", "doctrine", "illari", "juno", "mizuki", "wuyang",
-  "ana", "baptiste", "jetpackcat", "lucio", "zenyatta",
+  "ana", "baptiste", "jetpackcat", "lucio", "sombra", "zenyatta",
 ];
 
 // マップ（data/maps/<id>.js）。ID は公式統計ページのマップIDと同じ。並び順＝一覧の表示順。
@@ -62,7 +62,7 @@ OW.mapList = [
   // コントロール
   "antarctic-peninsula", "busan", "ilios", "lijiang-tower", "nepal", "oasis", "samoa",
   // エスコート
-  "circuit-royal", "dorado", "havana", "junkertown", "rialto", "route-66", "shambali-monastery", "watchpoint-gibraltar",
+  "circuit-royal", "dorado", "havana", "junkertown", "rialto", "route-66", "shambali-monastery", "watchpoint-gibraltar", "grimsvotn",
   // ハイブリッド
   "blizzard-world", "eichenwalde", "hollywood", "kings-row", "midtown", "neon-junction", "numbani", "paraiso",
   // プッシュ

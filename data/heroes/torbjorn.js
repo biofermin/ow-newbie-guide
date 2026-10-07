@@ -351,7 +351,7 @@ OW.registerHero({
       { hero: "dmon", rating: 27.0, reason: "セイバーで戦うため至近距離に来る大きな的で、副射撃が全弾当たる。アーマー275にモルテン・コアが290/秒で刺さる。", basis: "data" },
       { hero: "vendetta", rating: 11.9, reason: "近接で張り付いてくる相手に副射撃が刺さる。ウォーディング・スタンスは正面のみで、横からのタレットの弾は防げない。", basis: "data" },
       { hero: "reinhardt", rating: 11.3, reason: "大きな体に主射撃が当て放題で、アーマー300にはモルテン・コアが大ダメージ。バリアの横からタレットが削る。", basis: "data" },
-      { hero: "roadhog", rating: 8.6, reason: "大きなヒットボックスに副射撃とリベットが全弾当たり、タレットも常に削り続ける。", basis: "data" },
+      { hero: "roadhog", rating: 8.6, reason: "大きなヒットボックスに副射撃とリベットが全弾当たり、タレットも常に削り続ける。（S4時点の統計）", basis: "data" },
       { hero: "winston", rating: 8.6, reason: "後衛に飛び込んできたところを副射撃とタレットで迎撃できる。アーマー200にモルテン・コアも有効。", basis: "data" },
     ],
     weak: [

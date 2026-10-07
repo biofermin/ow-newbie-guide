@@ -328,7 +328,7 @@ OW.registerHero({
     strong: [
       { hero: "ramattra", rating: 11.0, reason: "大きな的で不和とオーブを当てやすい。ネメシス・フォーム中も遠距離から削れる。", basis: "data" },
       { hero: "reinhardt", rating: 9.6, reason: "遠距離攻撃に乏しく、盾の外から不和付きのオーブで一方的に削れる。不和は付いた後なら盾で外れない。", basis: "data" },
-      { hero: "roadhog", rating: 8.6, reason: "大きな的で不和の効果が最大化し、テイク・ア・ブリーザーの回復を上回るダメージを出せる。", basis: "data" },
+      { hero: "roadhog", rating: 8.6, reason: "大きな的で不和の効果が最大化し、テイク・ア・ブリーザーの回復を上回るダメージを出せる。（S4時点の統計）", basis: "data" },
       { hero: "hazard", rating: 8.2, reason: "近距離型のタンクで、距離を取れば不和付きのオーブで削り続けられる。", basis: "data" },
       { hero: "mauga", rating: 6.4, reason: "大きな的に不和を付けるとオーバーヘルスや回復を上回る火力が出る。ケージ・ファイトには心頭滅却で対応。", basis: "data" },
     ],

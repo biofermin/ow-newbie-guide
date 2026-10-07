@@ -313,7 +313,7 @@ OW.registerHero({
       { hero: "cassidy", rating: 8.2, reason: "フラッシュバング（ヒンダー）でブリンクとリコールを封じられ、そのまま撃ち落とされる。", basis: "data" },
       { hero: "hanzo", rating: 5.8, reason: "矢の一撃が重く、ヘッドショットを受けるとHP175では即瀕死。", basis: "data" },
       { hero: "hazard", rating: 5.8, reason: "スパイク・ガードは周囲7mの敵に追尾スパイクを撃つので、ブリンクで回り込んでも削られる。", basis: "data" },
-      { hero: "roadhog", rating: 5.5, reason: "チェイン・フックで引かれると逃げる前に高火力を受け、HP175は確殺圏。", basis: "data" },
+      { hero: "roadhog", rating: 5.5, reason: "チェイン・フックで引かれると逃げる前に高火力を受ける。シーズン5でフック後のスタンが0.3秒に縮みブリンクで逃げる余地は増えたが、HP175は1斉射で落とされやすい。（S4時点の統計）", basis: "data" },
     ],
     synergy: [
       { hero: "dmon", reason: "前線で敵の注意を集めるタンクの裏で動きやすい（デュオ勝率56.2%）。", basis: "data" },

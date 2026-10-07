@@ -324,9 +324,9 @@ OW.registerHero({
 
   matchups: {
     strong: [
-      { hero: "sombra", rating: 5.5, reason: "HP300でソンブラの奇襲を耐え、クリオ・フリーズはハックも無効にする。張り付かれてもビームのスロウで逃がさない。", basis: "data" },
+      { hero: "sombra", rating: 5.5, reason: "HP300でソンブラの奇襲を耐え、クリオ・フリーズはEMPのハックも無効にする。張り付かれてもビームのスロウで逃がさない（S4時点の統計）。", basis: "data" },
       { hero: "mauga", rating: 5.4, reason: "クリオ・フリーズでマウガの火力を受け流し、アイス・ウォールでオーバーランの突進や味方との連携を切れる。大きな体にアイシクルも当てやすい。", basis: "data" },
-      { hero: "roadhog", rating: 4.8, reason: "フックはクリオ・フリーズで無効化でき、ウォールで射線も切れる。大きな頭にアイシクルのヘッドショットが入りやすい。", basis: "data" },
+      { hero: "roadhog", rating: 4.8, reason: "フックはクリオ・フリーズで無効化でき、ウォールで射線も切れる。大きな頭にアイシクルのヘッドショットが入りやすい。（S4時点の統計）", basis: "data" },
       { hero: "sigma", rating: 4.5, reason: "ビームはキネティック・グラスプに吸収されず、ウォールでバリアやグラスプの射線を遮れる。", basis: "data" },
       { hero: "zarya", rating: 4.5, reason: "バリアの時間切れを待ってからスロウ＋アイシクルを当てられ、グラビトン・サージに巻き込まれてもクリオ・フリーズで無敵になって耐えられる（統計ベース）。", basis: "data" },
     ],

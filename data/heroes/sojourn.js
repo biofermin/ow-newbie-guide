@@ -329,7 +329,7 @@ OW.registerHero({
     strong: [
       { hero: "mauga", rating: 8.5, reason: "大きなヒットボックスに通常射撃が当てやすく、エネルギーが早く溜まる。チャージ・ショットのヘッドも狙いやすい。", basis: "data" },
       { hero: "reaper", rating: 6.2, reason: "中距離から高火力を出し、近づかれてもパワー・スライドで距離を保てる。", basis: "data" },
-      { hero: "roadhog", rating: 5.7, reason: "大きな的でエネルギーが溜まりやすい。フックの射程外からチャージ・ショットで削れる。", basis: "data" },
+      { hero: "roadhog", rating: 5.7, reason: "大きな的でエネルギーが溜まりやすい。フックの射程外からチャージ・ショットで削れる。（S4時点の統計）", basis: "data" },
       { hero: "torbjorn", rating: 5.2, reason: "タレットはディスラプター・ショットで壊しやすく、本体も中距離から撃ち抜ける。", basis: "data" },
       { hero: "baptiste", rating: 4.9, reason: "HP250のため、チャージ・ショットのヘッド180＋数発で倒せる。高所から撃ち合っても負けにくい。", basis: "data" },
     ],

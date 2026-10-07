@@ -329,7 +329,7 @@ OW.registerHero({
       { hero: "sigma", rating: 6.0, reason: "コアレッセンスはバリアを貫通し、オーブもバリアをすり抜けて裏の敵に届く（統計ベース）。", basis: "data" },
     ],
     weak: [
-      { hero: "roadhog", rating: 8.6, reason: "フックから即死コンボを狙われ、見てからのフェードは間に合わないことが多い。", basis: "data" },
+      { hero: "roadhog", rating: 8.6, reason: "フックで引き寄せられると至近距離で高火力を受ける。シーズン5でフック後のスタンが0.3秒に縮み副射撃もなくなったため、引かれた後にフェードで逃げられる場面は増えた。（S4時点の統計）", basis: "data" },
       { hero: "torbjorn", rating: 7.7, reason: "タレットが自動で撃ち続け、フェード明けを狙われる。ビームの射程外からも削られる。", basis: "data" },
       { hero: "wreckingball", rating: 6.9, reason: "グラップリングで後衛まで来て、ノックバックで回復の位置取りを崩される。", basis: "data" },
       { hero: "doomfist", rating: 6.7, reason: "ロケット・パンチのスタンとノックバックはフェードで解除できない。フェード後の6秒を狙われる。", basis: "data" },

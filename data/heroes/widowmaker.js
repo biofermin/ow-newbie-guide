@@ -330,7 +330,7 @@ OW.registerHero({
       { hero: "winston", rating: 16.4, reason: "リープで高所まで追ってきて、テスラ・キャノンは狙い不要。バリアでスコープも防がれる。最も不利な相手。", basis: "data" },
       { hero: "wreckingball", rating: 15.9, reason: "グラップリングで高速に後衛へ到達し、ノックバックで狙撃位置から落とされる。", basis: "data" },
       { hero: "doomfist", rating: 13.0, reason: "ロケット・パンチやスラムで一気に詰められ、近距離ではほぼ勝ち目がない。", basis: "data" },
-      { hero: "roadhog", rating: 9.6, reason: "フックで引き寄せられると即死コンボ。HPが多く、ヘッド1発でも倒しきれない。", basis: "data" },
+      { hero: "roadhog", rating: 9.6, reason: "フックで引き寄せられると至近距離の連射で倒されやすい（シーズン5でスタン短縮・副射撃削除により即死コンボは成立しにくくなった）。HPが多く、ヘッド1発でも倒しきれない。（S4時点の統計）", basis: "data" },
       { hero: "lifeweaver", rating: 8.3, reason: "ライフ・グリップで狙った相手を引き戻され、一撃のキルを取り消される。", basis: "data" },
     ],
     synergy: [
