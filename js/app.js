@@ -82,8 +82,16 @@
     const { heroId, tab } = parseRoute();
     renderNav(heroId);
     $("#sidebar").classList.remove("open");
-    const route = heroId === "select" ? "select" : heroId === "maps" || heroId === "map" ? "maps" : !heroId ? "home" : "";
+    const route =
+      heroId === "select" ? "select" : heroId === "maps" || heroId === "map" ? "maps" : heroId === "patches" ? "patches" : !heroId ? "home" : "";
     document.querySelectorAll(".topnav a").forEach((a) => a.classList.toggle("active", a.dataset.route === route));
+    if (heroId === "patches") {
+      document.title = "パッチノート | OW Hero Guide";
+      document.documentElement.style.removeProperty("--hero");
+      view.innerHTML = renderPatchNotes(location.hash.replace(/^#\/?/, "").split("/")[1]);
+      bindPatchNotes();
+      return;
+    }
     if (heroId === "maps" || heroId === "map") {
       const mapId = location.hash.replace(/^#\/?/, "").split("/")[1];
       const map = heroId === "map" && OW.maps[mapId];
@@ -416,6 +424,93 @@
     lb.addEventListener("click", close);
     document.addEventListener("keydown", onKey);
     document.body.appendChild(lb);
+  }
+
+  // ---------- パッチノート一覧（各ヒーローの patches をパッチ単位に束ねる） ----------
+  let patchRole = "all";
+
+  function collectPatches() {
+    const byDate = {};
+    heroIds().forEach((id) => {
+      const h = OW.heroes[id];
+      (h.patches || []).forEach((p) => {
+        (byDate[p.date] = byDate[p.date] || []).push({ hero: h, patch: p });
+      });
+    });
+    Object.keys(OW.patchInfo || {}).forEach((d) => (byDate[d] = byDate[d] || []));
+    return byDate;
+  }
+
+  const patchTitle = (date, entries) =>
+    OW.patchInfo?.[date]?.title || entries.map((e) => e.patch.title).find(Boolean) || (entries.length >= 5 ? "バランス調整" : "ホットフィックス");
+  const officialPatchUrl = (date) => `https://overwatch.blizzard.com/en-us/news/patch-notes/live/${date.slice(0, 4)}/${date.slice(5, 7)}/`;
+
+  function renderPatchNotes(dateArg) {
+    const byDate = collectPatches();
+    const dates = Object.keys(byDate).sort().reverse();
+    const date = byDate[dateArg] ? dateArg : dates[0];
+    const entries = byDate[date] || [];
+    const info = OW.patchInfo?.[date] || {};
+    const idx = dates.indexOf(date);
+    const options = dates
+      .map((d) => `<option value="${d}"${d === date ? " selected" : ""}>${fmtDate(d)}　${esc(patchTitle(d, byDate[d]))}（${byDate[d].length}人）</option>`)
+      .join("");
+    const shown = entries
+      .filter((e) => patchRole === "all" || e.hero.role === patchRole)
+      .sort((a, b) => ROLE_ORDER.indexOf(a.hero.role) - ROLE_ORDER.indexOf(b.hero.role) || OW.heroList.indexOf(a.hero.id) - OW.heroList.indexOf(b.hero.id));
+    const count = (dir) => entries.reduce((n, e) => n + e.patch.changes.filter((c) => c.dir === dir).length, 0);
+    const roleChips = [["all", "すべて"], ...ROLE_ORDER.map((r) => [r, OW.roles[r].label])]
+      .map(([k, l]) => {
+        const n = k === "all" ? entries.length : entries.filter((e) => e.hero.role === k).length;
+        return `<button class="chip${k === patchRole ? " active" : ""}" data-patch-role="${k}">${l} ${n}</button>`;
+      })
+      .join("");
+    const card = ({ hero: h, patch: p }) => `
+      <article class="pn-hero" style="--c:${h.color}">
+        <a class="pn-who" href="#/${h.id}/patches">
+          ${avatar(h.id, "pn-ava")}
+          <span><b>${esc(h.name)}</b><small>${OW.roles[h.role].label}・${esc(h.subrole)}</small></span>
+        </a>
+        <ul>${p.changes.map((c) => `<li><span class="dir dir-${c.dir}">${DIR[c.dir]}</span><span>${esc(c.text)}</span></li>`).join("")}</ul>
+        ${p.note ? `<details class="pn-note"><summary>開発コメント要旨</summary><p>${esc(p.note)}</p></details>` : ""}
+      </article>`;
+    return `
+      <div class="home patchnotes">
+        <h1>PATCH NOTES</h1>
+        <p class="lead">パッチごとに、全ヒーローの調整をまとめて表示。ヒーローを押すとそのヒーローのパッチ履歴へ。</p>
+        <div class="pn-select">
+          <button class="chip" data-patch-go="${dates[idx + 1] || ""}" ${dates[idx + 1] ? "" : "disabled"} aria-label="前のパッチ">← 前</button>
+          <select id="pn-date" aria-label="パッチを選ぶ">${options}</select>
+          <button class="chip" data-patch-go="${dates[idx - 1] || ""}" ${idx > 0 ? "" : "disabled"} aria-label="次のパッチ">次 →</button>
+        </div>
+        <header class="pn-head">
+          <div class="pn-date">${fmtDate(date)}</div>
+          <h2>${esc(patchTitle(date, entries))}</h2>
+          <div class="pn-sum">
+            <span>${entries.length}人を調整</span>
+            <span class="dir dir-buff">強化 ${count("buff")}</span>
+            <span class="dir dir-nerf">弱体 ${count("nerf")}</span>
+            <span class="dir dir-change">変更 ${count("change")}</span>
+            <a href="${officialPatchUrl(date)}" target="_blank" rel="noopener">公式パッチノート →</a>
+          </div>
+        </header>
+        ${info.general?.length ? `<div class="box pn-general"><h3>全体の変更</h3><ul>${info.general.map((g) => `<li>${esc(g)}</li>`).join("")}</ul></div>` : ""}
+        <div class="seg-group" style="margin:16px 0">${roleChips}</div>
+        ${shown.length ? `<div class="pn-grid">${shown.map(card).join("")}</div>` : `<p class="empty">このパッチで調整されたヒーローの記録はありません。</p>`}
+        <p class="mu-legend" style="margin-top:20px">Stadium・アーケード限定の変更は含みません。</p>
+      </div>`;
+  }
+
+  function bindPatchNotes() {
+    const go = (d) => d && (location.hash = `#/patches/${d}`);
+    $("#pn-date")?.addEventListener("change", (e) => go(e.target.value));
+    view.querySelectorAll("[data-patch-go]").forEach((b) => b.addEventListener("click", () => go(b.dataset.patchGo)));
+    view.querySelectorAll("[data-patch-role]").forEach((b) =>
+      b.addEventListener("click", () => {
+        patchRole = b.dataset.patchRole;
+        render();
+      })
+    );
   }
 
   // ---------- hero select (ゲーム内のヒーロー選択画面風) ----------
