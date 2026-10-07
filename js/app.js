@@ -45,7 +45,8 @@
   const statOf = (id) => {
     if (isStale(id)) return null;
     const v = OW.stats?.sets?.[statKey]?.[id];
-    return v ? { wr: v[0], pr: v[1], br: v[2] } : null;
+    // ピック率0は試合がほぼ無い（例：ランク解禁前の新ヒーロー）ので、勝率を出さない
+    return v && v[1] ? { wr: v[0], pr: v[1], br: v[2] } : null;
   };
   const tierOf = (id) => {
     const s = statOf(id);
