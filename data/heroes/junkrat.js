@@ -389,6 +389,56 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ジャンクラ",
+      body: "定番の略称。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/jakuragheisyo/",
+    },
+    {
+      kind: "reputation",
+      title: "壊れじゃないのにウザい",
+      body: "角の裏からのグレネード、罠、地雷、タイヤと、とにかく相手をしていて不快だと言われる。「罠を一回踏んで溶かされた瞬間に全部どうでもよくなる」という声も（2026年9月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260922-050656",
+    },
+    {
+      kind: "running",
+      title: "初手ジャンクラ地雷率100%説",
+      body: "「初手でジャンクラを選ぶやつの地雷率は100%」という説が出回るほど、即ピックするジャンクラは不安視されがち（2026年1月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260104-143928/",
+    },
+    {
+      kind: "running",
+      title: "捨てゲーで出てくるジャンクラ",
+      body: "負けが見えた試合で投げやりに出されるキャラのイメージがある一方、「変態OTPが出すジャンクラは怖い」とも言われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260922-050656",
+    },
+    {
+      kind: "voice",
+      title: "Fire in the hole!",
+      quote: "Fire in the hole!",
+      body: "RIP-タイヤ発動時のセリフで、敵にも聞こえる。この声が聞こえた瞬間にタイヤを探して慌てるのがお約束。発破前の伝統的な警告の掛け声が元ネタ。",
+      source: "https://overwatch.fandom.com/wiki/Junkrat/Quotes",
+    },
+    {
+      kind: "play",
+      title: "グレネード・スパム",
+      body: "チョークポイントにひたすらフラグ・ランチャーを撃ち込み、跳ね返った弾で狙っていない敵まで倒してしまうプレイ。偶然のキルが多いことから“スパム”と揶揄されがち。",
+    },
+    {
+      kind: "official",
+      title: "Dr.ジャンケンシュタイン",
+      body: "ハロウィンイベント「ジャンケンシュタインの復讐」の悪役Dr.ジャンケンシュタインはジャンクラットが演じる。毎年恒例のPvEイベントとして定着している。",
+    },
+    {
+      kind: "official",
+      title: "水筒の中身はタピオカミルクティー",
+      body: "ジャンクラットの水筒の中身は「甘さ半分のタピオカミルクティー」だと、開発者が公式フォーラムで回答している。",
+      source: "https://overwatch.fandom.com/wiki/Junkrat",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Junkrat", url: "https://overwatch.fandom.com/wiki/Junkrat" },

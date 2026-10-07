@@ -382,6 +382,47 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "実装直後からナーフ前提",
+      body: "2026年6月の実装直後から「ぶっ壊れ」と言われ、いつナーフされるかという前提で語られた。特に罰（バースト）の瞬間火力とバイクが問題視された。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260619-202023/",
+    },
+    {
+      kind: "running",
+      title: "交通事故",
+      body: "実装当初はバイクの直撃が190ダメージもあり、轢かれて落ちることが「交通事故」扱いされた。のちに乗車中の衝突ダメージは下方修正された。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260619-202023/",
+    },
+    {
+      kind: "running",
+      title: "ペチペチのシオンは怖くない",
+      body: "遠くから撃っているだけのシオンは弱く、Eからの近距離バーストを決められるかどうかで別キャラになる、というのが共通認識（2026年6月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260624-001733",
+    },
+    {
+      kind: "voice",
+      title: "バイク、見せてあげた",
+      quote: "Wait 'til you see me—oh! You just did.",
+      body: "キリコを倒したときの台詞。キリコの「Wait 'til you see me on my bike」は、バイクが一向に登場しないことでいじられてきたボイスで、本当にバイクに乗るシオンがそれを煽り返す形になっている。",
+      source: "https://overwatch.fandom.com/wiki/Shion/Quotes",
+    },
+    {
+      kind: "official",
+      title: "So anyway, I started blasting!",
+      quote: "So anyway, I started blasting!",
+      body: "エイプリルフール限定のウルト台詞。海外ドラマ『It's Always Sunny in Philadelphia』の一場面から広まった定番ミームの引用で、二丁拳銃で暴れるシオンにぴったりはまっている。",
+      source: "https://overwatch.fandom.com/wiki/Shion/Quotes",
+    },
+    {
+      kind: "play",
+      title: "バイクを投げるヒーロー",
+      body: "ジョイライドでバイクに乗って突進し、そのまま爆発物として敵に投げつけられる。OW初の乗れる乗り物がまさかの投擲物という点が発表時から話題になった。",
+      source: "https://engadget.com/2192702/overwatch-latest-damage-hero-shion-will-throw-a-bike-at-your-head",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Shion", url: "https://overwatch.fandom.com/wiki/Shion" },

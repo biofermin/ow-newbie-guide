@@ -433,6 +433,46 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "LW",
+      body: "英語名 Lifeweaver の頭文字で「LW」と略される。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260519-072148/",
+    },
+    {
+      kind: "reputation",
+      title: "上位帯ではトロールピック",
+      body: "2026年9月、韓国上位帯ではマーシーと並んでトロールピック扱いされていると話題になった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260910-173504/",
+    },
+    {
+      kind: "running",
+      title: "味方に来ると怖いトロール性能",
+      body: "ライフ・グリップで勝手に引き戻されると、「味方に来ると一番怖いトロール性能のヒーロー」として名前が挙がる常連。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260608-194552/",
+    },
+    {
+      kind: "running",
+      title: "一時削除で「ゲーム直った」",
+      body: "2026年8月、ペタル・プラットフォームのバグで一時削除された際、「ついにゲーム直ったな」「そもそも全然見ない」といじられた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260822-081905/",
+    },
+    {
+      kind: "play",
+      title: "ライフ・グリップのトロール",
+      body: "味方を引き寄せて救うライフ・グリップだが、アルト中の味方を引き戻したり崖や井戸へ落としたりと、使い方次第で味方の邪魔になる。実装前から「トロールに使える」とネタにされ、開発陣もリスクは理解していると語った。",
+      source: "https://ggrecon.com/articles/lifeweaver-trolling-potential",
+    },
+    {
+      kind: "official",
+      title: "If I see even one axe...",
+      quote: "If I see even one axe, so help me!",
+      body: "エイプリルフール限定のツリー・オブ・ライフのボイス。「斧を一本でも見かけたらただじゃおかない」と自分の木を守ろうとする。",
+      source: "https://overwatch.fandom.com/wiki/Lifeweaver/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Lifeweaver", url: "https://overwatch.fandom.com/wiki/Lifeweaver" },

@@ -395,6 +395,58 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ゴリラ",
+      body: "見た目そのままに「ゴリラ」と呼ばれるのが国内の定番。「ゴリラダイブ」「ゴリラミラー」など、名前よりこちらの方がよく使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/goriramikat/",
+      common: true,
+    },
+    {
+      kind: "running",
+      title: "敵ゴリラは強いのに味方ゴリラは即死",
+      body: "「敵のゴリラは飛ぶたびにサポートを倒していくのに、味方のゴリラは飛ぶたびに即死する」というあるある。一緒にダイブしない周りのせいだ、と言い返されるまでがセット。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/goriramikat/",
+    },
+    {
+      kind: "running",
+      title: "1キル取るとすぐリーパーが来る",
+      body: "ゴリラで少し暴れただけで、敵がすぐリーパーなどのアンチピックに変えてくるのが「ゴリラ使い最大の弱点」とネタにされる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260221-164534/",
+    },
+    {
+      kind: "running",
+      title: "使うと現実でもゴリラ化",
+      body: "「恋人がウィンストンを使うと低い声になって、相手に何度も「こんにちは」と言い始める」という海外の相談が話題になった（2026年7月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260712-182328/",
+    },
+    {
+      kind: "voice",
+      title: "Did someone say peanut butter?",
+      quote: "Did someone say peanut butter?",
+      body: "ウィンストンの大好物ピーナッツバターにまつわるボイス。ピーナッツバター好きは彼の代名詞で、ほかにも関連ボイスが多数ある。",
+      source: "https://overwatch.fandom.com/wiki/Winston/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "No monkey business.",
+      quote: "No monkey business.",
+      body: "「おふざけはなしだ」という意味の慣用句を、ゴリラのウィンストンが言うダジャレ。「Ape-preciated!」など類人猿にかけたダジャレ系ボイスが多い。",
+      source: "https://overwatch.fandom.com/wiki/Winston/Quotes",
+    },
+    {
+      kind: "play",
+      title: "ダイブ構成の主役",
+      body: "ジャンプ・パックで後衛に飛び込み、トレーサーやゲンジと一緒に狙った相手を落とす「ウィンストン・ダイブ」はOW1時代の代表的な構成。今でもダイブ＝ウィンストンのイメージが強い。",
+    },
+    {
+      kind: "play",
+      title: "プライマル・レイジで場外ボープ",
+      body: "アルティメット中の殴りは強いノックバックがあるため、敵を崖や落下死エリアへ叩き落とすのが定番の見せ場。暴れゴリラになって敵陣を荒らすだけでも十分に仕事になる。",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Winston", url: "https://overwatch.fandom.com/wiki/Winston" },

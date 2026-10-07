@@ -439,6 +439,41 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ラマ",
+      body: "略して「ラマ」と呼ばれることが多い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/safndikgtht/",
+      common: true,
+    },
+    {
+      kind: "reputation",
+      title: "幼稚園児でも使えるタンク",
+      body: "硬くて扱いやすいため、国内では「幼稚園児でも使えるタンク」「バリアフリータンク」と悪口を言われることがある。一方で「対面していて不快度は低い」という声もある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/safndikgtht/",
+    },
+    {
+      kind: "running",
+      title: "ラマットラで味方をよしよし",
+      body: "試合前にラマットラで味方の頭をポンポンしてあげる文化が海外で広まり、「よしよしされて勝った」という投稿が話題になった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/idnrfogrt/",
+    },
+    {
+      kind: "community",
+      title: "ゼニヤッタとラマットラはプロフェッサーXとマグニートー",
+      body: "同じ師モンダッタのもとにいながら、人間との共存を説くゼニヤッタと、力によるオムニック解放を選んだラマットラ。この関係が『X-MEN』のプロフェッサーXとマグニートーに例えられることが多い。",
+      source: "https://overwatch.fandom.com/wiki/Ramattra",
+    },
+    {
+      kind: "voice",
+      title: "I'm sorry, brother.",
+      quote: "I'm sorry, brother.",
+      body: "ゼニヤッタを倒したときのボイス。ゼニヤッタを「兄弟」と呼ぶ掛け合いや撃破時の台詞が多く、二人の因縁を感じさせるボイスとしてファンの間で語られる。",
+      source: "https://overwatch.fandom.com/wiki/Ramattra/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Ramattra", url: "https://overwatch.fandom.com/wiki/Ramattra" },

@@ -402,6 +402,15 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "劣化シグマ",
+      body: "同じバリア持ちのポークタンクとして比べられ、「シグマの下位互換」「劣化シグマ」と言われがち（2026年5〜8月ごろ）。バリアがすぐ割れるのにクールダウンが長い、という不満が多い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260722-165134/",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Domina", url: "https://overwatch.fandom.com/wiki/Domina" },

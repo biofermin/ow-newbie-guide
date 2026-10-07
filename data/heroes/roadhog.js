@@ -450,6 +450,65 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ホグ / 豚",
+      body: "略して「ホグ」「ホッグ」、見た目から「豚」とも呼ばれる。「今豚いいよね？」のように使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/bd-trh6/",
+      common: true,
+    },
+    {
+      kind: "running",
+      title: "お散歩ホグ",
+      body: "フックで釣るためにサイドへ回り込みすぎて、エリアがら空きになるホグを「お散歩ホグ」と呼んでいじる。本人は気持ちよくワンピックを狙っているのがお約束。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/bd-trh6/",
+    },
+    {
+      kind: "reputation",
+      title: "アジアでは捨てピック、欧米ではOP",
+      body: "2026年8月ごろ、アジア鯖ではアナに止められて「出した時点で半分捨てピック」なのに、欧米では「強すぎるからナーフしろ」と言われる温度差が話題になった。強さより「戦っていてイラつく」のが嫌われる理由とも。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260807-185653/",
+    },
+    {
+      kind: "reputation",
+      title: "フックを外したら産廃",
+      body: "2026年4月にリワーク予定が発表されたころ、「フックを外したら8秒間無防備」「どうしようもない産廃」と言われていた。強化されると一転して「ホグ環境」と騒がれるのもお約束。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260417-135606/",
+    },
+    {
+      kind: "play",
+      title: "壁越しフック",
+      body: "初期のオーバーウォッチでは、チェイン・フックが壁や床、角越しに敵を引き寄せることが多く「フックマジック」と揶揄された。不満の大きさから「Hook 2.0」と呼ばれる修正が入るほどの話題になった。",
+      source: "https://www.itechpost.com/articles/36621/20161005/overwatch-roadhog-hook-update-blizzard-confirms-broken-nerf-underway.htm",
+    },
+    {
+      kind: "voice",
+      title: "Get over here!",
+      quote: "Get over here!",
+      body: "チェイン・フックで敵を引き寄せたときの叫び。『モータルコンバット』のスコーピオンの決め台詞と同じで、元ネタを知るプレイヤーにはおなじみのオマージュ。",
+      source: "https://overwatch.fandom.com/wiki/Roadhog",
+    },
+    {
+      kind: "play",
+      title: "フック・コンボ（ワンショット）",
+      body: "フックで引き寄せて至近距離のスクラップ・ガン＋近接攻撃で200HPのヒーローを即死させる連携。OW1時代のロードホッグの代名詞で、フックを外したら終わりというプレッシャーも込みで語られる。",
+    },
+    {
+      kind: "voice",
+      title: "Life is pain. So is death.",
+      quote: "Life is pain. So is death.",
+      body: "ロードホッグの荒んだ世界観を一言で表したボイス。寡黙で物騒なキャラクター性を象徴する台詞として引用される。",
+      source: "https://overwatch.fandom.com/wiki/Roadhog/Quotes",
+    },
+    {
+      kind: "official",
+      title: "着地でまれにおならをする",
+      body: "ジャンプして着地したとき、まれにロードホッグがおならをするイースターエッグがある。知っていると思わず確かめたくなる小ネタ。",
+      source: "https://overwatch.fandom.com/wiki/Roadhog",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Roadhog", url: "https://overwatch.fandom.com/wiki/Roadhog" },

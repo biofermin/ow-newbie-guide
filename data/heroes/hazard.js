@@ -428,6 +428,27 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "脳死キャラ扱い",
+      body: "2026年10月ごろ、海外では「脳死キャラ」と叩かれがちで、100時間使ったGMプレイヤーが壁の置き方などの奥深さを訴える擁護スレが立った。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261002-135003/",
+    },
+    {
+      kind: "running",
+      title: "スキンが少なくて不遇",
+      body: "後から実装されたウーヤンやフレイヤの方がレジェンダリースキンが2倍もある、とハザードの扱いの悪さが海外でネタにされた（2025年12月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20251223-051607/",
+    },
+    {
+      kind: "jp",
+      title: "関西弁のハザード",
+      body: "原語版ではスコットランド訛りのハザードが、日本語版では関西弁を話す。トレーラー公開時にはゲームメディアの見出しが「めっちゃ ええやん」になるなど、発表時から話題になった。",
+      source: "https://www.gamespark.jp/article/2024/11/23/147175.html",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Hazard", url: "https://overwatch.fandom.com/wiki/Hazard" },

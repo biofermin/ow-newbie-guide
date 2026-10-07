@@ -395,6 +395,54 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "シグマおじさん / 爺",
+      body: "白髪の老科学者なので「シグマおじさん」「爺」と呼ばれることがある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260722-165134/",
+    },
+    {
+      kind: "reputation",
+      title: "強くなるとすぐナーフされる",
+      body: "2025年12月、強化でワンパンができるようになった直後に「音速ナーフ」されたことが話題になった。強化された瞬間に「これナーフされるな」と全員が察するのがお約束。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20251217-153640/",
+    },
+    {
+      kind: "reputation",
+      title: "ゴルプラ帯で強いタンク",
+      body: "エリアを取る意識が薄く、全員がタンクの後ろに固まりがちなゴールド〜プラチナ帯では、シグマが強くウィンストンが弱いと言われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/dsnfgvtht/",
+    },
+    {
+      kind: "community",
+      title: "シグマの素足",
+      body: "2019年の発表時、シグマが裸足で浮いていることに注目が集まり、足ネタのミームが大量に出回った。海外メディアが「シグマ（と彼の足）へのネットの反応」をまとめる記事を出すほどだった。",
+      source: "https://knowyourmeme.com/memes/sigma-overwatch",
+    },
+    {
+      kind: "voice",
+      title: "Het universum zingt voor mij!",
+      quote: "Het universum zingt voor mij!",
+      body: "グラビティック・フラックス発動時のオランダ語の叫びで、意味は「宇宙が私に歌っている！」。この台詞はクリス・メッツェンの提案によるもので、シグマの狂気を象徴するボイスになっている。",
+      source: "https://overwatch.fandom.com/wiki/Sigma",
+    },
+    {
+      kind: "voice",
+      title: "What is that melody?",
+      quote: "What is that melody?",
+      body: "シグマが頭の中で聴いている「メロディ」にまつわるボイス。ハイライト演出ではそのメロディとされるピアノ曲が流れ、アルティメット中にも崩れたピアノの音が聞こえる。",
+      source: "https://overwatch.fandom.com/wiki/Sigma/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "There is no obligation for the universe to make sense to you.",
+      quote: "There is no obligation for the universe to make sense to you.",
+      body: "ヒーロー選択時の台詞「宇宙はあなたに理解されるために存在しているわけではない」は、天体物理学者ニール・ドグラース・タイソンの言葉の引用。天文学者らしいシグマのキャラクター付けになっている。",
+      source: "https://overwatch.fandom.com/wiki/Sigma",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Sigma", url: "https://overwatch.fandom.com/wiki/Sigma" },

@@ -402,6 +402,47 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "しねしね",
+      body: "デス・ブロッサムの通称（「デスブロ」とも）。日本語ボイスの「死ね、死ね、死ね」から来ていて、リーパー自体を「しねしねおじさん」と呼ぶ人もいる。",
+      source: "https://ameblo.jp/1003jenius-cr363/entry-12407839551.html",
+    },
+    {
+      kind: "reputation",
+      title: "タンクキラー",
+      body: "体の大きいタンクにはショットガンが全弾当たりやすく、吸収で回復しながら溶かせるため、昔からタンクの天敵として扱われる。",
+      source: "https://ow.jill-tone.com/basics_of_reaper/",
+    },
+    {
+      kind: "running",
+      title: "環境入りすると即ナーフ",
+      body: "2025年秋ごろ、リーパーは強くなるとすぐ弱体化されるのに、ゲンジやトレーサーは放置されているという不満が定番の愚痴になった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/anbvfigr/",
+    },
+    {
+      kind: "voice",
+      title: "Die! Die! Die!",
+      quote: "Die! Die! Die!",
+      body: "デス・ブロッサム発動時の叫び。くるくる回りながら連呼する姿が面白がられ、リーパーといえばこれという定番ミームになった。OW2では低く囁く「Die... die... die...」に変わっている。",
+      source: "https://knowyourmeme.com/memes/die-die-die",
+    },
+    {
+      kind: "community",
+      title: "エッジロード（edgelord）",
+      body: "黒ずくめの衣装、ドクロの仮面、物騒な台詞回しから「中二病の権化」扱いされるネタ。リーパー使いのいかにもなプレイヤー名もセットでいじられてきた。",
+      source: "https://www.destructoid.com/?p=219464",
+    },
+    {
+      kind: "official",
+      title: "Soldier: 24",
+      quote: "Gabriel Reyes... I know that name. Soldier: 24, right?",
+      body: "ソルジャー76の名前をもじった軍人時代風のスキン名。のちにシエラとの掛け合いでも、リーパーをこの名前で呼ぶ台詞が用意された。",
+      source: "https://overwatch.fandom.com/wiki/Reaper/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Reaper", url: "https://overwatch.fandom.com/wiki/Reaper" },

@@ -406,6 +406,40 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "才能ない奴が使うと悲惨",
+      body: "空中でのトラッキングと「寄って撃って爆弾を付けてビームで仕留める」流れに加え、ウルトでは他ヒーローの練度まで求められる。上手い人と下手な人の差が極端なDPSとされる（2024年12月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/agjb/",
+    },
+    {
+      kind: "running",
+      title: "ウルトで誰をコピーするか問題",
+      body: "エコー使いの定番の悩み。エコーメインからはザリアがGODティアとされ、味方タンクにバリアを張りつつ自分だけタンク2枚の旧OW気分を味わえる、という声がある（2024年12月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/aghg/",
+    },
+    {
+      kind: "official",
+      title: "ルート66のペイロードの中身",
+      body: "エコーは実装前、ルート66のペイロードの中に（見えない形で）積まれていたという設定のイースターエッグ。アニメ短編「Reunion」の公開に合わせて取り除かれた。",
+      source: "https://overwatch.fandom.com/wiki/Echo",
+    },
+    {
+      kind: "voice",
+      title: "Electric sheep",
+      quote: "Yes, I do dream of electric sheep.",
+      body: "小説『アンドロイドは電気羊の夢を見るか？』（映画『ブレードランナー』の原作）へのオマージュ。AIであるエコーならではの返しとして知られる。",
+      source: "https://overwatch.fandom.com/wiki/Echo/Quotes",
+    },
+    {
+      kind: "play",
+      title: "コピーしたヒーローの声で叫ぶ",
+      body: "デュプリケイトで変身すると、コピー先のアルティメット台詞をエコーの声で言う。ゲンジなら日本語、マーシーならドイツ語など元の言語のままなので、聞き慣れた台詞が別人の声で飛んでくる面白さがある。",
+      source: "https://overwatch.fandom.com/wiki/Echo/Quotes/Overwatch_1",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Echo", url: "https://overwatch.fandom.com/wiki/Echo" },

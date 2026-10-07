@@ -386,6 +386,46 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ゼニ／銭",
+      body: "国内では「ゼニ」と略され、「銭」と書かれることも。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260708-084534/",
+    },
+    {
+      kind: "reputation",
+      title: "弱い扱いなのに勝率は高い",
+      body: "2026年9月、「弱い」「味方に来ると嫌がられる」と言われながら全ロール勝率53％で、評判と数字が噛み合わないと話題に。デカい・遅い・脆いので味方の介護が要る、という評価も。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260909-184456/",
+    },
+    {
+      kind: "running",
+      title: "調和のオーブを付けてくれない",
+      body: "フランカーに調和を付けず、付けたと思ったらすぐタンクに付け直すゼニヤッタは「一番ウザい」とぼやかれる。ゼニ側からは「射線を切られると外れる」と反論される定番の言い合い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260708-084534/",
+    },
+    {
+      kind: "voice",
+      title: "Experience tranquility.",
+      quote: "Experience tranquility.",
+      body: "心頭滅却発動時のボイス（自分・味方側）。敵側には「Pass into the Iris.」と聞こえる。敵のアルトを受け止める「アルト返し」の合図としておなじみ。",
+      source: "https://overwatch.fandom.com/wiki/Zenyatta/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "I think, therefore I am.",
+      quote: "I think, therefore I am.",
+      body: "デカルトの「我思う、ゆえに我あり」を引用したボイス。ほかにも「Death is whimsical today.」など、哲学的だったり皮肉めいていたりする台詞が多く、よく引用される。",
+      source: "https://overwatch.fandom.com/wiki/Zenyatta/Quotes",
+    },
+    {
+      kind: "play",
+      title: "スナップ・キック",
+      body: "近接攻撃がノックバック付きの蹴りになっており、崖際なら敵を蹴り落とす環境キルも狙える。穏やかな僧侶ロボが蹴りで敵を退場させる意外さが見どころ。",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Zenyatta", url: "https://overwatch.fandom.com/wiki/Zenyatta" },

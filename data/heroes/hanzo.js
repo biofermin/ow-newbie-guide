@@ -379,6 +379,59 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "パチンコ",
+      body: "狙っていない敵に矢が当たって倒れることが多いため、適当に撃って当たる様子を揶揄して「パチンコ」と呼ばれる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/hanzo-ha/",
+    },
+    {
+      kind: "running",
+      title: "流れ弾ヘッドショット",
+      body: "「背の高いタンクを狙った流れ弾が後ろの敵の頭に当たる」のがハンゾーの真理、というあるある。置きエイムでばら撒いて当たるのを祈るスタイルもネタにされる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/hanzo-ha/",
+    },
+    {
+      kind: "reputation",
+      title: "削除してほしいヒーロー2位",
+      body: "2023年6月、海外の「削除してほしいヒーローは？」という話題でウィドウメイカーに次いで名前が多く挙がった。ヘッドショット一撃の理不尽さが主な理由。",
+      source: "https://fpsjp.net/archives/452320",
+    },
+    {
+      kind: "voice",
+      title: "竜が我が敵を喰らう！",
+      quote: "Ryū ga waga teki o kurau!",
+      quoteJa: "竜が我が敵を喰らう！",
+      body: "竜撃破の発動ボイス。ハンゾーは英語版でもアルティメット時だけ日本語で叫ぶため、海外プレイヤーにも広く知られるフレーズになった。ローン・ウルフ系スキンでは竜が狼に変わり、セリフも「狼よ、我が敵を喰らえ！」になる。",
+      source: "https://overwatch.fandom.com/wiki/Hanzo/Quotes",
+    },
+    {
+      kind: "community",
+      title: "ブロンズ帯のハンゾー使い",
+      body: "チーム構成を気にせずハンゾーやウィドウメイカーを即ピックし、当たらない矢を撃ち続ける低ランク帯プレイヤーのステレオタイプ。“DPS専”の象徴としてネタにされる。",
+    },
+    {
+      kind: "voice",
+      title: "Simple geometry.",
+      quote: "Simple geometry.",
+      body: "クレジットで解放できるボイスライン。弓の一撃を「単純な幾何学だ」と言い切るハンゾーらしいセリフで、2023年のバレンタインイベントでは“幾何学好き”という設定が公式にネタにされた。",
+      source: "https://overwatch.fandom.com/wiki/Hanzo",
+    },
+    {
+      kind: "play",
+      title: "スキャッター・アロー",
+      body: "かつて存在した、分裂して壁に跳ね返る矢。足元に撃ち込むとタンクすら一撃で溶かせたため“理不尽ワンショット”として語り草になったが、リワークでストーム・アローに置き換えられた。",
+      source: "https://overwatch.fandom.com/wiki/Hanzo",
+    },
+    {
+      kind: "community",
+      title: "ブラジルの「ハンゾー教会」",
+      body: "2017年、ブラジルで宗教団体の設立がいかに簡単かを示すため、ファンが「ハンゾー国立教会」を正式に設立して話題になった。",
+      source: "https://overwatch.fandom.com/wiki/Hanzo",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Hanzo", url: "https://overwatch.fandom.com/wiki/Hanzo" },

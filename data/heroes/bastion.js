@@ -395,6 +395,44 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "初心者狩り",
+      body: "フランカーで裏を取れない初心者には対処が難しく、「初心者殺し」「初心者狩りと不意打ちしかできない」と言われる（2023年8月の反応）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/basutaisaku/",
+    },
+    {
+      kind: "running",
+      title: "適当に撃ってるだけで無双",
+      body: "「適当に撃ってただけで38キル0デスだった、強すぎでは？」という質問が出るほど、低ランク帯ではとりあえず撃つだけで勝ててしまうことがある（2020年）。",
+      source: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12221876327",
+    },
+    {
+      kind: "reputation",
+      title: "OTPが嫌われがち",
+      body: "マップや構成次第で刺さらない防衛寄りのヒーローのため、ジャンクラット・トールビョーン・シンメトラと並んで「OTPだと嫌われるキャラ」に挙げられる（2024年）。",
+      source: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14300750479",
+    },
+    {
+      kind: "community",
+      title: "ブロンズ帯の悪夢",
+      body: "砲台モードで正面から撃ち続けるだけで強力なため、裏取りや集中攻撃といった対策が浸透していない低ランク帯では「処理できない」と恐れられた。",
+    },
+    {
+      kind: "play",
+      title: "パイレーツ・シップ",
+      body: "ペイロードに乗ったバスティオンをラインハルトなどのバリアで守り、マーシーがポケットで支える構成。バリアが帆のように見えることから名付けられ、2017年のアジア大会をきっかけにプロシーンでも流行した。",
+      source: "https://upcomer.com/?p=37167",
+    },
+    {
+      kind: "official",
+      title: "ガニメデと『The Last Bastion』",
+      body: "戦場跡で目覚めたバスティオンと小鳥のガニメデの交流を描いた公式短編。殺戮兵器なのに小鳥と仲良しという“癒やし系バスティオン”のイメージはここから定着した。",
+      source: "https://overwatch.fandom.com/wiki/Bastion",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Bastion", url: "https://overwatch.fandom.com/wiki/Bastion" },

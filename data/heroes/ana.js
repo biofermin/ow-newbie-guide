@@ -396,6 +396,58 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "婆ちゃん",
+      body: "国内外で「婆ちゃん（Grandma）」と呼ばれる。若い頃のスキンが続いた後、疲れた姿のスキンが来た時は「やっと婆ちゃんに戻った」と喜ばれた（2026年9月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260909-094624/",
+    },
+    {
+      kind: "reputation",
+      title: "10年放置の阻害",
+      body: "2026年10月時点でピック率7割超の最多使用ヒーロー。キリコばかりナーフされ、タンクを苦しめる阻害グレネードは10年近く放置されている、という不満が根強い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261001-211149/",
+    },
+    {
+      kind: "reputation",
+      title: "タンクに一番キツいサポ",
+      body: "タンク使いから「アナが断トツで一番キツい」と言われる存在。それでもBANするか悩むほど、味方にも欲しいヒーロー。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261002-160916/",
+    },
+    {
+      kind: "running",
+      title: "ナノを抱えて死ぬアナキリ",
+      body: "先手必勝のゲームなのに、ナノ・ブーストや狐駆けを後生大事に抱えたまま死ぬアナとキリコは「OW名物」と揶揄される。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260926-162129/",
+    },
+    {
+      kind: "play",
+      title: "ナノブレード（Nano Blade）",
+      body: "アナのナノ・ブーストとゲンジの龍撃剣を重ねるコンボ。OW1時代からの定番で、ナノを受けたゲンジが敵陣へ斬り込む光景はアナとゲンジの代名詞になっている。",
+    },
+    {
+      kind: "voice",
+      title: "You're powered up! Get in there!",
+      quote: "You're powered up! Get in there!",
+      body: "ナノ・ブーストを味方にかけたときのボイス。ナノの合図として耳に残る台詞で、エイプリルフール限定ボイスではウーヤンがこの台詞を言いかけてやめるパロディまで作られた。",
+      source: "https://overwatch.fandom.com/wiki/Ana/Quotes",
+    },
+    {
+      kind: "community",
+      title: "アナおばあちゃん（Grandma Ana）",
+      quote: "Children, behave.",
+      body: "ファラの母で百戦錬磨のベテランという設定から、海外では「Grandma Ana」、日本でも「おばあちゃん」と呼ばれる。敵を子ども扱いする「Children, behave.」のような台詞もそのイメージを強めている。",
+      source: "https://overwatch.fandom.com/wiki/Ana/Quotes",
+    },
+    {
+      kind: "community",
+      title: "アナ＝ソンブラ説",
+      body: "実装前、写真に写り込んだアナのマスク（開発名「Shrike」）が、噂されていた次期ヒーロー「ソンブラ」のものだと誤解され、コミュニティで「次のヒーローはソンブラのスナイパー」という説が広まった。",
+      source: "https://overwatch.fandom.com/wiki/Ana",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Ana", url: "https://overwatch.fandom.com/wiki/Ana" },

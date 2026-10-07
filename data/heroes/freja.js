@@ -423,6 +423,35 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "ハンゾーの下位互換",
+      body: "2025年4月の実装直後、公式フォーラムで「誰のアンチピックにもならない」「シールダーにもフランカーにも弱い」と酷評された。",
+      source: "https://jp.forums.blizzard.com/ja/overwatch/t/%E8%AA%B0%E3%82%82%E3%83%95%E3%83%AC%E3%82%A4%E3%83%A4%E3%81%AE%E4%BA%8B%E3%82%92%E6%84%9B%E3%81%95%E3%81%AA%E3%81%84%E3%81%97%E6%95%91%E3%81%88%E3%81%AA%E3%81%84/6896",
+    },
+    {
+      kind: "reputation",
+      title: "弱いと言われがち、でも腕次第",
+      body: "2025年5月ごろは「刺さる場面がない」「ウルトが弱い」と弱キャラ扱いされる一方、右クリックの精度が上がれば強い、上位帯ではむしろ強いという反論もあった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/alic/",
+    },
+    {
+      kind: "voice",
+      title: "Hvad drikker Møller?",
+      quote: "Hvad drikker Møller?",
+      body: "エコーを倒したときのデンマーク語ボイス。やまびこに「モラーは何を飲む？」と叫ぶと「オラー（ビール）」と返ってくるように聞こえる、デンマークの言葉遊びにかけたもの。",
+      source: "https://overwatch.fandom.com/wiki/Freja/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "Klap lige kænguruen",
+      quote: "Klap lige kænguruen",
+      body: "ジャンクラットやロードホッグを倒したときの台詞。「落ち着け」を意味するデンマークの言い回し「馬をなでろ」を、オーストラリア組に合わせてカンガルーに替えたもの。",
+      source: "https://overwatch.fandom.com/wiki/Freja/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Freja", url: "https://overwatch.fandom.com/wiki/Freja" },

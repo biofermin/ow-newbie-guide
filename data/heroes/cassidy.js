@@ -398,6 +398,67 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "マクリー",
+      body: "2021年に改名される前の旧名。改名から年月が経っても、日本のプレイヤーの間では今も「マクリー」と呼ばれることが多い。",
+      source: "https://x.com/Overwatch2_NEWS/status/1580030501867245570",
+    },
+    {
+      kind: "nickname",
+      title: "ハイヌーン（ウルトの通称）",
+      body: "正式名はデッドアイだが、英語版の発動ボイス「It's high noon」からウルト自体を「ハイヌーン」と呼ぶ人が多い。日本語版のセリフは「俺は早いぜ」。",
+      source: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q10296123420",
+    },
+    {
+      kind: "running",
+      title: "コロコロキャスディ",
+      body: "コンバット・ロールのでんぐり返しは「コロコロ」と呼ばれ、ダメージ軽減で「計算上899ダメージまで耐える」と話題になったときは「コロコロカービィみたい」とネタにされた（2023年10月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/kyasudennguri/",
+    },
+    {
+      kind: "reputation",
+      title: "勝率最下位常連・実質ウルト無し",
+      body: "2024年初めごろには「昔から勝率最下位常連」「ウルトもグレもクルリンパも弱い」「実質ULT無いようなもん」と言われ、リワークを望む声が多かった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/kasusyouritu/",
+    },
+    {
+      kind: "voice",
+      title: "It's high noon",
+      quote: "It's high noon.",
+      body: "デッドアイ発動時のセリフ。敵にも聞こえるため、この声を聞いた敵が一斉に物陰へ隠れ、誰も倒せずに終わるのがお約束。発動時に足元を回転草（タンブルウィード）が転がる西部劇らしい演出もセットで親しまれている。",
+      source: "https://overwatch.fandom.com/wiki/Cassidy/Quotes",
+    },
+    {
+      kind: "official",
+      title: "Well, would you look at the time?",
+      quote: "Well, would you look at the time?",
+      body: "デッドアイ中のキャスディをアッシュが倒したときの専用セリフ。「正午（ハイヌーン）」に引っかけて「あら、もうこんな時間？」と返す、公式による“ハイヌーン潰し”ネタ。",
+      source: "https://overwatch.fandom.com/wiki/Ashe/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "I'm your huckleberry",
+      quote: "I'm your huckleberry.",
+      body: "映画『トゥームストーン』のドク・ホリデイの名台詞が元ネタ。ギャンブラー・スキンやガンスピンのエモートもドク・ホリデイを意識しているとされる。",
+      source: "https://overwatch.fandom.com/wiki/Cassidy",
+    },
+    {
+      kind: "official",
+      title: "How do you want to do this?",
+      quote: "How do you want to do this?",
+      body: "OW2シーズン5で追加されたアンロック・ボイス。英語版声優マシュー・マーサーがTRPG番組『Critical Role』でよく使う決め台詞へのオマージュ。",
+      source: "https://overwatch.fandom.com/wiki/Cassidy",
+    },
+    {
+      kind: "play",
+      title: "フラッシュバン＋ファン・ザ・ハンマー",
+      body: "OW1時代はフラッシュバンが完全なスタンだったため、スタンさせてからファン・ザ・ハンマーを連射して近距離の敵を一瞬で倒すのがお決まりのコンボだった。現在のフラッシュバンは移動阻害のみで、往年の“即死コンボ”は昔話になっている。",
+      source: "https://overwatch.fandom.com/wiki/Cassidy",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Cassidy", url: "https://overwatch.fandom.com/wiki/Cassidy" },

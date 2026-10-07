@@ -367,6 +367,55 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "トレ",
+      body: "トレーサーの略。「リーパーやトレ」「トレソン」のように会話やまとめ記事で普通に使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/adoe/",
+      common: true,
+    },
+    {
+      kind: "reputation",
+      title: "元マスコットガール",
+      body: "パッケージを飾ったOWの看板娘。ただ2025年10月には「300日以上レジェンダリースキンが出ていない」と話題になり、「元マスコット」「開発に見捨てられた」といじられた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/agbdfiv4/",
+    },
+    {
+      kind: "running",
+      title: "トレソン",
+      body: "トレーサーとソンブラの組み合わせ、またはその2人が毎試合いる環境のこと。2024年春ごろに「うざいだけでつまらない」と嫌われる一方、「フランカーはゲームの華」と擁護する声もあった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/toresyori/",
+    },
+    {
+      kind: "running",
+      title: "上手いトレーサーは幽霊",
+      body: "「超上手いゲンジと超上手いトレーサー、どっちがウザいか」という話題では、ブリンクで視界から消えるトレーサーが圧倒的に多数派。蚊と戦うのと幽霊と戦うのの違いとまで言われた（2025年11月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/nsdivr/",
+    },
+    {
+      kind: "voice",
+      title: "Cheers, love! The cavalry's here!",
+      quote: "Cheers, love! The cavalry's here!",
+      body: "OW1時代の登場ボイスで、トレーサーの代名詞的な決め台詞。ゲームの顔として広告やトレーラーでも繰り返し使われ、ジャンクラットが「Cheers, mate!」ともじる掛け合いまである。",
+      source: "https://overwatch.fandom.com/wiki/Tracer/Quotes/Overwatch_1",
+    },
+    {
+      kind: "official",
+      title: "I'm already Tracer!",
+      quote: "I'm already Tracer!",
+      body: "ファン制作の楽曲「No Mercy」で、トレーサーを選ぼうとしたら相方に先に取られていたというくだりがミーム化（TikTokでも流行）。公式がそのままトレーサーのボイスとして逆輸入した。",
+      source: "https://knowyourmeme.com/memes/im-already-tracer",
+    },
+    {
+      kind: "voice",
+      title: "Couldn't have been me",
+      quote: "Couldn't have been me. I'm way over here!",
+      body: "パルス・ボムを貼り付けた直後にリコールで消えたときの台詞。爆弾を置いて逃げるトレーサーらしいとぼけ方として好まれている。",
+      source: "https://overwatch.fandom.com/wiki/Tracer/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Tracer", url: "https://overwatch.fandom.com/wiki/Tracer" },

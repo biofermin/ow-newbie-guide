@@ -408,6 +408,58 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "スピブ",
+      body: "クロスフェードの速度ブースト（スピードブースト）の略。「スピブ」と「回復」の切り替えがルシオの基本操作。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260513-220311/",
+    },
+    {
+      kind: "reputation",
+      title: "サポート環境の常連",
+      body: "競技のサポート枠は結局ルシオ・キリコ・アナに戻る、と言われ続けている（2026年4月時点）。常時スピードは替えが利かない、が定説。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260425-055326/",
+    },
+    {
+      kind: "running",
+      title: "野良のスピブは誰にも伝わらない",
+      body: "VCのない野良では加速をかけても味方が合わせてくれず、本人だけが楽しく走り回っている、というあるある。ジュノのリングの方が伝わりやすいと比べられる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260802-111614/",
+    },
+    {
+      kind: "reputation",
+      title: "劣化版ジュノになる？",
+      body: "2026年1月にサウンドウェーブのCDが延びた際、「タンク裏で回復と加速を撒くだけのルシオになる」「劣化版ジュノになる」と嘆かれた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260109-090734/",
+    },
+    {
+      kind: "play",
+      title: "ブープ（Boop）",
+      quote: "Boop!",
+      body: "サウンドウェーブで敵を押し出すこと。崖や井戸へ落とす環境キルは「ブープ」と呼ばれるルシオの花形プレイで、ルシオ自身にも「Boop!」「Sky boop!」というボイスがある。",
+      source: "https://overwatch.fandom.com/wiki/L%C3%BAcio/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "Oh, let's break it down!",
+      quote: "Oh, let's break it down!",
+      body: "サウンド・バリア発動時のボイス。かつて敵側に聞こえる台詞は「Let's drop the beat!」だったが、後にポルトガル語の台詞へ差し替えられた。",
+      source: "https://overwatch.fandom.com/wiki/L%C3%BAcio/Quotes",
+    },
+    {
+      kind: "official",
+      title: "ルシオボール（Lúcioball）",
+      body: "2016年の夏季イベント「Summer Games」で登場した、ルシオ同士がサウンドウェーブでボールを打ち合うサッカー風モード。以後の夏イベントの定番になった。",
+    },
+    {
+      kind: "official",
+      title: "Lúcio-Oh's",
+      body: "ルシオがパッケージを飾るシリアル。2018年にケロッグとのコラボで実際に期間限定販売されたが、本人の出身地ブラジルでは発売されなかったのも語り草。",
+      source: "https://overwatch.fandom.com/wiki/L%C3%BAcio",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Lúcio", url: "https://overwatch.fandom.com/wiki/L%C3%BAcio" },

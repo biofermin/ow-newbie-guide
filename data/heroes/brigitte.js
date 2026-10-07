@@ -423,6 +423,57 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ブリ",
+      body: "国内での略称。「ダメ0ブリ」「ブリメイン」のように使う。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260710-230020/",
+    },
+    {
+      kind: "running",
+      title: "フレイルぶんぶん",
+      body: "移動ペナルティも弾もないので、左クリックを押しっぱなしでフレイルを振り回すのがブリギッテの基本。バグで盾が消えた時は「フレイルぶんぶんネキ」と書かれた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20251229-090535/",
+    },
+    {
+      kind: "reputation",
+      title: "ダメ0ブリ＝飛ばないマーシー",
+      body: "ブリギッテを出してダメージ0なのは「飛ばないマーシー」と同レベル、と言われる（2026年7月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260710-230020/",
+    },
+    {
+      kind: "reputation",
+      title: "ミズキの下位互換？",
+      body: "2026年のミズキ登場後は「ミズキが完全な上位互換」と言われた。一方で競技の最上位ではブリギッテが残り、「低ランクと組織プレイで強い逆ベルカーブ型」と分析された（2026年3月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260321-172033/",
+    },
+    {
+      kind: "community",
+      title: "GOATS",
+      body: "タンク3・サポート3（ブリギッテ、ルシオ、ゼニヤッタ等）で固める構成。2018〜2019年に競技シーンを席巻し、2019年のロールキュー（2-2-2）導入のきっかけになった。",
+    },
+    {
+      kind: "play",
+      title: "実装時の強すぎたブリギッテ",
+      body: "2018年の実装時はシールド・バッシュにスタンがあるなど非常に強く、何度もナーフされた。開発チーム自身も初期バランスは大きく外れていたと認めている。",
+      source: "https://overwatch.fandom.com/wiki/Brigitte",
+    },
+    {
+      kind: "voice",
+      title: "Mace to the face!",
+      quote: "Mace to the face!",
+      body: "フレイルで殴る彼女らしい決め台詞。エイプリルフール限定のラリーボイスでは「Mace to the face」を連呼する台詞になった。",
+      source: "https://overwatch.fandom.com/wiki/Brigitte/Quotes",
+    },
+    {
+      kind: "official",
+      title: "猫好きのブリギッテ",
+      body: "公式設定で何匹も猫を飼っており、2026年に登場したジェットパック・キャット（フィーカ）も、ジブラルタルの野良猫だったところをブリギッテに引き取られたという設定になっている。",
+      source: "https://overwatch.fandom.com/wiki/Jetpack_Cat",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Brigitte", url: "https://overwatch.fandom.com/wiki/Brigitte" },

@@ -423,6 +423,41 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "脳死で撃つだけで楽しい",
+      body: "ボタンを押して撃つだけで何も考えなくていい気楽さが魅力、と海外のマウガ使い自身がネタにしている（2026年5月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260501-072556/",
+    },
+    {
+      kind: "running",
+      title: "マウガ相撲（マウガの精神）",
+      body: "2026年5月ごろ、韓国鯖でタンクがマウガを出して敵マウガだけを狙い続け、勝敗を他ロールの腕に委ねる「抗議」が流行した。タンクばかり責められることへのストライキとして「マウガの精神」と呼ばれた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260504-094528/",
+    },
+    {
+      kind: "community",
+      title: "モアナのマウイ似",
+      body: "ポリネシア系の巨漢で陽気なキャラクターなことから、ディズニー映画『モアナと伝説の海』のマウイによく例えられる。マウガのエモート「You're Welcome」もマウイの有名な曲を思わせるネタとして話題になった。",
+      source: "https://overwatch.fandom.com/wiki/Mauga",
+    },
+    {
+      kind: "voice",
+      title: "A gun in each hand and a smile on my face!",
+      quote: "A gun in each hand and a smile on my face!",
+      body: "両手のチェーンガンを撃ちまくりながら笑っている、マウガのキャラクターを一言で表すボイス。ニヤリと笑う表情とセットで彼のトレードマークになっている。",
+      source: "https://overwatch.fandom.com/wiki/Mauga/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "Cha-cha 'n Gunny say hi!",
+      quote: "Cha-cha 'n Gunny say hi!",
+      body: "マウガの2丁のチェーンガンには「ガニー」と「チャチャ」という名前がついている。銃をペットのように扱う台詞が多く、アビリティ名の（ガニー）（チャチャ）にもなっている。",
+      source: "https://overwatch.fandom.com/wiki/Mauga/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Mauga", url: "https://overwatch.fandom.com/wiki/Mauga" },

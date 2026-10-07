@@ -393,6 +393,72 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ハルト",
+      body: "国内では「ラインハルト」を縮めて「ハルト」と呼ぶのが定番。「ハルトとJQどっち出す？」のように使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/harutojq/",
+      common: true,
+    },
+    {
+      kind: "running",
+      title: "マーシーを見たら単独シャター",
+      body: "敵が何人いてもマーシー（やサポート）めがけてアース・シャターを1人に撃つのは「ハルト使いの通過儀礼」といじられる。蘇生や回復で邪魔された恨みもあると言われる（2026年4月の海外スレ）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260427-153829/",
+    },
+    {
+      kind: "running",
+      title: "暴言対策はラインハルトになりきること",
+      body: "試合中ずっと騎士っぽい大文字チャットとボイス連打でラインハルトを演じたら一度も暴言を受けなくなった、という海外の投稿が話題になった（2026年6月）。「OWで一番愛されるキャラ」という扱いがよく分かるネタ。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260607-200421/",
+    },
+    {
+      kind: "reputation",
+      title: "盾構えてるだけのおじさん",
+      body: "OW2で機動力の高いDPS・サポートが増えると、足の遅いハルトは追いつけず「盾を構えてるだけのおじさん」になると言われるようになった。「ラッシュならJQ、ポークならシグマでいい」と比べられがち。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/domurasyuharuto/",
+    },
+    {
+      kind: "running",
+      title: "アナとラインハルトはカップル",
+      body: "昔なじみの2人の掛け合いボイスが多く、海外では「Anahardt」と呼ばれる公式カップル扱いが定番。新しい掛け合いが追加されるたびに盛り上がる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260528-133330/",
+    },
+    {
+      kind: "voice",
+      title: "Hello!",
+      quote: "Hello!",
+      body: "コミュニケーション・ホイールの「Hello」で、まれに「HELLOOOOOO!」と大声で叫ぶバージョンが流れる。陽気なおじいちゃん騎士らしさの象徴として、試合開始前の挨拶合戦でよく使われる。",
+      source: "https://overwatch.fandom.com/wiki/Reinhardt",
+    },
+    {
+      kind: "official",
+      title: "釜山のカラオケで「ハンマー・ダウン！」",
+      quote: "Do, da-da, da, hammer down!",
+      body: "釜山マップのカラオケで、ラインハルトが自分のアルティメットの掛け声を鼻歌まじりに歌う隠しボイスがある。ゲーム中の決め台詞をノリノリで歌ってしまう姿がファンに好まれている。",
+      source: "https://overwatch.fandom.com/wiki/Reinhardt/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "Precision German engineering.",
+      quote: "Precision German engineering.",
+      body: "バリア・フィールド展開時などのボイス。「ドイツの精密工学」を誇る台詞で、ラインハルトのバリアや鎧の頼もしさを語るときの決まり文句になっている。",
+      source: "https://overwatch.fandom.com/wiki/Reinhardt/Quotes",
+    },
+    {
+      kind: "play",
+      title: "チャージで突っ込んで帰ってこないライン",
+      body: "チャージ（突進）は敵を捕まえたまま止まれないため、敵陣の真ん中や崖の外まで突っ込んでしまう事故が定番ネタ。逆に敵を壁や崖に叩きつける「ピン」が決まると最高に気持ちいい。",
+    },
+    {
+      kind: "official",
+      title: "ドン・キホーテのような騎士",
+      body: "開発者がラインハルトを「ちょっとドン・キホーテのようなキャラクター」と表現している。老いてなお騎士道を貫き、無謀に突撃していくイメージとプレイ中のチャージ癖が重ねて語られる。",
+      source: "https://overwatch.fandom.com/wiki/Reinhardt",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Reinhardt", url: "https://overwatch.fandom.com/wiki/Reinhardt" },

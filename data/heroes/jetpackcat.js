@@ -437,6 +437,57 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "害獣",
+      body: "どこからでも飛んできて粘着し、倒し切れないうちに逃げる性質から、国内掲示板では「害獣」呼ばわりされる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260929-223612/",
+    },
+    {
+      kind: "nickname",
+      title: "クソ猫・猫畜生",
+      body: "実装直後から「クソ猫」「糞猫」「猫畜生」などの罵倒交じりの呼び方が定着。ウルトで崖や穴へ運ばれた恨みとセットで語られる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260212-201113/",
+    },
+    {
+      kind: "nickname",
+      title: "猫バス",
+      body: "ライフラインでバスティオンやキャスディを吊り下げて上空から撃たせる構成の呼び名。2026年のプロシーンで話題になり、一般マッチでは広がる前にBANで抑え込まれた。",
+      source: "https://fpsjp.net/archives/552437",
+    },
+    {
+      kind: "reputation",
+      title: "ほぼ永久BAN",
+      body: "2026年2月の実装直後から「ほぼ永久BAN状態」と言われるほどBANされ続けた。8月時点でも最上位帯でBAN率7割超という数字が出回っている。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260212-201113/",
+    },
+    {
+      kind: "reputation",
+      title: "サポートのふりをしたDPS",
+      body: "常時飛行と高い火力・自己回復で、サポートなのにフランカーのように敵を倒しに来ることから。海外でも嫌われ方は同じで、新しいソンブラ扱いされている（2026年2月）。",
+      source: "https://x.com/Overwatch2_NEWS/status/2025480706068230340",
+    },
+    {
+      kind: "running",
+      title: "猫が出たらヒットスキャン義務化",
+      body: "空中を飛び回る猫に対抗するため、相手に猫がいるだけでDPSにヒットスキャンを強いられる、というぼやきが定番。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260929-223612/",
+    },
+    {
+      kind: "official",
+      title: "「ジェットパック・キャット」は冗談だった",
+      body: "2017年、当時のディレクターが没ヒーロー案として「ジェットパックを背負った猫」に触れたことで、名前だけが長年ネタとして語り継がれていた。2026年に本当にヒーローとして実装された。",
+      source: "https://overwatch.fandom.com/wiki/Jetpack_Cat",
+    },
+    {
+      kind: "official",
+      title: "物を落とす猫",
+      body: "エモートでは本物の猫のように机の上の物を叩き落とす。",
+      source: "https://overwatch.fandom.com/wiki/Jetpack_Cat",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Jetpack Cat", url: "https://overwatch.fandom.com/wiki/Jetpack_Cat" },

@@ -409,6 +409,52 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "サポート一強",
+      body: "2022年の実装以来、火力・回復・機動力・鈴を全部持つ「一強」として扱われ、アナと並ぶ二強体制が長く続いた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260909-180614/",
+    },
+    {
+      kind: "reputation",
+      title: "ナーフ後はトロールピック扱い",
+      body: "2026年9月の弱体化後、勝率がサポート最下位に落ちて「出したら負けるレベル」とまで言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260911-120255/",
+    },
+    {
+      kind: "running",
+      title: "狐を抱えて死ぬアナキリ",
+      body: "狐駆けやナノ・ブーストを使わないまま倒れるアナとキリコは「OW名物」とネタにされる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260926-162129/",
+    },
+    {
+      kind: "reputation",
+      title: "日本での人気は断トツ",
+      body: "日本で行われたキャラ人気投票ではキリコの票が断トツだった（2026年9月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260919-101834/",
+    },
+    {
+      kind: "community",
+      title: "新しい看板娘",
+      body: "トレーサーがシリーズのマスコットとされてきたが、OW2ではキリコが新たな「看板娘（poster girl）」になったという声が海外コミュニティで広がり、メディアでも取り上げられた。",
+      source: "https://www.dexerto.com/overwatch/overwatch-2-community-thinks-poster-child-tracer-has-been-replaced-by-this-hero-2450074/",
+    },
+    {
+      kind: "play",
+      title: "鈴で倒せた時代",
+      body: "かつて守護の鈴には小さなノックバックがあり、鈴で敵を倒すとキルログに専用アイコンが出た。",
+      source: "https://overwatch.fandom.com/wiki/Kiriko",
+    },
+    {
+      kind: "official",
+      title: "Believe it! / Just aim for the head!",
+      quote: "Just aim for the head!",
+      body: "エイプリルフール限定の狐駆けボイス。忍者アニメの決め台詞「Believe it!」（のちに削除）や、ヘッドショット頼みのクナイをいじる「Just aim for the head!」が用意された。",
+      source: "https://overwatch.fandom.com/wiki/Kiriko/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Kiriko", url: "https://overwatch.fandom.com/wiki/Kiriko" },

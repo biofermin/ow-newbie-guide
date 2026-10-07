@@ -343,6 +343,27 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "渋すぎる悪役サポ",
+      body: "2026年9月のトレーラー公開時、コメントの半分が「渋すぎる」で埋まった。悪役をやれるサポートの登場として歓迎された。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260930-023937/",
+    },
+    {
+      kind: "running",
+      title: "サポートなのにデカすぎる",
+      body: "体格がジャンカークイーンより大きく、タンク以外ではバスティオンの次にデカいことがネタにされた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260915-080139/",
+    },
+    {
+      kind: "reputation",
+      title: "実装前から弱体化",
+      body: "先行体験で「楽しいうえに普通に強い」と評判になり、正式実装（2026年10月6日）の前に弱体化された。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261006-080327/",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Doctrine", url: "https://overwatch.fandom.com/wiki/Doctrine" },

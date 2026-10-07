@@ -449,6 +449,41 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "初心者狩り兼フランカー入門",
+      body: "2026年2月の実装直後、耐久が高くて倒せないと話題になった。低ランクでは勝率が高いが高ランクでは振るわないことから、「初心者狩りキャラであり初心者用キャラ」とも評された。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260221-165008/",
+    },
+    {
+      kind: "running",
+      title: "キャスディかミズキを出せば止まる",
+      body: "「アンランが倒せない」という相談への定番の答え。フラッシュや鎖で動きを止めれば機能停止すると言われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260221-165008/",
+    },
+    {
+      kind: "community",
+      title: "同じ顔問題とフェイスリフト",
+      body: "実装時のゲーム内モデルの顔がシネマティックより柔らかくなり、キリコやジュノと似すぎているとして「Same Face Syndrome」の例に挙げられた。反響を受けて公式が2026年4月に顔立ちを調整した。",
+      source: "https://kotaku.com/overwatch-anran-kiriko-juno-face-edit-reaction-change-2000666138",
+    },
+    {
+      kind: "official",
+      title: "朱雀＝チキン扱い",
+      quote: "Hot wings, hot wings, spicy hot wings!",
+      body: "エイプリルフール限定ボイスでは、神獣の朱雀をただのニワトリ扱いするジョークが連発される。手羽先や「なぜ朱雀は道を渡ったか」など鶏ネタ尽くし。",
+      source: "https://overwatch.fandom.com/wiki/Anran/Quotes",
+    },
+    {
+      kind: "official",
+      title: "Wrong script",
+      quote: "Heroes never-- oh shoot, wrong script.",
+      body: "同じくエイプリルフールのウルト台詞。マーシーの「Heroes never die!」を言いかけて台本違いに気づくという楽屋ネタ。",
+      source: "https://overwatch.fandom.com/wiki/Anran/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Anran", url: "https://overwatch.fandom.com/wiki/Anran" },

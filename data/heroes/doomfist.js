@@ -431,6 +431,53 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ドゥーム",
+      body: "国内では略して「ドゥーム」と呼ぶのが一般的。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/afgb/",
+      common: true,
+    },
+    {
+      kind: "running",
+      title: "片道切符ドゥーム",
+      body: "敵陣に突っ込んだまま帰ってこられずに落ちるドゥームを「片道切符ドゥーム」と呼ぶ。チームが撃ち合う前にタンクが落ちて試合にならない、と嘆かれるのがお約束。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/afgb/",
+    },
+    {
+      kind: "running",
+      title: "どの試合にもドゥーム専",
+      body: "2026年10月ごろ、海外で「味方にも敵にもドゥーム専ばかり」と話題になった。DPSの待ち時間が長いので、タンクでDPS気分のドゥームを出す人が多いという説がある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261003-134344/",
+    },
+    {
+      kind: "running",
+      title: "ヴェンデッタに全部奪われた男",
+      body: "ストーリーでヴェンデッタにタロンのリーダーの座を奪われたうえ、BlizzConのポスター中央の位置まで差し替えられ、海外で同情といじりを集めた（2026年8月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260828-094445/",
+    },
+    {
+      kind: "community",
+      title: "ドゥームフィストはいつ来るのか",
+      body: "2014年のシネマティックで登場したガントレットの持ち主として、長年プレイアブル化が待望されていた。海外俳優が演じたいと名乗り出るパロディ動画が話題になるなど、2017年の実装まで「Doomfist when?」が定番ネタだった。",
+      source: "https://knowyourmeme.com/memes/doomfist",
+    },
+    {
+      kind: "community",
+      title: "クラッシュログからリーク",
+      body: "2017年6月のPTRのクラッシュログに「Doomfist / Summer Games」という文字列が残っており、25人目のヒーローがドゥームフィストだとうっかり判明した。",
+      source: "https://overwatch.fandom.com/wiki/Doomfist",
+    },
+    {
+      kind: "official",
+      title: "One punch is all I need.",
+      quote: "One punch is all I need.",
+      body: "「一発で十分だ」というボイス。拳一つで戦う姿から『ワンパンマン』と重ねられることが多く、のちに公式コラボでサイタマのスキンが実装され、腕立て100回などのボイスまで追加された。",
+      source: "https://overwatch.fandom.com/wiki/Doomfist/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Doomfist", url: "https://overwatch.fandom.com/wiki/Doomfist" },

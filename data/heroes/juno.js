@@ -408,6 +408,34 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "集金キャラ",
+      body: "ショップ限定スキンが次々に追加されることから「集金キャラ」と呼ばれる（2026年8月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260811-080959/",
+    },
+    {
+      kind: "running",
+      title: "ジュノ×ウーヤン",
+      body: "公式漫画での匂わせから、ジュノとウーヤンの関係がよくネタにされる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260819-054007/",
+    },
+    {
+      kind: "official",
+      title: "Martian? Always have been!",
+      quote: "Martian? Always have been!",
+      body: "エイプリルフール限定のオービタル・レイのボイス。宇宙飛行士の「Always has been」ミームをもじった台詞で、火星生まれのジュノらしいネタ。",
+      source: "https://overwatch.fandom.com/wiki/Juno/Quotes",
+    },
+    {
+      kind: "official",
+      title: "顔が出る銃",
+      body: "ジュノの銃は狙っている相手によって表示が変わり、敵には怒り顔、味方には笑顔が出る小ネタがある。",
+      source: "https://overwatch.fandom.com/wiki/Juno",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Juno", url: "https://overwatch.fandom.com/wiki/Juno" },

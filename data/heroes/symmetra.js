@@ -384,6 +384,49 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "シンメ",
+      body: "定番の略称。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sinnmekonntorotu/",
+    },
+    {
+      kind: "running",
+      title: "開幕テレポ要員",
+      body: "コントロールなどで開幕にテレポーターを置くためだけにシンメトラを求められがちで、「開幕テレポのためにシンメを出さないDPSを見ると負けの匂いがする」という声まである（2023年3月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sinnmekonntorotu/",
+    },
+    {
+      kind: "reputation",
+      title: "OTPが嫌われがち",
+      body: "防衛寄りでマップ次第では役に立たないことから、「OTPだと嫌われるキャラ」にジャンクラット・トールビョーン・バスティオンと並んで挙がる（2024年）。",
+      source: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q14300750479",
+    },
+    {
+      kind: "play",
+      title: "シンメトラのテレポーター",
+      body: "スポーン地点から前線や高所、裏取りルートへ味方を一気に送り込むテレポーター。意外な場所への設置で奇襲を決めるのがシンメトラ使いの腕の見せどころとして語られる。",
+    },
+    {
+      kind: "community",
+      title: "リワークされ続けたヒーロー",
+      body: "2016年9月時点で最も使われていないヒーローで、複数回の大規模リワークを受けた唯一のヒーローになった。かつては2種類のアルティメットから選べた時期もある。",
+      source: "https://overwatch.fandom.com/wiki/Symmetra",
+    },
+    {
+      kind: "play",
+      title: "オートエイムのビーム",
+      body: "OW1初期のフォトン・プロジェクターは近くの敵に自動でロックオンするビームだったため、「エイム不要」とネタにされた。",
+    },
+    {
+      kind: "play",
+      title: "バスケットボールにタレット",
+      body: "スポーンルームのバスケットボールにセントリー・タレットを貼り付け、フォトン・プロジェクターで押して運ぶ小ネタ。壁や床に当たるとタレットは壊れる。",
+      source: "https://overwatch.fandom.com/wiki/Symmetra",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Symmetra", url: "https://overwatch.fandom.com/wiki/Symmetra" },

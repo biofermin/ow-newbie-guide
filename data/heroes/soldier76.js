@@ -377,6 +377,53 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ソル",
+      body: "定番の略称。「ソルジャー」とも。",
+      common: true,
+    },
+    {
+      kind: "reputation",
+      title: "最も文句を言われないヒーロー",
+      body: "移動・攻撃・回復のどれにも意外性がない“シューターの原型”のようなヒーローで、2023年7月の海外の話題では「最も論争の少ない、バランスの取れたヒーロー」と評された。",
+      source: "https://fpsjp.net/archives/457504",
+    },
+    {
+      kind: "reputation",
+      title: "初心者向けの“普通のFPS”枠",
+      body: "「最も“普通のFPS”に近い動き方ができる」として、初心者におすすめのDPSの筆頭に挙がる（2026年2月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/syo-8/",
+    },
+    {
+      kind: "voice",
+      title: "I've got you in my sights!",
+      quote: "I've got you in my sights!",
+      body: "タクティカル・バイザー発動時のセリフで、敵にも聞こえる。照準が自動で敵に吸い付くため“公式エイムボット”と呼ばれ、この声が聞こえたら遮蔽物に隠れるのが鉄則。",
+      source: "https://overwatch.fandom.com/wiki/Soldier:_76/Quotes",
+    },
+    {
+      kind: "community",
+      title: "パパ76",
+      body: "若い頃のヒーローたち（子ども）の世話に手を焼く父親として描くファンアートの定番ネタ。英語版声優も「確かに父親的な存在」と好意的に受け止めている。",
+      source: "https://overwatch.fandom.com/wiki/Soldier:_76",
+    },
+    {
+      kind: "voice",
+      title: "Get off my lawn!",
+      quote: "Get off my lawn!",
+      body: "「うちの芝生から出ていけ！」という頑固じいさんの定番フレーズ。「Back in my day...」で始まるセリフもあり、“おじいちゃん76”いじりの材料になっている。",
+      source: "https://overwatch.fandom.com/wiki/Soldier:_76/Quotes",
+    },
+    {
+      kind: "community",
+      title: "みんなの最初のヒーロー",
+      body: "チュートリアルで操作するのがソルジャー76で、2016年9月時点では最も遊ばれているヒーローだった。素直な撃ち合いができるため、他のFPSから来た人がまず手に取る定番キャラとして扱われる。",
+      source: "https://overwatch.fandom.com/wiki/Soldier:_76",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Soldier: 76", url: "https://overwatch.fandom.com/wiki/Soldier:_76" },

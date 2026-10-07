@@ -8,6 +8,7 @@
     { id: "techniques", label: "テクニック" },
     { id: "playstyle", label: "立ち回り" },
     { id: "matchups", label: "相性" },
+    { id: "memes", label: "ミーム" },
     { id: "patches", label: "パッチ履歴" },
   ];
   const ROLE_ORDER = ["tank", "damage", "support"];
@@ -639,6 +640,7 @@
       case "techniques": return renderTechniques(h);
       case "playstyle": return renderPlaystyle(h);
       case "matchups": return renderMatchups(h);
+      case "memes": return renderMemes(h);
       case "patches": return renderPatches(h);
       default: return renderOverview(h);
     }
@@ -925,6 +927,56 @@
       </div>
       <h2 class="sec">相性の良い味方</h2>
       <div class="mu-grid"><div class="mu-col">${h.matchups.synergy.map(card).join("")}</div></div>`;
+  }
+
+  const MEME_KIND = {
+    nickname: "あだ名",
+    reputation: "評判",
+    running: "お約束",
+    voice: "ボイス",
+    play: "プレイ・仕様",
+    community: "海外コミュニティ",
+    jp: "日本コミュニティ",
+    official: "公式ネタ",
+  };
+
+  function renderMemes(h) {
+    const memes = h.memes || [];
+    const nick = memes.filter((m) => m.kind === "nickname");
+    const talk = memes.filter((m) => m.kind === "reputation" || m.kind === "running");
+    const other = memes.filter((m) => !["nickname", "reputation", "running"].includes(m.kind));
+    const src = (m) => (m.source ? `<a class="meme-src" href="${esc(m.source)}" target="_blank" rel="noopener">出典</a>` : m.common ? `<span class="meme-src">定番の略称</span>` : "");
+    const card = (m) => `
+        <article class="meme">
+          <span class="meme-kind kind-${esc(m.kind)}">${esc(MEME_KIND[m.kind] || m.kind)}</span>
+          <h3>${esc(m.title)}</h3>
+          ${m.quote ? `<blockquote>“${esc(m.quote)}”${m.quoteJa ? `<span>「${esc(m.quoteJa)}」</span>` : ""}</blockquote>` : ""}
+          <p>${esc(m.body)}</p>
+          ${src(m)}
+        </article>`;
+    const nickHtml = nick.length
+      ? `<h2 class="sec">呼ばれ方</h2>
+        <div class="nick-list">${nick
+          .map(
+            (m) => `
+          <div class="nick">
+            <b>${esc(m.title)}</b>
+            <span>${esc(m.body)}</span>
+            ${src(m)}
+          </div>`
+          )
+          .join("")}</div>`
+      : "";
+    const talkHtml = talk.length ? `<h2 class="sec">界隈での扱い・ネタ</h2><div class="meme-grid">${talk.map(card).join("")}</div>` : "";
+    const otherHtml = other.length
+      ? `<details class="meme-more"${nick.length || talk.length ? "" : " open"}>
+          <summary>ボイス・公式ネタなど（${other.length}件）</summary>
+          <div class="meme-grid">${other.map(card).join("")}</div>
+        </details>`
+      : "";
+    if (!nickHtml && !talkHtml && !otherHtml) return `<p class="empty">まだ定着したネタは見つかっていません。</p>`;
+    return `${nickHtml}${talkHtml}${otherHtml}
+      <p class="mu-legend" style="margin-top:16px">プレイヤー間での呼ばれ方・ネタの紹介です。時期や界隈によって使われ方が違い、攻略上の評価とは関係ありません。</p>`;
   }
 
   const DIR = { buff: "強化", nerf: "弱体", change: "変更" };

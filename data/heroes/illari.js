@@ -400,6 +400,41 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "イラリー",
+      body: "国内では「イラリ」より「イラリー」と伸ばして呼ばれることが多い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260422-025825/",
+    },
+    {
+      kind: "reputation",
+      title: "勝率トップのやりすぎサポ",
+      body: "2026年1〜4月ごろは全ランク帯で勝率トップクラスとなり、「やりすぎ」と言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260422-025825/",
+    },
+    {
+      kind: "running",
+      title: "ハンゾーより弾がデカい",
+      body: "ヒットスキャンなのに弾の当たり判定が大きく、「ハンゾーより弾がでかいのかよ」「弾当てるだけの作業」とぼやかれる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260120-011253/",
+    },
+    {
+      kind: "voice",
+      title: "Inti lluqsimun",
+      quote: "Face the sunrise!",
+      body: "キャプティブ・サン発動時、自分・味方側は「Face the sunrise!」、敵側にはケチュア語で「Inti lluqsimun（太陽が昇る）」と聞こえる。名前の「イラリ」もケチュア語で「日の出」の意味。",
+      source: "https://overwatch.fandom.com/wiki/Illari",
+    },
+    {
+      kind: "official",
+      title: "SPF 15 is useless!",
+      quote: "SPF 15 is useless!",
+      body: "エイプリルフール限定のキャプティブ・サンのボイス。「SPF15じゃ役に立たない」「日焼け止めを塗りなさい」と太陽ネタに振り切った台詞になった。",
+      source: "https://overwatch.fandom.com/wiki/Illari/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Illari", url: "https://overwatch.fandom.com/wiki/Illari" },

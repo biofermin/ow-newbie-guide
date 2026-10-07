@@ -421,6 +421,51 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "バティ／窓",
+      body: "本人は「バティ」、アンプリフィケーション・マトリックスは見た目から「窓」と略される。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260519-072148/",
+    },
+    {
+      kind: "nickname",
+      title: "イモ",
+      body: "イモータリティ・フィールドの略。「イモも実装時は糞アビリティと思ってた」のように使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260422-145628/",
+    },
+    {
+      kind: "reputation",
+      title: "競技では最強、野良ではゴミ",
+      body: "連携の取れる競技では最強サポートの一人なのに、野良ランクではゴミ扱いされる（2026年4月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260422-145628/",
+    },
+    {
+      kind: "reputation",
+      title: "1世代古いサポ",
+      body: "横移動がなくCDも重いため「他のサポより1世代古い」「猫からジェットパック借りてこい」と言われ、野良ランクの三弱に数えられた（2026年5月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260519-072148/",
+    },
+    {
+      kind: "play",
+      title: "ランプ（Lamp）",
+      body: "イモータリティ・フィールドの装置が電気スタンドのような形をしていることから、コミュニティでは「ランプ」と呼ばれる。「ランプを置く／ランプを壊せ」は定番のコール。",
+    },
+    {
+      kind: "official",
+      title: "Shoot through the box!",
+      quote: "Everybody, shoot through the box!",
+      body: "アンプリフィケーション・マトリックスを出しても味方が通して撃ってくれない、というバティストあるある。エイプリルフール限定ボイスで「箱を通して撃って！」と懇願する台詞が採用された。",
+      source: "https://overwatch.fandom.com/wiki/Baptiste/Quotes",
+    },
+    {
+      kind: "official",
+      title: "GOATSへのカウンター",
+      body: "2019年の実装時、開発陣はバティストをGOATS構成へのカウンターになるよう設計したと語っていた。",
+      source: "https://www.invenglobal.com/articles/7678/principal-overwatch-designer-ensures-baptiste-will-be-a-counter-for-goats-composition",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Baptiste", url: "https://overwatch.fandom.com/wiki/Baptiste" },

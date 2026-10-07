@@ -376,6 +376,45 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "バトルモイラ（バトモイ）",
+      body: "攻撃寄りに立ち回るモイラの呼び名。「ウルトの回転率を上げるため仕方なく回復するのがバトモイ、回復しないのはバトモイですらない」と言われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260504-183615/",
+    },
+    {
+      kind: "reputation",
+      title: "スタッツだけ盛れる初狩りキャラ",
+      body: "エイム不要でキルもダメージも盛れるのに勝てない、と言われがち（2026年6月）。金メダルを取っても貢献していないと言われるのが定番。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260629-094058/",
+    },
+    {
+      kind: "running",
+      title: "DPSモイラ論争",
+      body: "「DPSモイラこそ正しい使い方」派と「回復しないならいらない」派の言い合いは海外でも終わらない（2026年4月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260408-150114/",
+    },
+    {
+      kind: "community",
+      title: "DPSモイラ",
+      body: "回復そっちのけでバイオティック・グラスプの吸収やダメージオーブでキルを狙うモイラのこと。回復しないサポートの象徴としてネタにされる一方、攻撃しないと回復リソースが回復しない仕様ゆえの議論も絶えない。",
+    },
+    {
+      kind: "voice",
+      title: "Good news, everyone.",
+      quote: "Good news, everyone.",
+      body: "アニメ『フューチュラマ』のファーンズワース教授の口癖と同じ台詞。マッドサイエンティストという設定と重なる小ネタとして知られる。",
+      source: "https://overwatch.fandom.com/wiki/Moira/Quotes",
+    },
+    {
+      kind: "official",
+      title: "コアレッセンス＝かめはめ波",
+      body: "両手から太いビームを放つコアレッセンスは「かめはめ波」によく例えられる。エイプリルフール限定ボイスでは敵側に「Kamehameha!」と聞こえる台詞が用意された（のちに削除）。",
+      source: "https://overwatch.fandom.com/wiki/Moira/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Moira", url: "https://overwatch.fandom.com/wiki/Moira" },

@@ -411,6 +411,41 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "本体は弱いのにウルトだけ壊れ",
+      body: "2026年4月の実装直後は「クソ弱くね？」という評価が多かった一方、23発の爆弾を落とすウルトは「絨毯爆撃ヤバすぎ」と批判が集中し、早くもナーフを求められた。",
+      source: "https://fpsjp.net/archives/546925",
+    },
+    {
+      kind: "reputation",
+      title: "エイム不要の救済キャラ",
+      body: "2026年9月ごろには、勝率は低いのにうざいヒーローとして話題になった。弾幕でエイムがなくても火力が出る、トラッキング音や台詞がうるさい、タンクが顔を出せなくなる、といった点が嫌われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260917-004748",
+    },
+    {
+      kind: "community",
+      title: "フランキーじゃなかった",
+      body: "ヒーロー51の姿が公開されると、ファンはアッシュのデッドロック・ギャングの一員フランキーだと予想した。ふたを開けると別人の新キャラで、しかもデッドロック・ギャングと敵対する立場だった。",
+      source: "https://kotaku.com/overwatch-new-hero-51-frankie-deadlock-gang-ashe-2000683600",
+    },
+    {
+      kind: "voice",
+      title: "Touch grass",
+      quote: "You ever touch grass? Might do you good.",
+      body: "ネットスラングの「touch grass（外に出て草でも触れ）」を使った煽り台詞。登山家のシエラが言うと文字どおりの意味にもなる。",
+      source: "https://overwatch.fandom.com/wiki/Sierra/Quotes",
+    },
+    {
+      kind: "official",
+      title: "エイプリルフールのミーム台詞",
+      quote: "I think we're gonna have to kill these guys, Dorothy!",
+      body: "エイプリルフール限定のウルト台詞は、海外ミーム「I Think We're Gonna Have to Kill This Guy, Steven」のもじり。敵側にはファラの「Justice rains from above!」をまねて笑う版が流れる。",
+      source: "https://overwatch.fandom.com/wiki/Sierra/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Sierra", url: "https://overwatch.fandom.com/wiki/Sierra" },

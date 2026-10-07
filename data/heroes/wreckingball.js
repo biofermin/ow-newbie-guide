@@ -423,6 +423,52 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ハム / ボール",
+      body: "中身のハムスターから「ハム」、メカの見た目から「ボール」と呼ばれる。正式名の「レッキング・ボール」で呼ぶ人はあまりいない。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/borumein/",
+      common: true,
+    },
+    {
+      kind: "reputation",
+      title: "味方に来ると嫌われるタンク",
+      body: "前線を放って後衛を荒らしに行くため、上手くないと「トロールと変わらない」と言われがち。ボールメインには毎回のように回避の申告が来る、という嘆きもある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/borumein/",
+    },
+    {
+      kind: "running",
+      title: "どっか行っちゃうハム",
+      body: "ウェーブの合間に回復しようとしてもすぐどこかへ転がって行き、敵陣の奥で「ヒール！」と連呼して爆発四散するハム、というサポート目線のあるある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/hamukaihuk/",
+    },
+    {
+      kind: "community",
+      title: "名前はハモンドと呼べ",
+      body: "ヒーロー名は「レッキング・ボール」だが、中のハムスターの名前「ハモンド」で呼ぶファンが多い。発表当時は名前が地味だという投稿が大きな反響を呼び、海外メディアも「ハモンドと呼べ」と記事にした。",
+      source: "https://kotaku.com/call-overwatchs-hamster-hammond-you-cowards-1827324712",
+    },
+    {
+      kind: "official",
+      title: "ハムスターは喋らない",
+      body: "ハモンドは人間の言葉を話さず、メカのAI音声とハムスターの鳴き声でコミュニケーションする。開発者は「ハムスターが話すのはばかげている」と説明しており、キュッという鳴き声だけのボイスもネタになっている。",
+      source: "https://overwatch.fandom.com/wiki/Wrecking_Ball",
+    },
+    {
+      kind: "official",
+      title: "ピカチュウサイズ",
+      body: "ハモンドの大きさは公式に「ピカチュウくらい」とされている。小さなハムスターが巨大なボールで敵をなぎ倒すギャップが魅力として語られる。",
+      source: "https://overwatch.fandom.com/wiki/Wrecking_Ball",
+    },
+    {
+      kind: "official",
+      title: "ドラドの鐘でテーマ曲を歌う",
+      body: "ドラドの攻撃側スポーン地点の鐘をオーバーウォッチのテーマのメロディで鳴らすと、ハモンドがそれに合わせて歌う隠し要素がある。",
+      source: "https://overwatch.fandom.com/wiki/Wrecking_Ball",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Wrecking Ball", url: "https://overwatch.fandom.com/wiki/Wrecking_Ball" },

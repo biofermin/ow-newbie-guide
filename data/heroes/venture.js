@@ -387,6 +387,40 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "モグラ",
+      body: "地面に潜って移動するところから。実装直後の2024年4月には「モグラ強すぎる」という声がまとめられた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/bencha/",
+    },
+    {
+      kind: "reputation",
+      title: "交戦距離以外に弱点がないバケモン",
+      body: "2024年11月ごろ、高い耐久と火力から「射程が短いこと以外に弱点がない」と言われ、全盛期のドゥームフィストと比べられた。ただしコメント欄では「ドゥームの理不尽さはこんなものではなかった」という声が多い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/aeme",
+    },
+    {
+      kind: "community",
+      title: "石を食べるベンチャー",
+      body: "コンセプトアートの欠けた歯から「掘ってるうちに石をかじったのでは」という冗談が生まれ、実装前から「rock eater」としてファンアートやネタが量産された。",
+      source: "https://kotaku.com/overwatch-2-venture-new-hero-eats-rocks-nonbinary-1851368854",
+    },
+    {
+      kind: "community",
+      title: "タイムズスクエア広告",
+      body: "2024年6月、ベンチャー好きのファン有志がニューヨークのタイムズスクエアの電光広告枠を買い、ペットの石と戯れる絵などのネタ画像を流した。",
+      source: "https://kotaku.com/overwatch-2-venture-times-square-ad-skibidi-toilet-meme-1851561388",
+    },
+    {
+      kind: "voice",
+      title: "Et tu, Brigitte?",
+      quote: "Et tu, Brigitte?",
+      body: "ブリギッテに倒されたときの台詞。シェイクスピア『ジュリアス・シーザー』の「ブルータス、お前もか」のもじりで、鼻をすすりながら言うのがポイント。",
+      source: "https://overwatch.fandom.com/wiki/Venture/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Venture", url: "https://overwatch.fandom.com/wiki/Venture" },

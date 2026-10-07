@@ -409,6 +409,53 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "一番嫌われているタンク",
+      body: "海外では「なぜザリアは一番嫌われるタンクなのか」というスレが立つほど嫌われがち。「撃てば強化、撃たなきゃ耐久」の仕組みが面倒で、連携できない低ランクでは無双しやすいのが理由とされる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/akab/",
+    },
+    {
+      kind: "running",
+      title: "「ザリアのバリアは撃つな」論争",
+      body: "「バリアを撃つとエネルギーが溜まるから撃つな」と教わった初心者と、「集中できるなら撃て、撃たないと一生死なない」という派で毎回議論になる定番の話題。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260406-215711/",
+    },
+    {
+      kind: "play",
+      title: "グラビトン・サージ＋範囲ウルト",
+      body: "グラビトン・サージで敵をまとめて浮かせ、ハンゾーの龍撃破などの範囲アルティメットを重ねる連携が定番。「グラビ＋〇〇」で一気に全滅させる場面はハイライトの常連になっている。",
+    },
+    {
+      kind: "voice",
+      title: "Is your day ruined, ninja?",
+      quote: "Is your day ruined, ninja?",
+      body: "龍撃剣を抜いたゲンジをグラビトン・サージに巻き込んで倒したときの専用ボイス。ゲンジの最大の見せ場を潰す状況そのものがネタとして公式に拾われている。",
+      source: "https://overwatch.fandom.com/wiki/Zarya/Quotes",
+    },
+    {
+      kind: "official",
+      title: "It's only a game. Why do you have to be mad?",
+      quote: "It's only a game. Why do you have to be mad?",
+      body: "サマーゲームズで追加されたボイスで、ロシアのアイスホッケー選手のインタビュー発言が元になった有名な海外ミームの引用。キレている相手をなだめる（煽る）定番台詞になった。",
+      source: "https://overwatch.fandom.com/wiki/Zarya/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "I can bench more than you.",
+      quote: "I can bench more than you.",
+      body: "「お前よりベンチプレスを挙げられる」という筋肉自慢のボイス。重量挙げ選手出身というザリアの設定を端的に表す台詞として親しまれている。",
+      source: "https://overwatch.fandom.com/wiki/Zarya/Quotes",
+    },
+    {
+      kind: "official",
+      title: "肩の「512」",
+      body: "ザリアの肩のタトゥー「512」は重量挙げの自己記録とされ、スプレーにも512kgのバーベルが描かれている。現実の記録を大きく超える数字で、彼女の怪力ぶりを示す小ネタ。",
+      source: "https://overwatch.fandom.com/wiki/Zarya",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Zarya", url: "https://overwatch.fandom.com/wiki/Zarya" },

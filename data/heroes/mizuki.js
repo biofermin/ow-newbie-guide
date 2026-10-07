@@ -417,6 +417,40 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "ブリギッテの上位互換",
+      body: "2026年の実装後は「ブリギッテの完全な上位互換」と言われた。ただし競技の最上位ではあまり使われなかった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260321-172033/",
+    },
+    {
+      kind: "reputation",
+      title: "野良ランクの三弱",
+      body: "2026年5月ごろには、バティスト、マーシーと並ぶ野良ランクの三弱に数えられていた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260519-072148/",
+    },
+    {
+      kind: "running",
+      title: "歩く広告塔",
+      body: "LE SSERAFIMコラボの第2弾スキンは、帽子や脚にまでグループ名が入っていたことから「歩く広告塔」と言われた（2026年9月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260916-214736/",
+    },
+    {
+      kind: "official",
+      title: "Anything but the shirikodama!",
+      quote: "Anything but the shirikodama!",
+      body: "エイプリルフール限定のケッカイ・サンクチュアリのボイス（敵側）。衣装のモチーフが河童で、河童が尻子玉を抜くという伝承にかけた台詞。",
+      source: "https://overwatch.fandom.com/wiki/Mizuki/Quotes",
+    },
+    {
+      kind: "jp",
+      title: "博多弁のミズキ",
+      body: "日本語版の声優はミズキと同じ福岡出身で、自然な博多弁で話すのが日本のプレイヤーに注目されている。",
+      source: "https://overwatch.fandom.com/wiki/Mizuki",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Mizuki", url: "https://overwatch.fandom.com/wiki/Mizuki" },

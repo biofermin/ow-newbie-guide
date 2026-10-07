@@ -402,6 +402,64 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "タレ爺",
+      body: "タレットを置くおじいちゃんであることから「タレット爺ちゃん」「タレ爺」と呼ばれる。OW1の頃から定着している呼び名。",
+      source: "https://gametokka.com/overwatch2orisatorbjorn122522/",
+    },
+    {
+      kind: "reputation",
+      title: "初心者の強敵",
+      body: "OW1初期（2016年）から、オートエイム・全方位射撃のタレットが「ある意味チート武器」と言われ、初心者の強敵とされてきた。",
+      source: "https://fpsjp.net/archives/253277",
+    },
+    {
+      kind: "reputation",
+      title: "隠れOP",
+      body: "2023年初めには「割と万能キャラ」「メインがミニハンゾー並みに強い」「マジで隠れOP」と言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/to-rubyo-n-taretto/",
+    },
+    {
+      kind: "running",
+      title: "トールビョーン使いはイケメン",
+      body: "海外の「ヒーロー別プレイヤー性格あるある」では、「トールビョーンメインはいつも超イケメンで美人の奥さんがいて金持ち」と、なぜかべた褒めされるネタがある（2026年1月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260114-073524/",
+    },
+    {
+      kind: "play",
+      title: "タレットのPOTG",
+      body: "自動で撃ち続けるタレットのキルがプレイ・オブ・ザ・ゲームに選ばれ、本人はほとんど映らない“タレットPOTG”はトールビョーンの代名詞的なネタ。",
+    },
+    {
+      kind: "voice",
+      title: "Molten floor!",
+      quote: "Molten floor!",
+      body: "モルテン・コア発動時の「Molten core!」が、まれに「Molten floor!」に変わる。床を溶岩にする効果そのままの言い換えボイス。",
+      source: "https://overwatch.fandom.com/wiki/Torbj%C3%B6rn/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "When it's done.",
+      quote: "Completion date? *chuckle* When it's done.",
+      body: "「完成日？完成したときさ」というボイスライン。発売日を「完成したときに出す（when it's done）」としてきたBlizzardのお決まりの言い回しへの目配せ。",
+      source: "https://overwatch.fandom.com/wiki/Torbj%C3%B6rn/Quotes",
+    },
+    {
+      kind: "community",
+      title: "TF2のエンジニア",
+      body: "タレットを建ててハンマーで修理・強化するスタイルが『Team Fortress 2』のエンジニアそっくりだと言われる。旧仕様ではタレットがレベル3まで強化され、アーマーパックも配れた。",
+      source: "https://overwatch.fandom.com/wiki/Torbj%C3%B6rn",
+    },
+    {
+      kind: "official",
+      title: "IKEA風スプレー",
+      body: "「Torbjörn」はIKEAの椅子の名前でもあり、ゲーム内にはIKEAの組み立て説明書風のスプレーが複数ある。",
+      source: "https://overwatch.fandom.com/wiki/Torbj%C3%B6rn",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Torbjörn", url: "https://overwatch.fandom.com/wiki/Torbj%C3%B6rn" },

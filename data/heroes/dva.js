@@ -446,6 +446,55 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "太ったトレーサー",
+      body: "海外では、タンクなのにダイブDPSのように飛び回って後衛を狩るD.Vaを「Fat Tracer（太ったトレーサー）」と呼ぶことがある（2026年5月のRedditで話題）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260512-142342/",
+    },
+    {
+      kind: "reputation",
+      title: "勝率は低いのに最強タンク扱い",
+      body: "2026年6月ごろ、統計上の勝率は低いのに「最強タンク」と言われ、BANもされやすいことが話題になった。スキル上限が高く、上手い人が使うと手が付けられないためと言われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260625-135840/",
+    },
+    {
+      kind: "voice",
+      title: "Nerf this!",
+      quote: "Nerf this!",
+      body: "自爆（セルフ・デストラクト）発動時の叫び。「ナーフしてみろ」と開発に挑戦しているようにも聞こえ、実際に自爆そのものは長らくナーフされなかったことがネタにされた。",
+      source: "https://overwatch.fandom.com/wiki/D.Va",
+    },
+    {
+      kind: "voice",
+      title: "GG! / Winky face!",
+      quote: "Winky face!",
+      body: "プロゲーマー出身らしく、ボイスラインに「GG!」や「Winky face!（ウインク顔！）」がある。勝ち誇った煽りや試合後の挨拶として連打されがち。",
+      source: "https://overwatch.fandom.com/wiki/D.Va/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "Love, D.Va.",
+      quote: "Love, D.Va.",
+      body: "ファンへのサインのような決め台詞。アイドル的な人気を持つキャラクター性を表すボイスとして、ファンアートや投稿の締めにも使われる。",
+      source: "https://overwatch.fandom.com/wiki/D.Va/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "Is this easy mode?",
+      quote: "Is this easy mode?",
+      body: "「これってイージーモード？」と相手を挑発するボイス。一方的に勝っている場面で使われる定番の煽り台詞になっている。",
+      source: "https://overwatch.fandom.com/wiki/D.Va/Quotes",
+    },
+    {
+      kind: "official",
+      title: "ディフェンス・マトリックスはAPMに数えられる",
+      body: "公式設定では、ディフェンス・マトリックスはD.Vaが飛んでくる弾を手動で撃ち落としていることになっている。理論上の最大APMをファンが計算するなど、プロゲーマー設定ならではの小ネタになっている。",
+      source: "https://overwatch.fandom.com/wiki/D.Va",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - D.Va", url: "https://overwatch.fandom.com/wiki/D.Va" },

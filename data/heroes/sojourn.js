@@ -379,6 +379,50 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "ぶっ壊れと勝率下位を行き来するヒーロー",
+      body: "OW2リリース当初は「誰が使ってもぶっ壊れ」と言われたが、2024年初めには全ランク帯で勝率下位に。2025年4月ごろには再び「高ランク帯でも暴れている簡単な最強ぶっ壊れキャラ」「2秒でワンパンされるのが理不尽」と言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/akre/",
+    },
+    {
+      kind: "running",
+      title: "極太レールガン",
+      body: "レールガンの弾が大きくなった調整以降、当たり判定の太さをいじって「極太レールガン」と呼ぶネタがある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sojo/",
+    },
+    {
+      kind: "running",
+      title: "ソルジャー使った方が良い",
+      body: "メイン射撃を当ててレールガンのチャージを貯められない人には「ソルジャー使った方が良い」と言われがち。「低ランクではソルジャーの方が勝率が高い」という声も（2023年11月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sorusojo-n/",
+    },
+    {
+      kind: "play",
+      title: "レールガンのワンショット",
+      body: "チャージしたレールガンのヘッドショットで体力の低いヒーローを一撃で倒せたため、OW2リリース直後は強すぎると話題になり、繰り返し調整の対象になった。",
+      source: "https://overwatch.fandom.com/wiki/Sojourn",
+    },
+    {
+      kind: "community",
+      title: "OW2の『Quake』",
+      body: "高速スライディングとレールガンの組み合わせが往年のアリーナFPS『Quake』を思わせると、昔ながらのFPSファンに喜ばれた。",
+      source: "https://www.gamesradar.com/overwatch-2-sojourn",
+    },
+    {
+      kind: "play",
+      title: "スライド・ジャンプ",
+      body: "パワー・スライド中にジャンプすると大きく飛び上がれるため、高所への移動や離脱に多用される定番テク。",
+    },
+    {
+      kind: "community",
+      title: "アナの写真の謎の人物",
+      body: "2016年のアナのオリジン・ストーリーに登場する旧オーバーウォッチの集合写真に、正体不明の人物として写っていた。のちにソジョーンと判明し、同じ写真の別の人物もエムレだったことが分かった。",
+      source: "https://overwatch.fandom.com/wiki/Emre",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Sojourn", url: "https://overwatch.fandom.com/wiki/Sojourn" },

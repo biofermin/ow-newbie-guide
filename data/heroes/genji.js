@@ -402,6 +402,61 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "竜剣",
+      body: "アルティメット「龍撃剣」の略。調整の話題でも「竜剣威力110」のように普通に通じる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sdfnbgr54/",
+    },
+    {
+      kind: "reputation",
+      title: "なぜかHPを減らされない優遇キャラ",
+      body: "2025年秋ごろ、トレーサーやソンブラはHPを削られたのにゲンジは250のまま、リーパーは環境入りするとすぐナーフされるのにゲンジは放置、という不満が話題になった。一方で「難しいキャラだから」と擁護する声も根強い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/anbvfigr/",
+    },
+    {
+      kind: "running",
+      title: "回復パックの位置くらい覚えろ",
+      body: "敵陣で暴れるゲンジにヒールは届きにくいので、自分でパックを拾えというのが定番の説教。上手いゲンジほど自分で回復して戻ってくる、とも言われる。",
+      source: "https://overwatch2news.net/archives/4398",
+    },
+    {
+      kind: "community",
+      title: "I need healing",
+      quote: "I need healing.",
+      body: "全ヒーロー共通の回復要請ボイスだが、前に出すぎて回復を連呼するゲンジ使いの姿と結びついて定番ネタ化した。サポート側の「またか」という気持ちを表す決まり文句として使われる。",
+      source: "https://knowyourmeme.com/memes/i-need-healing",
+    },
+    {
+      kind: "community",
+      title: "Is that a pro Genji?",
+      body: "人気YouTuberのプレイ動画で発せられたひと言がきっかけ。自信満々に突っ込んでいくゲンジ使いを皮肉る言い回しとして広まり、他ヒーローにも「pro ○○」と応用された。",
+      source: "https://knowyourmeme.com/memes/is-that-a-pro-genji",
+    },
+    {
+      kind: "voice",
+      title: "竜神の剣を喰らえ！",
+      quote: "Ryūjin no ken wo kurae!",
+      quoteJa: "竜神の剣を喰らえ！",
+      body: "龍撃剣の発動ボイス。英語版でも日本語で叫ぶため、海外プレイヤーにも耳で覚えられた有名フレーズ。聞こえた瞬間に身構える「死の宣告」として扱われる。",
+      source: "https://overwatch.fandom.com/wiki/Genji/Quotes",
+    },
+    {
+      kind: "play",
+      title: "ナノブレード",
+      body: "アナのナノ・ブーストを龍撃剣に重ねる定番コンボ。速度と火力が跳ね上がり一気にチームを刈り取れるため、「Nano-Blade」の呼び名でOW1初期から語り継がれている。",
+      source: "https://overwatch.fandom.com/wiki/Genji",
+    },
+    {
+      kind: "official",
+      title: "Tatakae!",
+      quote: "Tatakae!",
+      body: "エイプリルフール限定ボイス。『進撃の巨人』の主人公の口癖で、ファンの間でミーム化していた「戦え！」を公式がゲンジに言わせたもの。",
+      source: "https://overwatch.fandom.com/wiki/Genji/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Genji", url: "https://overwatch.fandom.com/wiki/Genji" },

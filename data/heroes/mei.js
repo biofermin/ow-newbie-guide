@@ -380,6 +380,57 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "メイちゃん",
+      body: "見た目の可愛さから「メイちゃん」と呼ばれることが多い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/meikawai/",
+    },
+    {
+      kind: "running",
+      title: "味方のウルトも壁で止める",
+      body: "敵のウルトを止めようとした壁が、味方のカウンターウルトまで止めてしまうのがあるある。低ランク帯ではトロールキャラ扱いされがち。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/meikooorikabe/",
+    },
+    {
+      kind: "reputation",
+      title: "使われると嫌なヒーロー",
+      body: "壁で分断してタンクを孤立させ、凍らせて倒すため相手にすると嫌がられる。OW2リリース直後（2022年11月）には「最近メイが復活して試合を壊される」という声も出た。",
+      source: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q13271273718",
+    },
+    {
+      kind: "community",
+      title: "メイ＝サタン",
+      body: "公式では明るく前向きな科学者だが、凍らされてじわじわ倒される側の恐怖から、海外コミュニティでは「Ice Satan」など悪魔扱いするネタが定着した。",
+      source: "https://fanlore.org/wiki/Mei-Ling_Zhou",
+    },
+    {
+      kind: "play",
+      title: "味方を締め出すアイス・ウォール",
+      body: "敵を分断するはずのアイス・ウォールで、味方のタンクやヒーラーを壁の向こうに締め出してしまう事故。メイがいる試合のお約束としてネタにされる。",
+    },
+    {
+      kind: "voice",
+      title: "Freeze! Don't move!",
+      quote: "Freeze! Don't move!",
+      body: "ブリザード発動時のセリフ。味方には英語で、自分と敵には中国語の「冻住！不许走！」で聞こえる。",
+      source: "https://overwatch.fandom.com/wiki/Mei/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "A-Mei-zing!",
+      quote: "A-Mei-zing!",
+      body: "自分の名前と「amazing」を掛けたダジャレのボイスライン。",
+      source: "https://overwatch.fandom.com/wiki/Mei/Quotes",
+    },
+    {
+      kind: "official",
+      title: "雪合戦と『Rise and Shine』",
+      body: "冬のイベントの乱闘「メイの雪玉オフェンス」や、南極基地での孤独な戦いを描いた短編『Rise and Shine』など、公式もメイを冬と雪の顔として扱っている。",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Mei", url: "https://overwatch.fandom.com/wiki/Mei" },

@@ -414,6 +414,58 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "蚊",
+      body: "海外では、実害は少ないのに延々と嫌がらせしてくる存在として「蚊」に例えられる。DPS時代の終わりは「蚊が絶滅したみたいな喜び方」で送られた（2026年10月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260120-010738/",
+    },
+    {
+      kind: "reputation",
+      title: "最も嫌われるヒーローの一角",
+      body: "2023年の「削除してほしいヒーロー」アンケートでは、ウィドウメイカー、ハンゾーに次いで名前が挙がり、特にタンク使いから嫌われた。",
+      source: "https://fpsjp.net/archives/452320",
+    },
+    {
+      kind: "running",
+      title: "引退宣言するソンブラ使い",
+      body: "弱体化、ヒーローBAN導入、サポート化のたびにソンブラ使いが「もうこのゲームはやらない」と宣言する、という定番のいじり。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260915-071046/",
+    },
+    {
+      kind: "running",
+      title: "バトルソンブラ",
+      body: "2026年10月にサポート化した直後、評価が「ゴミ」と「楽しすぎ」に割れ、裏取りで暴れる姿は「バトルモイラ改めバトルソンブラ」と呼ばれた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261007-071244/",
+    },
+    {
+      kind: "community",
+      title: "ソンブラARG",
+      body: "2016年、ソンブラ公開前にBlizzardが仕掛けた長期の代替現実ゲーム。動画やゲーム内に隠された暗号をファンが解読し続け、ドラドのマップがハッキングされる演出まであったが、焦らしが長すぎてネタにされた。最終的にBlizzCon 2016で正式公開。",
+    },
+    {
+      kind: "official",
+      title: "Propaganda is useless!",
+      quote: "Propaganda is useless!",
+      body: "EMPの「¡Apagando las luces!（明かりを消すわよ）」がコミュニティで「Propaganda is useless」と空耳され、エイプリルフール限定ボイスとして本当に採用された。",
+      source: "https://overwatch.fandom.com/wiki/Sombra/Quotes",
+    },
+    {
+      kind: "voice",
+      title: "Hack the planet.",
+      quote: "Hack the planet.",
+      body: "映画『ハッカーズ』（1995）からの引用。「Mess with the best, die like the rest」も同作の台詞で、ハッカーらしい小ネタが多い。",
+      source: "https://overwatch.fandom.com/wiki/Sombra",
+    },
+    {
+      kind: "official",
+      title: "16進数の残弾表示",
+      body: "マシン・ピストルの残弾表示は16進数で、満タン時は「3C」（60）と表示される。",
+      source: "https://overwatch.fandom.com/wiki/Sombra",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Sombra", url: "https://overwatch.fandom.com/wiki/Sombra" },

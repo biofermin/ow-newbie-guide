@@ -391,6 +391,51 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "戦っていて不快なタンク",
+      body: "海外では、長いフォーティファイと遠距離から引っ張るジャベリンで「相手をしていて不快」と言われがち。「遠距離CCを持つタンクはコンセプトから破綻している」という声まである。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/kjf84jw/",
+    },
+    {
+      kind: "reputation",
+      title: "パッド勢のオリーサ",
+      body: "2026年8月ごろ、アメリカのコントローラー鯖でタンク上位10人中8人がオリーサを使っていたことが話題になった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260820-113233/",
+    },
+    {
+      kind: "running",
+      title: "オリーサと一生タンク相撲",
+      body: "ダイブタンクを出したのにオリーサと正面で押し合いを続ける味方、というサポート目線の嘆きが定番。タンク同士が正面で殴り合うだけの状態を「相撲」と呼ぶ。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/snfohbntmjy/",
+    },
+    {
+      kind: "running",
+      title: "ウルト中にバティのランプを撃ってくれ",
+      body: "オリーサのテラ・サージに合わせて誰もバティストの不死装置を壊してくれない、と3年以上訴え続けているオリーサ使いの投稿が共感を集めた（2026年1月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260102-115921/",
+    },
+    {
+      kind: "community",
+      title: "オリーサは馬",
+      body: "四脚のケンタウロスのような体型から、海外コミュニティでは「馬」扱いされることが多い。カウボーイのキャスディがオリーサに乗るファンアートなど、馬ネタは定番になっている。",
+      source: "https://fanlore.org/wiki/Orisa",
+    },
+    {
+      kind: "community",
+      title: "木馬コントローラーでオリーサ",
+      body: "海外の配信者が木馬（ロッキングホース）とおもちゃの銃を自作コントローラーにしてオリーサを操作する動画が話題になった。馬ネタの決定版として語られる。",
+      source: "https://www.itechpost.com/articles/93478/20170327/overwatch-fan-play-orisa-using-rocking-horse-nerf-gun.htm",
+    },
+    {
+      kind: "official",
+      title: "最年少ヒーロー",
+      body: "オリーサは少女エフィが作り直したオムニックで、実装時の設定では起動からわずか1か月の「最年少ヒーロー」とされていた。巨体と生まれたての純粋さのギャップが愛されている。",
+      source: "https://overwatch.fandom.com/wiki/Orisa",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Orisa", url: "https://overwatch.fandom.com/wiki/Orisa" },

@@ -415,6 +415,33 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "置物DPS",
+      body: "2026年2月の実装直後は「ダメージだけ出して全然キル取れない置物DPS」「走れないソルジャー、火力の低いアッシュ」と散々な言われようだった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260221-170647",
+    },
+    {
+      kind: "reputation",
+      title: "ほぼ確定枠",
+      body: "メイン射撃のダメージ強化後は一転して「強すぎてほぼ確定枠」「サイフォン強すぎ」と言われるようになった（2026年3月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260331-023951/",
+    },
+    {
+      kind: "official",
+      title: "EmreMain",
+      body: "エムレは2016年の時点でアナのオリジン・ストーリーの集合写真に写っていたが、長年プレイアブルにならなかった。ストリーマーモードの名前候補には以前から「EmreMain」があり、実装後には「EmreMainReal」が追加された。",
+      source: "https://overwatch.fandom.com/wiki/Emre",
+    },
+    {
+      kind: "community",
+      title: "「リャオ」と呼ばれていた男",
+      body: "アナの写真に写る正体不明の男は、エムレと判明する前はコミュニティから「リャオ」と呼ばれていた。2020年ごろドクター・ミナ・リャオの設定が明かされ、2023年の『Overwatch: Declassified』でエムレだと確定した。",
+      source: "https://overwatch.fandom.com/wiki/Emre",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Emre", url: "https://overwatch.fandom.com/wiki/Emre" },

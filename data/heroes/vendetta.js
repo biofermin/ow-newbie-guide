@@ -446,6 +446,39 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "ぶっ壊れ",
+      body: "2025年11月の先行プレイの時点で、アーマー125の硬さやハルトより強い近接、短いCDの移動技から「ぶっ壊れ」「サポ絶滅しそう」と言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sdbauybfgerdgr/",
+    },
+    {
+      kind: "reputation",
+      title: "永久BAN状態",
+      body: "2025年12月ごろ、マスター帯以上では5〜7割の試合でBANされる常連になった。敵として嫌というより、味方が下手に使うと負けるからBANする、という声も多い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20251221-005254/",
+    },
+    {
+      kind: "running",
+      title: "片道特攻ヴェンデッタ",
+      body: "豊富な移動技を活かさず正面から突っ込んで即死するヴェンデッタのこと。「毎試合ヴェンデッタばかりでつまらない、しかも9割がこの使い方」と嘆かれた（2025年12月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20251223-000624/",
+    },
+    {
+      kind: "community",
+      title: "XLV（ヒーロー45）探し",
+      body: "実装前、コロッセオのポスターに書かれた「XLV」（ローマ数字の45）や大剣を持つ女騎士の落書き、エイプリルフールのブリギッテの紹介文「gladiators gonna gladiate」などから、ファンが45番目のヒーローを推理して盛り上がった。",
+      source: "https://fandomwire.com/overwatch-2s-hero-45-tease-is-so-vague-even-shakira-might-qualify/",
+    },
+    {
+      kind: "community",
+      title: "She-Wolf＝シャキーラ？",
+      body: "異名「She-Wolf」はローマ建国神話の狼が由来だが、同名のシャキーラの曲を連想するファンも多く、ティザー時点から冗談のネタにされた。",
+      source: "https://fandomwire.com/overwatch-2s-hero-45-tease-is-so-vague-even-shakira-might-qualify/",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Vendetta", url: "https://overwatch.fandom.com/wiki/Vendetta" },

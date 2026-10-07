@@ -395,6 +395,59 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "ロケットクイーン",
+      body: "自称の決め台詞から来た呼び名。攻略記事でも「引っ込めロケットクイーン」のように対策の文脈で使われる。",
+      source: "https://ow.jill-tone.com/antipharah_teampick/",
+    },
+    {
+      kind: "nickname",
+      title: "もってっけー",
+      body: "バラージの呼び方のひとつ。ロケットをばらまく姿を『マクロス』のミサイル乱射になぞらえたもの。普通は「バラージ」や「正義の雨」と呼ばれる。",
+      source: "https://ameblo.jp/1003jenius-cr363/entry-12407839551.html",
+    },
+    {
+      kind: "reputation",
+      title: "ファラゲー",
+      body: "空を押さえたファラのせいで試合が一方的になること。対空できるヒーローがいないと、ヒーラーからタンクまで何もできずに終わる。",
+      source: "https://ow.jill-tone.com/antipharah_teampick/",
+    },
+    {
+      kind: "reputation",
+      title: "ファラマーシーは嫌われ者",
+      body: "2023年の「削除してほしいヒーローは？」という海外アンケートでは、マーシーとセットのファラも不人気ヒーローとして名前が挙がった。",
+      source: "https://fpsjp.net/archives/452320",
+    },
+    {
+      kind: "running",
+      title: "ファラ放置問題",
+      body: "味方DPSが誰もファラを落としに行かず、サポートがバティストなどに替えて対空するはめになるあるある。「ファラを放置する味方にはキレていい」とまで言われる（2024年12月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/agnd/",
+    },
+    {
+      kind: "voice",
+      title: "Justice rains from above!",
+      quote: "Justice rains from above!",
+      body: "バラージ発動時の叫び。空中で静止して撃つため、宣言した直後にヒットスキャンに撃ち落とされる「正義、降らず」のオチが定番化した。",
+      source: "https://knowyourmeme.com/memes/justice-rains-from-above",
+    },
+    {
+      kind: "play",
+      title: "ファラマーシー（Pharmercy）",
+      body: "マーシーがファラにビームを繋ぎ、一緒に空を飛び続ける強力なデュオ。対策を知らない相手には一方的になるため、ポケットマーシーの代表例として語られる。ファンの間ではカップリング名としても使われる。",
+      source: "https://knowyourmeme.com/memes/pharmercy",
+    },
+    {
+      kind: "voice",
+      title: "That's not justice.",
+      quote: "That's not justice.",
+      body: "バラージ中の敵ファラを倒したときの専用ボイス。自分の決め台詞を逆手に取ったセルフツッコミとしてファンに知られている。",
+      source: "https://overwatch.fandom.com/wiki/Pharah/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Pharah", url: "https://overwatch.fandom.com/wiki/Pharah" },

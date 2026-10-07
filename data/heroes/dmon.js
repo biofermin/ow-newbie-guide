@@ -449,6 +449,33 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "実装直後から勝率トップ",
+      body: "2026年8月の実装直後は勝率30％台だったが、数日で全ランク帯のタンク勝率首位に浮上した。弱体化後も勝率トップが続き、「猫とD.Monはなぜナーフしないのか」と言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260819-050319/",
+    },
+    {
+      kind: "running",
+      title: "生身形態が罰ゲーム",
+      body: "メックを失った後の生身の銃が弱すぎて、「呼び直すくらいなら崖から落ちた方が早い」と言われるほどの罰ゲーム扱い（2026年8月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260816-124928/",
+    },
+    {
+      kind: "running",
+      title: "顔を直してほしい",
+      body: "実装時、ゲーム内の顔が設定画と違いすぎるとして、韓国を中心にモデルの修正を求める声が集まった（2026年8月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260819-052011/",
+    },
+    {
+      kind: "community",
+      title: "MEKA部隊の仲間はいつ来るのか",
+      body: "D.Va以外のMEKA部隊メンバーの参戦は長年の要望だったが、メカの脱出・再召喚の仕組みが技術的に難しく、開発は慎重だった。実装時には海外メディアが「8年待った」と見出しに掲げるほどの待望の参戦になった。",
+      source: "https://overwatch.fandom.com/wiki/D.Mon",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - D.Mon", url: "https://overwatch.fandom.com/wiki/D.Mon" },

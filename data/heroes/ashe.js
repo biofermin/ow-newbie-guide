@@ -397,6 +397,53 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "running",
+      title: "ボブが本体",
+      body: "ウルトのB.O.B.が強すぎるため「アッシュよりボブが本体」と言われがち。ボブに頼りきりの立ち回りを「ボブが労基に駆け込む」といじる攻略記事もある。",
+      source: "https://ow.jill-tone.com/basics_of_ashe/",
+    },
+    {
+      kind: "running",
+      title: "スキンの予算はボブに全振り",
+      body: "新スキンが出るたびに「なんで毎回アッシュよりボブに予算全振りされてんだよ」「ボブ単体でヒーローになってほしい」とボブの方が褒められるのがお約束（2026年10月のスキン公開時の反応）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261006-201613",
+    },
+    {
+      kind: "reputation",
+      title: "運営の寵愛を受けるヒーロー",
+      body: "2026年1月ごろ、パークで2タップ射程が伸びたことなどから海外で「アッシュ強すぎ」と話題になり、国内でも「BANすべき」「アッシュだけ運営の寵愛を受けている」と言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260105-092027",
+    },
+    {
+      kind: "voice",
+      title: "Bob! Do somethin'!",
+      quote: "Bob! Do somethin'!",
+      body: "B.O.B.発動時のセリフで、自分と敵にはこの声が聞こえる。呼び出したB.O.B.がすぐ倒されて何もできなかった場面などで、皮肉混じりに引用されがち。ハロウィン系スキンでは「Beelzebob! Do somethin'!」に変わる。",
+      source: "https://overwatch.fandom.com/wiki/Ashe/Quotes",
+    },
+    {
+      kind: "play",
+      title: "手を振り返すB.O.B.",
+      body: "アッシュがB.O.B.に向かって「手を振る」コミュニケーションを使うと、B.O.B.が手を振り返してくれる小ネタ。B.O.B.を守ると「Lifesaver」ハイライトも獲得できる。",
+      source: "https://overwatch.fandom.com/wiki/Ashe",
+    },
+    {
+      kind: "community",
+      title: "元相棒キャスディとの因縁",
+      quote: "We said \"Deadlock for life\", I meant it!",
+      body: "アッシュとキャスディはかつてデッドロック・ギャングの仲間。キャスディを倒したときの専用セリフなど掛け合いが多く、“元相棒”の因縁はファンの間で定番のネタになっている。",
+      source: "https://overwatch.fandom.com/wiki/Ashe/Quotes",
+    },
+    {
+      kind: "play",
+      title: "コーチ・ガン・ジャンプ",
+      body: "足元にコーチ・ガンを撃って自分を吹き飛ばし、高所に飛び乗ったり逃げたりする小技。本来は敵と距離を取るためのスキルだが、移動やトリックショットにも使える。",
+      source: "https://overwatch.fandom.com/wiki/Ashe",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Ashe", url: "https://overwatch.fandom.com/wiki/Ashe" },

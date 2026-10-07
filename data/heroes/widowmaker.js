@@ -387,6 +387,63 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "砂",
+      body: "スナイパーを指すFPS用語で、ウィドウメイカーもよく「砂」と呼ばれる。",
+      source: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q13160442608",
+    },
+    {
+      kind: "reputation",
+      title: "最も嫌われているヒーロー",
+      body: "2023年6月、海外の「削除してほしいヒーローは？」という話題で最も多く名前が挙がった。一撃キルが楽しさを奪う、サポートのピックが制限される、といった理由。",
+      source: "https://fpsjp.net/archives/452320",
+    },
+    {
+      kind: "reputation",
+      title: "機能したらゲームが壊れ、しなければ5対4",
+      body: "2024年8月、海外で「OWで最も欠陥のあるキャラクター」と議論され、国内でも「機能したらゲーム壊れる、機能しなかったら5対4になる」と極端な評価がされた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/abfe/",
+    },
+    {
+      kind: "running",
+      title: "安置でキルだけ稼ぐウィドウ",
+      body: "味方が目標周りで戦っているのに安全な場所から撃つだけ、オーバータイムでも目標に入らない、というウィドウ使いへの不満はOW1初期（2016年）から定番。",
+      source: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q13160442608",
+    },
+    {
+      kind: "voice",
+      title: "Une balle, un mort.",
+      quote: "Une balle, un mort.",
+      body: "「一発一殺（One shot, one kill）」を意味するフランス語のボイスライン。ヘッドショット一撃で仕留めるウィドウメイカーを象徴する決め台詞。",
+      source: "https://overwatch.fandom.com/wiki/Widowmaker/Quotes",
+    },
+    {
+      kind: "community",
+      title: "ブロンズ帯のウィドウ",
+      body: "ハンゾーと並び、低ランク帯で即ピックされては当たらない狙撃を続けるDPS専プレイヤーのステレオタイプとしてネタにされる。",
+    },
+    {
+      kind: "play",
+      title: "ウィドウ対ウィドウ",
+      body: "互いにウィドウメイカーを出して遠距離からヘッドショットを撃ち合う“ウィドウ・デュエル”。先に頭を抜いた側が試合の流れを握るため、上位帯やプロシーンでも見どころになる。",
+    },
+    {
+      kind: "official",
+      title: "短編『Alive』とトレーサー",
+      body: "キングス・ロウでの暗殺をトレーサーが阻止しようとする公式短編。2人の因縁はその後もLEGOセットなど公式グッズの定番の組み合わせになった。",
+      source: "https://overwatch.fandom.com/wiki/Widowmaker",
+    },
+    {
+      kind: "voice",
+      title: "Let them eat cake.",
+      quote: "Let them eat cake.",
+      body: "マリー・アントワネットの言葉として広まった「パンがなければケーキを食べればいい」を引用した、クレジット解放のボイスライン。",
+      source: "https://overwatch.fandom.com/wiki/Widowmaker/Quotes",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Widowmaker", url: "https://overwatch.fandom.com/wiki/Widowmaker" },

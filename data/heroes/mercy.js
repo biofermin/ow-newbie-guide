@@ -426,6 +426,67 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "紐",
+      body: "回復・攻撃力ブーストのビームは「紐」と呼ばれ、「紐を繋ぐ」「紐付けられる」と言う。繋がれたDPSはプレッシャーを感じる、というあるあるも。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260531-213639/",
+    },
+    {
+      kind: "reputation",
+      title: "上位帯ではトロールピック",
+      body: "2026年9月、ダイブが流行る韓国上位帯ではマーシーとライフウィーバーがトロールピック扱いされていると話題になった。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260910-173504/",
+    },
+    {
+      kind: "reputation",
+      title: "他人の勝利待ちキャラ",
+      body: "海外では「壁裏から回復とブーストを流すだけで勝てる」「他人が勝つのを待つだけのキャラ」として、存在するだけでイラつくヒーローに挙げられがち（2026年1月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260120-010738/",
+    },
+    {
+      kind: "running",
+      title: "何でもポケット扱い",
+      body: "開幕にDPSへブーストを付けただけ、タンクを生かしただけでも「ポケットしてる」と言われる、というマーシー使いの嘆き。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261002-162906/",
+    },
+    {
+      kind: "running",
+      title: "飛ばないマーシー",
+      body: "ガーディアン・エンジェルで飛び回らず後ろで突っ立っているマーシーは、使えないサポートの比喩として使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260710-230020/",
+    },
+    {
+      kind: "voice",
+      title: "Heroes never die!",
+      quote: "Heroes never die!",
+      body: "蘇生（リザレクト）時のボイス。OW1ではアルティメット「リザレクト」の台詞で、聞こえた瞬間に集団戦がひっくり返る絶望感とセットで語られ、マーシーの代名詞になった。",
+      source: "https://overwatch.fandom.com/wiki/Mercy/Quotes",
+    },
+    {
+      kind: "play",
+      title: "隠れリザ（Hide and Rez）",
+      body: "OW1初期、アルトのリザレクトで味方を一斉蘇生するため、物陰に隠れて味方の全滅を待つ戦法。戦わずに隠れるプレイが問題視され、2017年のリワーク（ヴァルキリー実装）につながった。",
+    },
+    {
+      kind: "official",
+      title: "Moth Meta（蛾メタ）",
+      body: "リワーク後、ヴァルキリーと短いCDの蘇生で暴れた時期の呼び名。光に群がる蛾のように味方へ飛び回る姿が由来。2025年2月には公式イベント「Overwatch Classic: Moth Meta」で当時の性能が期間限定で再現され、エイプリルフール限定のヴァルキリーボイスにも「Moth formation, go!」がある。",
+      source: "https://esports.gg/news/overwatch/overwatch-classic-moth-meta-event-now-live-moth-mercy-is-back",
+    },
+    {
+      kind: "community",
+      title: "ポケットマーシー / ファラマーシー",
+      body: "マーシーが特定の1人（主にDPS）に張り付いて回復と攻撃力ブーストを流し続けること。空を飛ぶファラと組む「Pharmercy（ファラマーシー）」は定番コンビとして長く親しまれている。",
+    },
+    {
+      kind: "play",
+      title: "スーパージャンプ",
+      body: "ガーディアン・エンジェルの移動中にジャンプやしゃがみを組み合わせて高く飛び上がる小技。もとは仕様の隙を突いたテクニックだったが、OW2ではガーディアン・エンジェル中の操作として正式に組み込まれた。",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Mercy", url: "https://overwatch.fandom.com/wiki/Mercy" },

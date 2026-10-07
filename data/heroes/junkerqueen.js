@@ -396,6 +396,40 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "nickname",
+      title: "JQ / クイーン",
+      body: "英語名「Junker Queen」の頭文字から「JQ」、または「クイーン」と呼ばれる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/jqtannkusigoto/",
+      common: true,
+    },
+    {
+      kind: "reputation",
+      title: "タンクの仕事を放棄した「ほぼDPS」",
+      body: "前線を張らずに斬り込んで殴り合うスタイルから、「JQはタンクの仕事を放棄したほぼDPS」と言われることがある。「タンクの仕事は弾を受けることだけじゃない」と反論されるまでが定番。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/jqtannkusigoto/",
+    },
+    {
+      kind: "official",
+      title: "ジャンカータウンの実況の人",
+      body: "ジャンカークイーンはOW1のジャンカータウン（2017年）で、マップ内のアナウンス音声とポスターでのみ登場していた。そこから人気が出て、OW2でついにプレイアブル化された。",
+      source: "https://overwatch.fandom.com/wiki/Junker_Queen",
+    },
+    {
+      kind: "community",
+      title: "クイーンの声が消えた事件",
+      body: "レッキング・ボール発表直前のパッチでジャンカータウンのクイーンの声が消えたため、次のヒーローはクイーンだと予想が盛り上がった。実際はただのバグだったと開発者が説明している。",
+      source: "https://overwatch.fandom.com/wiki/Junker_Queen",
+    },
+    {
+      kind: "official",
+      title: "ナイフのグレイシーと斧のカーネイジ",
+      body: "クイーンの投げナイフには「グレイシー」、斧には「カーネイジ」という名前がついている。武器に名前をつけて可愛がる荒くれ女王らしさがファンに好まれている。",
+      source: "https://overwatch.fandom.com/wiki/Junker_Queen",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Junker Queen", url: "https://overwatch.fandom.com/wiki/Junker_Queen" },

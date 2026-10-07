@@ -423,6 +423,40 @@ OW.registerHero({
     },
   ],
 
+  memes: [
+    {
+      kind: "reputation",
+      title: "優遇されすぎ",
+      body: "実装から半年でコラボスキンが3枚来たことから「優遇されすぎ」「最初からコラボのために作られたキャラ」と言われた（2026年2月）。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260228-212737/",
+    },
+    {
+      kind: "reputation",
+      title: "勝率2トップ",
+      body: "2026年1月ごろはイラリーと並んでサポート勝率の2トップと言われていた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260120-011253/",
+    },
+    {
+      kind: "running",
+      title: "ジュノ×ウーヤン",
+      body: "公式漫画での匂わせから、ジュノとの関係がよくネタにされる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260819-054007/",
+    },
+    {
+      kind: "official",
+      title: "Hydrate or diedrate!",
+      quote: "Hydrate or diedrate!",
+      body: "エイプリルフール限定のタイダル・ブラストのボイス。水使いにちなんだネットの定番フレーズで、アナのナノのボイスを言いかけてやめる台詞なども用意された。",
+      source: "https://overwatch.fandom.com/wiki/Wuyang/Quotes",
+    },
+    {
+      kind: "official",
+      title: "安然無恙",
+      body: "中国語名は無漾（ウーヤン）で、姉アンラン（安然）と並べると「無事で何より」を意味する成語「安然無恙」になる。",
+      source: "https://overwatch.fandom.com/wiki/Wuyang",
+    },
+  ],
+
   sources: [
     { label: "Overwatch 公式パッチノート", url: "https://overwatch.blizzard.com/en-us/news/patch-notes/" },
     { label: "Overwatch Wiki - Wuyang", url: "https://overwatch.fandom.com/wiki/Wuyang" },
