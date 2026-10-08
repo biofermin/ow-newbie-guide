@@ -696,12 +696,8 @@
         <div class="box bad"><h3>弱み</h3>${list(h.weaknesses)}</div>
       </div>
       <h2 class="sec">ひと目でわかる相性</h2>
-      <div class="two-col">
-        <div class="box good"><h3>得意な相手</h3>${mu(h.matchups.strong)}</div>
-        <div class="box bad"><h3>苦手な相手</h3>${mu(h.matchups.weak)}</div>
-        <div class="box"><h3>相性の良い味方</h3>${mu(h.matchups.synergy)}</div>
-      </div>
-      <p><a href="#/${h.id}/matchups">相性の理由を見る →</a></p>
+      ${renderOverviewMatchups(h, mu)}
+      <p><a href="#/${h.id}/matchups">相性の詳細を見る →</a></p>
       ${latest ? `<h2 class="sec">直近の調整</h2>
       ${renderPatchItem(latest)}
       <p><a href="#/${h.id}/patches">パッチ履歴をすべて見る →</a></p>` : ""}`;
@@ -931,7 +927,118 @@
       ${tip}`;
   }
 
+  // adv = こちらから見た有利度（+有利／−不利）。matchups.js は「相手がどれだけこちらに刺さるか」なので符号を反転
+  // 試合数が少ない組み合わせ：データ少のヒーロー相手、または値が極端（|15|超）なもの
+  const LOW_SAMPLE_MAX = 15;
+  const matchupEntries = (h) => {
+    const lowHeroes = OW.meta.lowSampleHeroes || [];
+    return Object.entries(OW.matchupStats?.heroes?.[h.id] || {})
+      .filter(([id]) => OW.heroes[id])
+      .map(([id, v]) => ({
+        id,
+        adv: -v,
+        low: Math.abs(v) > LOW_SAMPLE_MAX || (lowHeroes.includes(id) && !lowHeroes.includes(h.id)),
+      }));
+  };
+  // ロール別の有利（dir=1）／不利（dir=-1）上位（データ少は除く）
+  const roleTop = (entries, role, dir, n) =>
+    entries
+      .filter((e) => !e.low && heroRole(e.id) === role && (dir > 0 ? e.adv >= 0.5 : e.adv <= -0.5))
+      .sort((a, b) => (dir > 0 ? b.adv - a.adv : a.adv - b.adv))
+      .slice(0, n);
+
+  // 概要タブの「ひと目でわかる相性」：ロールごとに得意・苦手の上位3人
+  function renderOverviewMatchups(h, mu) {
+    const entries = matchupEntries(h);
+    if (!entries.length) {
+      return `<div class="two-col">
+        <div class="box good"><h3>得意な相手</h3>${mu(h.matchups.strong)}</div>
+        <div class="box bad"><h3>苦手な相手</h3>${mu(h.matchups.weak)}</div>
+        <div class="box"><h3>相性の良い味方</h3>${mu(h.matchups.synergy)}</div>
+      </div>`;
+    }
+    const faces = (list) => (list.length ? `<div class="face-row">${list.map((e) => face(e.id)).join("")}</div>` : `<p class="empty">なし</p>`);
+    const rows = ROLE_ORDER.map(
+      (role) => `
+        <div class="ov-mu-row">
+          <div class="ov-mu-role">対${OW.roles[role].label}</div>
+          <div class="box good"><h3>得意</h3>${faces(roleTop(entries, role, 1, 3))}</div>
+          <div class="box bad"><h3>苦手</h3>${faces(roleTop(entries, role, -1, 3))}</div>
+        </div>`
+    ).join("");
+    return `<div class="ov-mu">${rows}</div>
+      <div class="box" style="margin-top:12px"><h3>相性の良い味方</h3>${mu(h.matchups.synergy)}</div>`;
+  }
+
+  // ロール別の相性（data/matchups.js の全組み合わせ＋各ヒーローの理由付きの相性）
   function renderMatchups(h) {
+    const entries = matchupEntries(h);
+    if (!entries.length) return renderMatchupsLegacy(h);
+    const reasonOf = {};
+    [...h.matchups.strong, ...h.matchups.weak].forEach((m) => (reasonOf[m.hero] = m.reason));
+    // 全組み合わせデータで上位に入った相手への補足理由（data/heroes/<id>.js の matchupNotes）
+    Object.entries(h.matchupNotes || {}).forEach(([id, r]) => (reasonOf[id] = reasonOf[id] || r));
+    const stale = OW.stats?.stale || [];
+    const maxAbs = Math.max(...entries.filter((e) => !e.low).map((e) => Math.abs(e.adv)), 1);
+    const lowTag = (e) => (e.low ? `<span class="basis" title="試合数が少なく値が偏っている可能性">データ少</span>` : "");
+    const fmt = (v) => `${v > 0 ? "+" : v < 0 ? "−" : "±"}${Math.abs(v).toFixed(1)}`;
+    const staleTag = (id) => (stale.includes(id) ? `<span class="basis" title="S5でリワーク。数値の大半はリワーク前のもの">旧キット</span>` : "");
+    const pick = (role, dir) => roleTop(entries, role, dir, 4);
+    const card = (e, cls) => `
+        <div class="mu">
+          ${face(e.id, "mu-face")}
+          <div class="mu-body">
+            <div class="mu-top">
+              ${staleTag(e.id)}
+              <span class="mu-rate ${cls}">${fmt(e.adv)}</span>
+            </div>
+            <div class="bar"><i class="${cls}" style="width:${(Math.abs(e.adv) / maxAbs) * 100}%"></i></div>
+            ${reasonOf[e.id] ? `<p>${esc(reasonOf[e.id])}</p>` : ""}
+          </div>
+        </div>`;
+    const allRow = (e) => `
+        <a class="mu-row" href="#/${e.id}">
+          ${avatar(e.id, "mu-row-ava")}
+          <span class="mu-row-name">${esc(heroName(e.id))}${lowTag(e)}</span>
+          <span class="mu-row-bar"><i class="${e.adv >= 0 ? "up" : "down"}${e.low ? " low" : ""}" style="width:${Math.min(Math.abs(e.adv) / maxAbs, 1) * 50}%;${
+            e.adv >= 0 ? "left:50%" : `right:50%`
+          }"></i></span>
+          <span class="mu-row-val ${e.adv >= 0 ? "up" : "down"}">${fmt(e.adv)}</span>
+        </a>`;
+    const sections = ROLE_ORDER.map((role) => {
+      const good = pick(role, 1);
+      const bad = pick(role, -1);
+      const all = entries.filter((e) => heroRole(e.id) === role).sort((a, b) => b.adv - a.adv);
+      return `
+        <section class="mu-role">
+          <h2 class="sec">対${OW.roles[role].label}</h2>
+          <div class="mu-grid">
+            <div class="mu-col strong"><h3>▲ 有利な相手</h3>${good.map((e) => card(e, "up")).join("") || `<p class="empty">目立って有利な相手はいない</p>`}</div>
+            <div class="mu-col weak"><h3>▼ 不利な相手</h3>${bad.map((e) => card(e, "down")).join("") || `<p class="empty">目立って不利な相手はいない</p>`}</div>
+          </div>
+          <details class="mu-all">
+            <summary>${OW.roles[role].label}全員との相性（${all.length}人）</summary>
+            <div class="mu-rows">${all.map(allRow).join("")}</div>
+          </details>
+        </section>`;
+    }).join("");
+    const syn = ROLE_ORDER.map((role) => {
+      const list = h.matchups.synergy.filter((m) => heroRole(m.hero) === role);
+      return list.length
+        ? `<div class="mu-col"><h3>${OW.roles[role].label}</h3>${list
+            .map((m) => `<div class="mu">${face(m.hero, "mu-face")}<div class="mu-body"><p>${esc(m.reason)}</p></div></div>`)
+            .join("")}</div>`
+        : "";
+    }).join("");
+    return `
+      ${stale.includes(h.id) ? `<div class="notice">⚠ このヒーローはシーズン5でリワークされたため、相性の数値の大半はリワーク前のデータです。</div>` : ""}
+      ${(OW.meta.lowSampleHeroes || []).includes(h.id) ? `<div class="notice">⚠ 実装直後で試合数が少ないため、相性の数値は参考程度です（値が極端なものは上位から除外）。</div>` : ""}
+      <p class="mu-legend">数値は ${esc(OW.meta.statsSource)} のカウンターレーティングを、このヒーローから見た有利度に直したもの（＋有利／−不利、0が五分）。理由の文は、主な相手についてのみ記載。</p>
+      ${sections}
+      ${syn ? `<h2 class="sec">相性の良い味方</h2><div class="mu-grid mu-grid-3">${syn}</div>` : ""}`;
+  }
+
+  function renderMatchupsLegacy(h) {
     const all = [...h.matchups.strong, ...h.matchups.weak].map((m) => m.rating || 0);
     const max = Math.max(...all, 1);
     const card = (m) => {

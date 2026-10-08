@@ -8,6 +8,8 @@ OW.meta = {
   updated: "2026-10-07",
   // 相性・デュオ・マップ勝率の出典（勝率・ピック率・Tier は data/stats.js の公式データ）
   statsSource: "counterwatch.gg（5v5・全ランク・2026/10/5時点。集計期間は非公開）",
+  // 相性データの試合数がまだ少ないヒーロー（上位の選出から外し「データ少」と表示）。データが溜まったら外す
+  lowSampleHeroes: ["doctrine"],
 };
 
 OW.roles = {
