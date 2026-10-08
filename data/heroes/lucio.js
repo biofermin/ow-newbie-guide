@@ -592,6 +592,13 @@ OW.registerHero({
       body: "ルシオがパッケージを飾るシリアル。2018年にケロッグとのコラボで実際に期間限定販売されたが、本人の出身地ブラジルでは発売されなかったのも語り草。",
       source: "https://overwatch.fandom.com/wiki/L%C3%BAcio",
     },
+    {
+      kind: "slur",
+      title: "ゴキブリ",
+      body: "壁走りで素早く動き回るルシオを、ゴキブリにたとえた呼び方。「一定以上やるとクッソ速いゴキブリ」のように使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/patnfas/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/sapotano/"],
+    },
   ],
 
   sources: [

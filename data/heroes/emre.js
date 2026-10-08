@@ -536,6 +536,12 @@ OW.registerHero({
       body: "アナの写真に写る正体不明の男は、エムレと判明する前はコミュニティから「リャオ」と呼ばれていた。2020年ごろドクター・ミナ・リャオの設定が明かされ、2023年の『Overwatch: Declassified』でエムレだと確定した。",
       source: "https://overwatch.fandom.com/wiki/Emre",
     },
+    {
+      kind: "slur",
+      title: "ホモ枠",
+      body: "新ヒーローの中で同性愛者の設定があるのはエムレだろうと決めつけ、「ホモ枠」と呼んだもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1770878540/67",
+    },
   ],
 
   sources: [

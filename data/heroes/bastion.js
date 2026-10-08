@@ -550,6 +550,18 @@ OW.registerHero({
       body: "戦場跡で目覚めたバスティオンと小鳥のガニメデの交流を描いた公式短編。殺戮兵器なのに小鳥と仲良しという“癒やし系バスティオン”のイメージはここから定着した。",
       source: "https://overwatch.fandom.com/wiki/Bastion",
     },
+    {
+      kind: "slur",
+      title: "ブリキ野郎",
+      body: "バスティオンを「時代遅れのブリキ野郎」と呼んだもの。オムニック（ロボット）で、旧型の戦闘機械という設定に由来する。",
+      source: "https://ow.jill-tone.com/anti_bastion/",
+    },
+    {
+      kind: "slur",
+      title: "障害者専用キャラ",
+      body: "トールビョーン・ジャンクラットとまとめて「障害者専用キャラ」と呼んだもの。エイムがいらず誰でも使えると見なされていることに由来し、使い手を障害者扱いしている。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1703350579/282",
+    },
   ],
 
   sources: [

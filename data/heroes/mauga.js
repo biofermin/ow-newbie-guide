@@ -589,6 +589,18 @@ OW.registerHero({
       body: "マウガの2丁のチェーンガンには「ガニー」と「チャチャ」という名前がついている。銃をペットのように扱う台詞が多く、アビリティ名の（ガニー）（チャチャ）にもなっている。",
       source: "https://overwatch.fandom.com/wiki/Mauga/Quotes",
     },
+    {
+      kind: "slur",
+      title: "豚",
+      body: "マウガを「豚」と呼ぶもので、「ミッドパッチで超火力を得た豚、増える」のように使われる。巨漢の体型に由来する。",
+      source: "https://www.youtube.com/watch?v=2iaTuWT61AI",
+    },
+    {
+      kind: "slur",
+      title: "筋肉ダルマ",
+      body: "マウガを「筋肉ダルマ」と呼ぶもの。筋肉と脂肪で膨れた巨体に由来する。",
+      source: "https://www.youtube.com/watch?v=DAfVbPH2mWg",
+    },
   ],
 
   sources: [

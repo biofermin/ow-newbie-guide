@@ -596,6 +596,12 @@ OW.registerHero({
       body: "2019年の実装時、開発陣はバティストをGOATS構成へのカウンターになるよう設計したと語っていた。",
       source: "https://www.invenglobal.com/articles/7678/principal-overwatch-designer-ensures-baptiste-will-be-a-counter-for-goats-composition",
     },
+    {
+      kind: "slur",
+      title: "ゲイのバティスト",
+      body: "バティストを性的指向で呼ぶ言い方で、「ゲイのバティストなんて散々ネタにされてた」と言われる。公式にバイセクシャルと紹介されたことや、上半身裸のスプレーなどに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/priddds/",
+    },
   ],
 
   sources: [

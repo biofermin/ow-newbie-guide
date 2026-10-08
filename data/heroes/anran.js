@@ -590,6 +590,12 @@ OW.registerHero({
       body: "同じくエイプリルフールのウルト台詞。マーシーの「Heroes never die!」を言いかけて台本違いに気づくという楽屋ネタ。",
       source: "https://overwatch.fandom.com/wiki/Anran/Quotes",
     },
+    {
+      kind: "slur",
+      title: "デブ",
+      body: "アンランを指して「デブ過ぎ」のように使われる呼び方。当たり判定の大きさや、下半身が太めのデザインに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261007-051323/",
+    },
   ],
 
   sources: [

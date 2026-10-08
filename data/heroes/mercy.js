@@ -601,6 +601,31 @@ OW.registerHero({
       title: "スーパージャンプ",
       body: "ガーディアン・エンジェルの移動中にジャンプやしゃがみを組み合わせて高く飛び上がる小技。もとは仕様の隙を突いたテクニックだったが、OW2ではガーディアン・エンジェル中の操作として正式に組み込まれた。",
     },
+    {
+      kind: "slur",
+      title: "ババァ天使",
+      body: "マーシーを指す呼び方。天使モチーフの見た目と、37歳という年齢設定を組み合わせて「ババァ」と呼んだもの。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/absd/",
+    },
+    {
+      kind: "slur",
+      title: "行き遅れババア",
+      body: "マーシーを指す罵倒で、「マーシーという行き遅れババアを削除してくれ」のように使われた。37歳・独身という設定に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/uxdousutoresu/",
+    },
+    {
+      kind: "slur",
+      title: "コスプレ集金BBA",
+      body: "マーシーを「以後コスプレ集金BBAと呼ぶ」と罵ったもの。衣装違いのスキンが次々に売り出されることを「コスプレで集金」と皮肉り、年齢設定を「BBA」と重ねた呼び方。",
+      source: "https://x.com/Quin_Una/status/2099180817029472334",
+    },
+    {
+      kind: "slur",
+      title: "ゴキブリマーシー",
+      body: "ガーディアン・エンジェルで飛び回ってなかなか倒れないマーシーを、ゴキブリにたとえた呼び方。「生存力ゴキブリマーシー」「ゴキブリはマーシー定期」のように使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sapomik/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/sjfbvt/"],
+    },
   ],
 
   sources: [

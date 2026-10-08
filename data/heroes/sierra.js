@@ -547,6 +547,12 @@ OW.registerHero({
       body: "エイプリルフール限定のウルト台詞は、海外ミーム「I Think We're Gonna Have to Kill This Guy, Steven」のもじり。敵側にはファラの「Justice rains from above!」をまねて笑う版が流れる。",
       source: "https://overwatch.fandom.com/wiki/Sierra/Quotes",
     },
+    {
+      kind: "slur",
+      title: "ポリコレポイントのためのキャラ",
+      body: "アメリカ南部出身の黒人女性という設定から、多様性への配慮の点数稼ぎのためだけに作ったキャラだと揶揄する言い方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260524-091738/",
+    },
   ],
 
   sources: [

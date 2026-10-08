@@ -569,6 +569,19 @@ OW.registerHero({
       body: "オリーサは少女エフィが作り直したオムニックで、実装時の設定では起動からわずか1か月の「最年少ヒーロー」とされていた。巨体と生まれたての純粋さのギャップが愛されている。",
       source: "https://overwatch.fandom.com/wiki/Orisa",
     },
+    {
+      kind: "slur",
+      title: "馬",
+      body: "オリーサを「あの馬」と呼び、「あの馬をこれ以上試合で見たくない」のように見下して使うもの。四足の馬のような体型に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260616-175649/",
+    },
+    {
+      kind: "slur",
+      title: "ロボ馬",
+      body: "オリーサを「ロボ馬」と呼ぶもので、「また新しいロボ馬プレイヤーが誕生したのか」のように使われる。四足のオムニック（ロボット）である見た目に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260108-105946/",
+      sources: ["https://www.youtube.com/watch?v=xznCXB7JRjc"],
+    },
   ],
 
   sources: [

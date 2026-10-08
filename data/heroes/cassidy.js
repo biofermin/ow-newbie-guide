@@ -591,6 +591,12 @@ OW.registerHero({
       body: "OW1時代はフラッシュバンが完全なスタンだったため、スタンさせてからファン・ザ・ハンマーを連射して近距離の敵を一瞬で倒すのがお決まりのコンボだった。現在のフラッシュバンは移動阻害のみで、往年の“即死コンボ”は昔話になっている。",
       source: "https://overwatch.fandom.com/wiki/Cassidy",
     },
+    {
+      kind: "slur",
+      title: "マクハゲ",
+      body: "旧名「マクリー」と「ハゲ」を組み合わせた呼び方。実際に禿げているわけではなく、中年男性の外見から付けられた悪口。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/kyasuyoaw/",
+    },
   ],
 
   sources: [

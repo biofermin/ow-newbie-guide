@@ -539,6 +539,50 @@ OW.registerHero({
       body: "2016年のアナのオリジン・ストーリーに登場する旧オーバーウォッチの集合写真に、正体不明の人物として写っていた。のちにソジョーンと判明し、同じ写真の別の人物もエムレだったことが分かった。",
       source: "https://overwatch.fandom.com/wiki/Emre",
     },
+    {
+      kind: "slur",
+      title: "黒人女ポリコレ顔面",
+      body: "ソジョーンを、黒人女性という設定と顔立ちを結びつけて罵った言い方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sorutop/",
+    },
+    {
+      kind: "slur",
+      title: "屈伸ばらまきおばさん",
+      body: "ソジョーンを「おばさん」と呼び、スライディングで動き回りながら弾をばらまく戦い方と合わせて揶揄した言い方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sorutop/",
+    },
+    {
+      kind: "slur",
+      title: "クロンボババア",
+      body: "ソジョーンを、黒人への蔑称「クロンボ」と「ババア」を組み合わせて罵ったもの。黒人女性で40代という設定に由来する。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1668945797/864",
+    },
+    {
+      kind: "slur",
+      title: "身障黒人ブス女",
+      body: "義体化した手足、黒人であること、顔立ち、女性であることを並べて罵った呼び方。「黒人ブス」とも。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1668684253/442",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1667568134/730"],
+    },
+    {
+      kind: "slur",
+      title: "ポリコレ強者／ポリコレの王女",
+      body: "黒人で女性で全身義体という設定から、多様性への配慮のおかげで弱体化されないキャラだと揶揄する呼び方。「四肢欠損黒人」と並べて言われることもある。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1666982700/204",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1670381149/719"],
+    },
+    {
+      kind: "slur",
+      title: "ドレッドおばさん",
+      body: "ドレッドヘアと設定年齢から、ソジョーンを「ドレッドおばさん」と呼んだもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1771707537/170",
+    },
+    {
+      kind: "slur",
+      title: "五十路ョーン",
+      body: "「五十路（いそじ）」と「ソジョーン」を掛けた呼び方。ヒーローの年齢順の表が話題になったときに言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260922-034155/",
+    },
   ],
 
   sources: [

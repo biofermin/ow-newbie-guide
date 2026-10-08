@@ -538,6 +538,30 @@ OW.registerHero({
       body: "パルス・ボムを貼り付けた直後にリコールで消えたときの台詞。爆弾を置いて逃げるトレーサーらしいとぼけ方として好まれている。",
       source: "https://overwatch.fandom.com/wiki/Tracer/Quotes",
     },
+    {
+      kind: "slur",
+      title: "レズ／レズビッチ",
+      body: "トレーサーを指す呼び方。2016年の公式コミックで女性の恋人エミリーがいると明かされたことに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/nsifgr54/",
+    },
+    {
+      kind: "slur",
+      title: "クソレズ",
+      body: "トレーサーを、女性同性愛者という設定と結びつけて罵った呼び方。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1670381149/157",
+    },
+    {
+      kind: "slur",
+      title: "猿女",
+      body: "ちょこまか動き回って撃ってくるトレーサーを「猿女」と罵ったもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1668945797/191",
+    },
+    {
+      kind: "slur",
+      title: "小人",
+      body: "ヒーローの中で一人だけ背が低いことを「小人」とからかったもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1667296650/36",
+    },
   ],
 
   sources: [

@@ -572,6 +572,18 @@ OW.registerHero({
       body: "ソルジャー76の名前をもじった軍人時代風のスキン名。のちにシエラとの掛け合いでも、リーパーをこの名前で呼ぶ台詞が用意された。",
       source: "https://overwatch.fandom.com/wiki/Reaper/Quotes",
     },
+    {
+      kind: "slur",
+      title: "厨二病のおじさん",
+      body: "「死神様のお通りだ」といった芝居がかったセリフを、いい年をした中年男性の中二病だと揶揄した呼び方。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1668773623/225",
+    },
+    {
+      kind: "slur",
+      title: "ホモ",
+      body: "リーパーを同性愛者への蔑称で呼んだもの。かつての相棒ソルジャー76がゲイと公表された流れで、リーパーも同性愛者だという説が語られたことに由来する（リーパー自身の性的指向は公式には明かされていない）。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1668684253/837",
+    },
   ],
 
   sources: [

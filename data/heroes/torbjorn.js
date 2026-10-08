@@ -578,6 +578,31 @@ OW.registerHero({
       body: "「Torbjörn」はIKEAの椅子の名前でもあり、ゲーム内にはIKEAの組み立て説明書風のスプレーが複数ある。",
       source: "https://overwatch.fandom.com/wiki/Torbj%C3%B6rn",
     },
+    {
+      kind: "slur",
+      title: "チビ／デブ",
+      body: "背が低くずんぐりした体型を貶す呼び方で、「チビだから」「デブ過ぎて狩りやすい」のように使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/hgk8fg3z/",
+    },
+    {
+      kind: "slur",
+      title: "小汚いキャラ",
+      body: "トールビョーンとジャンクラットをまとめて「小汚いキャラ」と呼んだもの。髭面で煤けた外見に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/tore-sa-tukau/",
+    },
+    {
+      kind: "slur",
+      title: "ドワーフ／小人症",
+      body: "背が低くずんぐりした体型から、トールビョーンを「ドワーフ」「小人症みたいなもん」「小人枠」と呼んだもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1685354659/360",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1685354659/361", "https://fate.5ch.net/test/read.cgi/gamef/1667296650/38"],
+    },
+    {
+      kind: "slur",
+      title: "障害者専用キャラ",
+      body: "バスティオン・ジャンクラットとまとめて「障害者専用キャラ」と呼んだもの。タレットが自動で攻撃するため誰でも使えると見なされていることに由来し、使い手を障害者扱いしている。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1703350579/282",
+    },
   ],
 
   sources: [

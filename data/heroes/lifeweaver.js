@@ -608,6 +608,49 @@ OW.registerHero({
       body: "エイプリルフール限定のツリー・オブ・ライフのボイス。「斧を一本でも見かけたらただじゃおかない」と自分の木を守ろうとする。",
       source: "https://overwatch.fandom.com/wiki/Lifeweaver/Quotes",
     },
+    {
+      kind: "slur",
+      title: "ホモの木",
+      body: "ウルト「ツリー・オブ・ライフ」を、同性愛者への蔑称を使って呼んだもの。2023年の実装時にライフウィーバーが公式にパンセクシュアルと紹介されたことに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/raihuuxi/",
+    },
+    {
+      kind: "slur",
+      title: "ホモ",
+      body: "ライフウィーバー本人を、同性愛者への蔑称で呼んだもの。公式にパンセクシュアルと設定されていることに由来し、「ホモ出したくなる」「ホモは要らない」のように名前代わりに使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/raihuuxibahitu/",
+    },
+    {
+      kind: "slur",
+      title: "オカマ",
+      body: "ライフウィーバー本人を指す呼び方で、「オカマウルト」「オカマダッシュ」のようにスキル名にも付けられる。公式にパンセクシュアルと設定されていることに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/raihuuxibazyoukuu/",
+    },
+    {
+      kind: "slur",
+      title: "タイ人／タイの一般人",
+      body: "ライフウィーバーを、タイ出身という設定から国籍で呼んだもの。「タイの一般人」は、戦闘向きに見えない性能や外見を「ヒーローではなくただの一般人」と揶揄する言い方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/acrg/",
+    },
+    {
+      kind: "slur",
+      title: "ピンクのゲイ",
+      body: "ライフウィーバーを「自己評価が高いだけのピンクのゲイ」のように呼んだもの。ピンクを基調とした衣装と、公式にパンセクシュアルと設定されていることに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/kyuusyutu/",
+    },
+    {
+      kind: "slur",
+      title: "タイオカマ",
+      body: "「タイ人」と「オカマ」を組み合わせた呼び方で、「一流タイオカマ」のように使われる。タイ出身・パンセクシュアルという設定に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/lwsyagekikaihuku/",
+    },
+    {
+      kind: "slur",
+      title: "タイホモ／ホモのタイ人",
+      body: "ライフウィーバーを「タイ（人）」と「ホモ」を組み合わせて呼んだもの。「バティとタイホモ」「ホモのタイ人」「ゲイのタイ人」のように使われる。タイ出身・パンセクシュアルという設定に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/hsd8vbhrf/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/afma/", "https://overwatch2-news.apexlegends-leaksnews.com/raihui/"],
+    },
   ],
 
   sources: [

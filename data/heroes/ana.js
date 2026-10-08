@@ -577,6 +577,24 @@ OW.registerHero({
       body: "実装前、写真に写り込んだアナのマスク（開発名「Shrike」）が、噂されていた次期ヒーロー「ソンブラ」のものだと誤解され、コミュニティで「次のヒーローはソンブラのスナイパー」という説が広まった。",
       source: "https://overwatch.fandom.com/wiki/Ana",
     },
+    {
+      kind: "slur",
+      title: "無防備おばさん",
+      body: "スリープと阻害を使い切ったアナを「無防備おばさん」と呼んだもの。60代の女性という設定と、スキルを吐いた後は身を守れないことに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ahmb/",
+    },
+    {
+      kind: "slur",
+      title: "整形したら大失敗したアナ",
+      body: "結婚式をテーマにした新スキンの顔が不評だったことから、そのアナを「整形したら大失敗した」と揶揄した呼び方。コメントでは「アナの顔はブスに完全リモデル」とも言われた。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/hidvrfbhgrth/",
+    },
+    {
+      kind: "slur",
+      title: "砂かけババア",
+      body: "アナを妖怪「砂かけ婆」にたとえた呼び方で、ヒーローの蔑称を挙げる投稿で「アナ:砂かけババア」と書かれた。60代の女性という設定に由来する。",
+      source: "https://x.com/ryune_24hotcake/status/2102233357111398436",
+    },
   ],
 
   sources: [

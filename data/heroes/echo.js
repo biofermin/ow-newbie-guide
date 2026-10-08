@@ -564,6 +564,19 @@ OW.registerHero({
       body: "デュプリケイトで変身すると、コピー先のアルティメット台詞をエコーの声で言う。ゲンジなら日本語、マーシーならドイツ語など元の言語のままなので、聞き慣れた台詞が別人の声で飛んでくる面白さがある。",
       source: "https://overwatch.fandom.com/wiki/Echo/Quotes/Overwatch_1",
     },
+    {
+      kind: "slur",
+      title: "ババア声",
+      body: "エコーの声を「ババア声」と貶したもの。落ち着いた大人の女性の声に由来する。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1672828817/51",
+    },
+    {
+      kind: "slur",
+      title: "キモい",
+      body: "完全な機械の体なのに顔だけが中途半端に人間的なデザインを「キモい」と言ったもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1668945797/985",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1680155164/858"],
+    },
   ],
 
   sources: [

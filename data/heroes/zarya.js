@@ -582,6 +582,13 @@ OW.registerHero({
       body: "ザリアの肩のタトゥー「512」は重量挙げの自己記録とされ、スプレーにも512kgのバーベルが描かれている。現実の記録を大きく超える数字で、彼女の怪力ぶりを示す小ネタ。",
       source: "https://overwatch.fandom.com/wiki/Zarya",
     },
+    {
+      kind: "slur",
+      title: "メスゴリラ / ゴリラ",
+      body: "ザリアを「メスゴリラ」「ゴリラ」と呼ぶもので、「タンク最強女子が使うメスゴリラ」「ザリアがゴリラに進化した」「ザリアって実は最強のゴリラ」のように動画タイトルでも使われる。元ボディビルダーの筋骨たくましい体格に由来する。",
+      source: "https://www.youtube.com/watch?v=h-jFdi-IcvU",
+      sources: ["https://www.youtube.com/watch?v=yIsurUV5ED0", "https://www.youtube.com/watch?v=MjLtZG3LtUg", "https://www.youtube.com/watch?v=5LW6bhEJ3KE"],
+    },
   ],
 
   sources: [

@@ -600,6 +600,24 @@ OW.registerHero({
       body: "公式設定で何匹も猫を飼っており、2026年に登場したジェットパック・キャット（フィーカ）も、ジブラルタルの野良猫だったところをブリギッテに引き取られたという設定になっている。",
       source: "https://overwatch.fandom.com/wiki/Jetpack_Cat",
     },
+    {
+      kind: "slur",
+      title: "ゴリラ女",
+      body: "ブリギッテを指す呼び方で、「見た目ゴリラ女の癖に」のように使われる。筋肉質な体格と、OW2で体つきががっしりしたデザインに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/burigitteyowai/",
+    },
+    {
+      kind: "slur",
+      title: "ブサイク棍棒BBA",
+      body: "ブリギッテを「ブサイク」「棍棒（フレイル）」「BBA（ババア）」と並べて呼んだもの。容姿とフレイルで殴る戦い方をからかう言い方で、「ブリをブサイク棍棒BBA扱いしてる奴ら」として言及される。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/6yy54ke/",
+    },
+    {
+      kind: "slur",
+      title: "デブ",
+      body: "ブリギッテを「デブでトロイ」と評した呼び方。OW2で体格ががっしりし当たり判定が大きくなったことに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/haturubu/",
+    },
   ],
 
   sources: [

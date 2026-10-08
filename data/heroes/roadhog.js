@@ -631,6 +631,24 @@ OW.registerHero({
       body: "ジャンプして着地したとき、まれにロードホッグがおならをするイースターエッグがある。知っていると思わず確かめたくなる小ネタ。",
       source: "https://overwatch.fandom.com/wiki/Roadhog",
     },
+    {
+      kind: "slur",
+      title: "デブ",
+      body: "ロードホッグを指す呼び方で、「好き放題デブDPSしても通る」「軽減もないデブ」のように使われる。巨漢の体型に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260720-180630/",
+    },
+    {
+      kind: "slur",
+      title: "豚",
+      body: "ロードホッグを「豚」と呼び、「勝率最下位クラスの豚」「フックだけする豚おって草」のように見下して使うもの。名前（Hog＝豚）や巨漢の体型、豚を思わせるマスクに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261007-071400/",
+    },
+    {
+      kind: "slur",
+      title: "豚野郎",
+      body: "ロードホッグを「豚野郎」と呼ぶもので、「ロードホッグの豚野郎よくわからんが強いじゃねーか」のように使われる。名前（Hog＝豚）と巨漢の体型に由来する。",
+      source: "https://www.youtube.com/watch?v=edpB4rZGMBw",
+    },
   ],
 
   sources: [

@@ -587,6 +587,12 @@ OW.registerHero({
       body: "エイプリルフール限定ボイス。『進撃の巨人』の主人公の口癖で、ファンの間でミーム化していた「戦え！」を公式がゲンジに言わせたもの。",
       source: "https://overwatch.fandom.com/wiki/Genji/Quotes",
     },
+    {
+      kind: "slur",
+      title: "発達障害のクソガキ",
+      body: "ゲンジを、若い頃の放蕩ぶりや軽いノリの言動から罵った言い方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260619-175547/",
+    },
   ],
 
   sources: [

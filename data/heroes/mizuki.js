@@ -584,6 +584,20 @@ OW.registerHero({
       body: "日本語版の声優はミズキと同じ福岡出身で、自然な博多弁で話すのが日本のプレイヤーに注目されている。",
       source: "https://overwatch.fandom.com/wiki/Mizuki",
     },
+    {
+      kind: "slur",
+      title: "河童／カッパ野郎",
+      body: "ミズキを妖怪の河童になぞらえた呼び方で、「河童出した方がマシ」「キリコに近づくなカッパ野郎」のように使われる。河童がモチーフのマスクや帽子のデザインに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260528-102324/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/ow-20260212-031659/", "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260216-200858/"],
+    },
+    {
+      kind: "slur",
+      title: "壁も登れん出来損ない",
+      body: "ミズキを「壁も登れん出来損ない」と罵ったもの。ゲンジ・ハンゾー・キリコなど日本出身のヒーローは壁を登れるのにミズキは登れないことから、「壁登れない日本人」「このミズキは日本人ではない」などとも言われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260528-102324/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/ow-20260226-022709/", "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260206-091214/"],
+    },
   ],
 
   sources: [

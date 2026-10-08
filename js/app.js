@@ -1072,6 +1072,7 @@
     nickname: "あだ名",
     reputation: "評判",
     running: "お約束",
+    slur: "蔑称",
     voice: "ボイス",
     play: "プレイ・仕様",
     community: "海外コミュニティ",
@@ -1083,15 +1084,22 @@
     const memes = h.memes || [];
     const nick = memes.filter((m) => m.kind === "nickname");
     const talk = memes.filter((m) => m.kind === "reputation" || m.kind === "running");
-    const other = memes.filter((m) => !["nickname", "reputation", "running"].includes(m.kind));
-    const src = (m) => (m.source ? `<a class="meme-src" href="${esc(m.source)}" target="_blank" rel="noopener">出典</a>` : m.common ? `<span class="meme-src">定番の略称</span>` : "");
-    const card = (m) => `
+    const slurs = memes.filter((m) => m.kind === "slur");
+    const other = memes.filter((m) => !["nickname", "reputation", "running", "slur"].includes(m.kind));
+    // source（1件）に加えて sources（追加の用例URL）があれば「出典 1 2 3」と並べる
+    const src = (m) => {
+      const urls = [m.source, ...(m.sources || [])].filter(Boolean);
+      if (!urls.length) return m.common ? `<span class="meme-src">定番の略称</span>` : "";
+      if (urls.length === 1) return `<a class="meme-src" href="${esc(urls[0])}" target="_blank" rel="noopener">出典</a>`;
+      return `<span class="meme-src">出典 ${urls.map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">${i + 1}</a>`).join(" ")}</span>`;
+    };
+    const card = (m, noSrc) => `
         <article class="meme">
           <span class="meme-kind kind-${esc(m.kind)}">${esc(MEME_KIND[m.kind] || m.kind)}</span>
           <h3>${esc(m.title)}</h3>
           ${m.quote ? `<blockquote>“${esc(m.quote)}”${m.quoteJa ? `<span>「${esc(m.quoteJa)}」</span>` : ""}</blockquote>` : ""}
           <p>${esc(m.body)}</p>
-          ${src(m)}
+          ${noSrc ? "" : src(m)}
         </article>`;
     const nickHtml = nick.length
       ? `<h2 class="sec">呼ばれ方</h2>
@@ -1106,15 +1114,18 @@
           )
           .join("")}</div>`
       : "";
-    const talkHtml = talk.length ? `<h2 class="sec">界隈での扱い・ネタ</h2><div class="meme-grid">${talk.map(card).join("")}</div>` : "";
+    const talkHtml = talk.length ? `<h2 class="sec">界隈での扱い・ネタ</h2><div class="meme-grid">${talk.map((m) => card(m)).join("")}</div>` : "";
     const otherHtml = other.length
-      ? `<details class="meme-more"${nick.length || talk.length ? "" : " open"}>
-          <summary>ボイス・公式ネタなど（${other.length}件）</summary>
-          <div class="meme-grid">${other.map(card).join("")}</div>
-        </details>`
+      ? `<h2 class="sec">ボイス・公式ネタなど</h2>
+          <div class="meme-grid">${other.map((m) => card(m)).join("")}</div>`
       : "";
-    if (!nickHtml && !talkHtml && !otherHtml) return `<p class="empty">まだ定着したネタは見つかっていません。</p>`;
-    return `${nickHtml}${talkHtml}${otherHtml}
+    const slurHtml = slurs.length
+      ? `<h2 class="sec">蔑称・差別的な呼び方</h2>
+          <p class="slur-warn">⚠ 差別的・侮蔑的な表現を含みます。界隈でどう呼ばれているかの記録として、由来を添えて載せています。使うことを勧めるものではありません。</p>
+          <div class="meme-grid">${slurs.map((m) => card(m, true)).join("")}</div>`
+      : "";
+    if (!nickHtml && !talkHtml && !otherHtml && !slurHtml) return `<p class="empty">まだ定着したネタは見つかっていません。</p>`;
+    return `${nickHtml}${talkHtml}${otherHtml}${slurHtml}
       <p class="mu-legend" style="margin-top:16px">プレイヤー間での呼ばれ方・ネタの紹介です。時期や界隈によって使われ方が違い、攻略上の評価とは関係ありません。</p>`;
   }
 

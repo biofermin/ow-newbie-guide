@@ -578,6 +578,13 @@ OW.registerHero({
       body: "足元にコーチ・ガンを撃って自分を吹き飛ばし、高所に飛び乗ったり逃げたりする小技。本来は敵と距離を取るためのスキルだが、移動やトリックショットにも使える。",
       source: "https://overwatch.fandom.com/wiki/Ashe",
     },
+    {
+      kind: "slur",
+      title: "行き遅れ夢女おばさん／拗らせおばさん",
+      body: "キャスディより年上で独身という設定や、キャスディに執着する台詞をネタに、アッシュを「行き遅れ」「拗らせおばさん」と呼んだもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1670849197/480",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/assyubizin/"],
+    },
   ],
 
   sources: [

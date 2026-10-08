@@ -545,6 +545,12 @@ OW.registerHero({
       body: "ジュノの銃は狙っている相手によって表示が変わり、敵には怒り顔、味方には笑顔が出る小ネタがある。",
       source: "https://overwatch.fandom.com/wiki/Juno",
     },
+    {
+      kind: "slur",
+      title: "ハゲジュノ",
+      body: "表示バグで髪が消えたジュノの画像が「ジュノちゃん、ハゲてしまう」として話題になり、そこから生まれた呼び方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/lwhg/",
+    },
   ],
 
   sources: [

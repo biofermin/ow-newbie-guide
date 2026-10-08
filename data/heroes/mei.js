@@ -563,6 +563,24 @@ OW.registerHero({
       title: "雪合戦と『Rise and Shine』",
       body: "冬のイベントの乱闘「メイの雪玉オフェンス」や、南極基地での孤独な戦いを描いた短編『Rise and Shine』など、公式もメイを冬と雪の顔として扱っている。",
     },
+    {
+      kind: "slur",
+      title: "豚／メイ豚",
+      body: "メイを指す呼び方で、「メイ豚」「冷凍豚」「メス豚」のようにも使われる。ふっくらした体型と着ぶくれした防寒服のデザインに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260209-175251/",
+    },
+    {
+      kind: "slur",
+      title: "デブ／ブス",
+      body: "メイの体型や顔立ちを貶す呼び方で、「デブババア」「デブメガネ」「キモデブ」などの形でも使われる。丸い体型と眼鏡のデザインに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/imuhetamei/",
+    },
+    {
+      kind: "slur",
+      title: "クソチャイナ",
+      body: "メイを、中国出身という設定から国籍で罵った呼び方。「中国人」と呼び捨てにしたり、アイス・ウォールを「中国産の壁」と揶揄したりする言い方もある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/meiiumai/",
+    },
   ],
 
   sources: [

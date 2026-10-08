@@ -601,6 +601,19 @@ OW.registerHero({
       body: "マシン・ピストルの残弾表示は16進数で、満タン時は「3C」（60）と表示される。",
       source: "https://overwatch.fandom.com/wiki/Sombra",
     },
+    {
+      kind: "slur",
+      title: "メスガキソンブラ",
+      body: "ソンブラを「メスガキ」と呼ぶ言い方で、「これはメスガキソンブラ」「ソンブラってメスガキ感あるよな」のように使われる。相手を煽る生意気な台詞回しに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sonnburab/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/huranka/", "https://overwatch2-news.apexlegends-leaksnews.com/urutoonnsei/"],
+    },
+    {
+      kind: "slur",
+      title: "ポリコレブス",
+      body: "リワーク後のソンブラを「半分坊主頭+褐色でまーたポリコレブスかよ」と評した呼び方。多様性に配慮した（ポリコレ）デザインだとして、容姿と肌の色をまとめておとしめる言い方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/sonburatuyoi/",
+    },
   ],
 
   sources: [

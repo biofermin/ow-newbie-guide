@@ -562,6 +562,12 @@ OW.registerHero({
       body: "バラージ中の敵ファラを倒したときの専用ボイス。自分の決め台詞を逆手に取ったセルフツッコミとしてファンに知られている。",
       source: "https://overwatch.fandom.com/wiki/Pharah/Quotes",
     },
+    {
+      kind: "slur",
+      title: "レズ",
+      body: "ファラを指して「レズのファラ」のように使われる呼び方。ファンの間でファラが女性に惹かれる設定だと語られていることに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/faranar/",
+    },
   ],
 
   sources: [

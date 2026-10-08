@@ -577,6 +577,12 @@ OW.registerHero({
       body: "マリー・アントワネットの言葉として広まった「パンがなければケーキを食べればいい」を引用した、クレジット解放のボイスライン。",
       source: "https://overwatch.fandom.com/wiki/Widowmaker/Quotes",
     },
+    {
+      kind: "slur",
+      title: "死体",
+      body: "改造で心拍が遅く体温の低い、青白い肌の体にされた設定から、ウィドウメイカーを「死体」扱いした言い方。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1672828817/937",
+    },
   ],
 
   sources: [

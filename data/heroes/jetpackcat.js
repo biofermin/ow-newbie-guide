@@ -614,6 +614,12 @@ OW.registerHero({
       body: "エモートでは本物の猫のように机の上の物を叩き落とす。",
       source: "https://overwatch.fandom.com/wiki/Jetpack_Cat",
     },
+    {
+      kind: "slur",
+      title: "デブ猫",
+      body: "ジェットパック・キャットを指す呼び方で、「新顔のデブ猫」のように使われる。丸い体型のデザインに由来し、愛着を込めて使われることもある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260827-074102/",
+    },
   ],
 
   sources: [

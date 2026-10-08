@@ -588,6 +588,25 @@ OW.registerHero({
       body: "エイプリルフール限定の狐駆けボイス。忍者アニメの決め台詞「Believe it!」（のちに削除）や、ヘッドショット頼みのクナイをいじる「Just aim for the head!」が用意された。",
       source: "https://overwatch.fandom.com/wiki/Kiriko/Quotes",
     },
+    {
+      kind: "slur",
+      title: "ブスくのいち",
+      body: "キリコを「ブス」と「くのいち（女忍者）」を組み合わせて呼んだもの。忍者モチーフのキャラクターであることと、アップデートで顔が変わったという話題などに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/moirazyoui/",
+    },
+    {
+      kind: "slur",
+      title: "メスガキリコ",
+      body: "「メスガキ」と「キリコ」を合わせた呼び方で、「メスガキキリコ」とも書かれる。生意気な若い女性キャラクターという印象に由来し、性的なネタの中で使われることが多い。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/butasogai/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/kirikononennrei/"],
+    },
+    {
+      kind: "slur",
+      title: "ビッチ",
+      body: "キリコを「ビッチのキリコちゃん」と呼んだもの。若い女性キャラクターであることに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/aiua/",
+    },
   ],
 
   sources: [

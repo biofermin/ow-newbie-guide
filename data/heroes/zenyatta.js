@@ -560,6 +560,19 @@ OW.registerHero({
       title: "スナップ・キック",
       body: "近接攻撃がノックバック付きの蹴りになっており、崖際なら敵を蹴り落とす環境キルも狙える。穏やかな僧侶ロボが蹴りで敵を退場させる意外さが見どころ。",
     },
+    {
+      kind: "slur",
+      title: "ポンコツハゲオムニック",
+      body: "ゼニヤッタを指す罵倒で、「おにぎり体型で機動力ゴミのポンコツハゲオムニック」のように使われた。機動力の低さ、つるりとした頭、オムニック（ロボット）という種族に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ajmc/",
+    },
+    {
+      kind: "slur",
+      title: "気持ち悪い坊主",
+      body: "ゼニヤッタを「ただの気持ち悪い坊主」と呼んだもの。僧侶のオムニックで頭がつるりとしていることに由来し、「坊主」だけでも呼ばれる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/zeniyattakyakuryoku/",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/zariasapoo/"],
+    },
   ],
 
   sources: [

@@ -442,6 +442,12 @@ OW.registerHero({
       body: "先行体験で「楽しいうえに普通に強い」と評判になり、正式実装（2026年10月6日）の前に弱体化された。",
       source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20261006-080327/",
     },
+    {
+      kind: "slur",
+      title: "厨二コスプレおぢさん",
+      body: "ドクトリンを「吸血鬼憧れ厨二コスプレおぢさん」と呼んだもの。吸血鬼モチーフの衣装と年配の男性という見た目に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/shdvir/",
+    },
   ],
 
   sources: [

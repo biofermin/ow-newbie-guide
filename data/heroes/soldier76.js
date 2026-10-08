@@ -538,6 +538,25 @@ OW.registerHero({
       body: "チュートリアルで操作するのがソルジャー76で、2016年9月時点では最も遊ばれているヒーローだった。素直な撃ち合いができるため、他のFPSから来た人がまず手に取る定番キャラとして扱われる。",
       source: "https://overwatch.fandom.com/wiki/Soldier:_76",
     },
+    {
+      kind: "slur",
+      title: "ソルハゲ",
+      body: "ソルジャー76を「ハゲ」と呼ぶあだ名で、単に「ハゲ」とも呼ばれる。白髪の中年男性という外見に由来するが、実際には髪がある。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ablf/",
+    },
+    {
+      kind: "slur",
+      title: "ホモ／ホモソル",
+      body: "2019年の短編小説でゲイであることが公式に明かされたことに由来し、「ソルジャーがホモになった」「ホモソル」のように使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ayaug/",
+    },
+    {
+      kind: "slur",
+      title: "ホモハゲ76／ホモおじいちゃん",
+      body: "ゲイであることと「ハゲ」というあだ名、年齢を組み合わせて罵った呼び方。2019年にゲイと公表されたことに由来する。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1670381149/168",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1666918289/518"],
+    },
   ],
 
   sources: [

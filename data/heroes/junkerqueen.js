@@ -548,6 +548,12 @@ OW.registerHero({
       body: "クイーンの投げナイフには「グレイシー」、斧には「カーネイジ」という名前がついている。武器に名前をつけて可愛がる荒くれ女王らしさがファンに好まれている。",
       source: "https://overwatch.fandom.com/wiki/Junker_Queen",
     },
+    {
+      kind: "slur",
+      title: "荒野のおばさん",
+      body: "ジャンカー・クイーンを「荒野のおばさん」と呼ぶもので、「荒野のおばさんことジャンカークイーン」のように使われる。荒野（アウトバック）のジャンカータウンを治める中年女性という設定に由来する。",
+      source: "https://www.youtube.com/watch?v=erQcYT-ogRY",
+    },
   ],
 
   sources: [

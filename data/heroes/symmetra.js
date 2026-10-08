@@ -552,6 +552,18 @@ OW.registerHero({
       body: "スポーンルームのバスケットボールにセントリー・タレットを貼り付け、フォトン・プロジェクターで押して運ぶ小ネタ。壁や床に当たるとタレットは壊れる。",
       source: "https://overwatch.fandom.com/wiki/Symmetra",
     },
+    {
+      kind: "slur",
+      title: "浅黒ババア",
+      body: "シンメトラを、肌の色と年齢を結びつけて罵った呼び方で、「ナーフされないシンメとかいう浅黒ババア」のように使われる。インド出身という設定と褐色の肌に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20251221-004032/",
+    },
+    {
+      kind: "slur",
+      title: "インド人",
+      body: "シンメトラを、インド出身という設定から「これがインド人だ」と国籍で呼んだもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1691202524/77",
+    },
   ],
 
   sources: [

@@ -544,6 +544,39 @@ OW.registerHero({
       body: "ブリギッテに倒されたときの台詞。シェイクスピア『ジュリアス・シーザー』の「ブルータス、お前もか」のもじりで、鼻をすすりながら言うのがポイント。",
       source: "https://overwatch.fandom.com/wiki/Venture/Quotes",
     },
+    {
+      kind: "slur",
+      title: "ポリコレ枠",
+      body: "ノンバイナリー（性別を男女のどちらとも規定しない）と公式に設定されたことに由来し、多様性への配慮のためだけに作られたキャラだと揶揄する呼び方。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/afed/",
+    },
+    {
+      kind: "slur",
+      title: "マンドリル",
+      body: "ベンチャーの顔をサルの一種マンドリルにたとえて「イラリーよりブス」と貶したもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1711346897/828",
+    },
+    {
+      kind: "slur",
+      title: "ポリコレブス／ポリコレ顔",
+      body: "ノンバイナリーという設定と顔立ちを結びつけ、多様性への配慮のためにわざと不細工に作られた顔だと罵る言い方。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1713665733/376",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1715952595/797"],
+    },
+    {
+      kind: "slur",
+      title: "便チャー",
+      body: "「便（大便）」と「ベンチャー」を掛けた呼び方で、「ウンコ色のポリコレブス」と合わせて使われる。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1711089395/177",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1712374111/913"],
+    },
+    {
+      kind: "slur",
+      title: "性別不明／オスかメスか",
+      body: "ノンバイナリー（男女どちらとも規定しない）という設定をからかい、「性別不明」「オスなんですか？メスなんですか？」と動物のように呼ぶもの。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/adue/",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1713313767/346"],
+    },
   ],
 
   sources: [

@@ -571,6 +571,25 @@ OW.registerHero({
       body: "ジャンクラットの水筒の中身は「甘さ半分のタピオカミルクティー」だと、開発者が公式フォーラムで回答している。",
       source: "https://overwatch.fandom.com/wiki/Junkrat",
     },
+    {
+      kind: "slur",
+      title: "汚い／小汚いキャラ",
+      body: "ジャンクラットの見た目を「汚い」「小汚いキャラ」と貶す言い方。焼け焦げた髪や薄汚れた服装に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/anhd/",
+    },
+    {
+      kind: "slur",
+      title: "ガイジ／障害者御用達キャラ",
+      body: "ジャンクラットを「キャラがガイジ感ある」「見た目がガイジっぽい」と言ったり、「障害者御用達キャラ」「ジャンクラガイジ」と使い手ごと呼んだりするもの。奇声を上げる狂人じみたキャラ付けと、爆弾をばらまくだけで戦えると見なされていることに由来する。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1671817671/205",
+      sources: ["https://fate.5ch.net/test/read.cgi/gamef/1710751671/258", "https://fate.5ch.net/test/read.cgi/gamef/1708938338/35"],
+    },
+    {
+      kind: "slur",
+      title: "ホモ",
+      body: "ロードホッグとのコンビ関係から、ジャンクラットを同性愛者扱いしてからかったもの。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1685354659/537",
+    },
   ],
 
   sources: [

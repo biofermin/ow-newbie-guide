@@ -582,6 +582,12 @@ OW.registerHero({
       body: "中国語名は無漾（ウーヤン）で、姉アンラン（安然）と並べると「無事で何より」を意味する成語「安然無恙」になる。",
       source: "https://overwatch.fandom.com/wiki/Wuyang",
     },
+    {
+      kind: "slur",
+      title: "童貞くさい",
+      body: "ウーヤンを「童貞くさいしピュアピュア」と評した言い方。若く奥手そうなキャラクター付けに由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260603-190716/",
+    },
   ],
 
   sources: [

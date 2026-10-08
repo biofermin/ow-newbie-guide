@@ -592,6 +592,31 @@ OW.registerHero({
       body: "ドラドの攻撃側スポーン地点の鐘をオーバーウォッチのテーマのメロディで鳴らすと、ハモンドがそれに合わせて歌う隠し要素がある。",
       source: "https://overwatch.fandom.com/wiki/Wrecking_Ball",
     },
+    {
+      kind: "slur",
+      title: "ネズミ",
+      body: "ハモンド（ハムスター）を「あのネズミ」と呼ぶもので、「何のためにあのネズミをボールに入れてんだよ」のように使われる。ハムスターをネズミとひとくくりにしたもの。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260809-130553/",
+    },
+    {
+      kind: "slur",
+      title: "チビ毛玉",
+      body: "ハモンドを「チビ毛玉」と呼ぶもので、「あのチビ毛玉、ガチの危険人物だった」のように使われる。小さなハムスターの体に由来する。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260804-084912/",
+    },
+    {
+      kind: "slur",
+      title: "クソネズミ",
+      body: "ハモンドを「クソネズミ」と呼ぶもので、「このクソネズミはウィンストンが地球脱出するのに相乗りしただけ」「クソネズミは消すべき」のように使われる。ハムスターをネズミとひとくくりにしたもの。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/ow-20260804-084912/",
+    },
+    {
+      kind: "slur",
+      title: "害獣",
+      body: "レッキング・ボール（ハモンド）を「害獣」と呼ぶもので、「わからん殺し害獣レッキングボール」のように使われる。ネズミ扱いされるハムスターであることと、裏で暴れ回って厄介な性能に由来する。",
+      source: "https://www.youtube.com/watch?v=9qg8ANn_Rb0",
+      sources: ["https://overwatch2-news.apexlegends-leaksnews.com/ow-20260809-130553/"],
+    },
   ],
 
   sources: [

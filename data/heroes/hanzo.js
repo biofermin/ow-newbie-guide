@@ -557,6 +557,24 @@ OW.registerHero({
       body: "2017年、ブラジルで宗教団体の設立がいかに簡単かを示すため、ファンが「ハンゾー国立教会」を正式に設立して話題になった。",
       source: "https://overwatch.fandom.com/wiki/Hanzo",
     },
+    {
+      kind: "slur",
+      title: "薄汚い犯罪者一族",
+      body: "ハンゾーを、島田家が裏社会の犯罪組織という設定から罵った言い方で、「ドブカスハンゾー」と続けて使われる。",
+      source: "https://overwatch2-news.apexlegends-leaksnews.com/aebc/",
+    },
+    {
+      kind: "slur",
+      title: "ゴミゾー",
+      body: "「ゴミ」と「ハンゾー」を合わせた呼び方。流れ弾のような一撃で倒されることへの不満や、使い手が役に立たないという悪口から使われる。",
+      source: "https://fate.5ch.net/test/read.cgi/gamef/1672404378/325",
+    },
+    {
+      kind: "slur",
+      title: "ホモハンゾー",
+      body: "胸元をはだけたスキンなどを指して、ハンゾーを同性愛者扱いしてからかったもの。",
+      source: "https://pug.5ch.net/test/read.cgi/famicom/1676350197/137",
+    },
   ],
 
   sources: [
