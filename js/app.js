@@ -665,6 +665,9 @@
         el.hidden = !hit;
         if (hit) shown++;
       });
+      view.querySelectorAll("#tech-list .tech-group").forEach((g) => {
+        g.hidden = !g.querySelector(".tech:not([hidden])");
+      });
       $("#tech-none").hidden = shown > 0;
     });
   }
@@ -807,39 +810,43 @@
       <div class="perk-grid">${h.perks.major.map(perk).join("")}</div>`;
   }
 
-  const TECH_LEVELS = ["基本", "中級", "上級", "ニッチ"];
+  // テクニックの区分（種類）。並び順＝表示順
+  const TECH_CATS = ["立ち回り", "キャラコン", "数値・確殺", "仕様", "対策・連携", "マップ知識", "パーク", "設定"];
+  const techCat = (t) => (TECH_CATS.includes(t.cat) ? t.cat : "立ち回り");
 
   function renderTechniques(h) {
-    const levels = ["すべて", ...TECH_LEVELS];
-    if (!levels.includes(techFilter)) techFilter = "すべて";
-    const count = (l) => (l === "すべて" ? h.techniques.length : h.techniques.filter((t) => t.level === l).length);
-    // 難度順（基本→ニッチ）に並べる。同じ難度内はデータの順
-    const items = h.techniques
-      .map((t, i) => ({ t, i }))
-      .filter(({ t }) => techFilter === "すべて" || t.level === techFilter)
-      .sort((a, b) => TECH_LEVELS.indexOf(a.t.level) - TECH_LEVELS.indexOf(b.t.level) || a.i - b.i)
-      .map(({ t }) => t);
-    return `
-      <div class="filter">${levels
-        .filter((l) => count(l))
-        .map((l) => `<button class="chip${l === techFilter ? " active" : ""}" data-lv="${l}">${l} ${count(l)}</button>`)
-        .join("")}</div>
-      <input type="search" class="tech-search" id="tech-search" placeholder="テクニックを検索（例：キャンセル、確殺、マップ名）" autocomplete="off">
-      <div id="tech-list">${items
-        .map(
-          (t) => `
-        <article class="tech" data-text="${esc([t.title, t.body, ...(t.tags || [])].join(" ").toLowerCase())}">
-          <h3><span class="lv lv-${t.level}">${t.level}</span>${esc(t.title)}</h3>
+    const cats = ["すべて", ...TECH_CATS];
+    const count = (c) => (c === "すべて" ? h.techniques.length : h.techniques.filter((t) => techCat(t) === c).length);
+    if (!cats.includes(techFilter) || !count(techFilter)) techFilter = "すべて";
+    const card = (t) => `
+        <article class="tech" data-text="${esc([t.title, t.body, techCat(t), ...(t.tags || [])].join(" ").toLowerCase())}">
+          <h3><span class="cat cat-${TECH_CATS.indexOf(techCat(t))}">${esc(techCat(t))}</span>${esc(t.title)}</h3>
           <p>${esc(t.body)}</p>
           <div class="ttags">${(t.tags || []).map((g) => `<span>${esc(g)}</span>`).join("")}${
             t.source ? `<a class="tech-src" href="${esc(t.source)}" target="_blank" rel="noopener">出典</a>` : ""
           }</div>
-        </article>`
+        </article>`;
+    // 「すべて」は区分ごとに見出しを付けてまとめる。区分を選んだときはその区分だけ
+    const groups = (techFilter === "すべて" ? TECH_CATS : [techFilter])
+      .map((c) => ({ c, items: h.techniques.filter((t) => techCat(t) === c) }))
+      .filter((g) => g.items.length);
+    return `
+      <div class="filter">${cats
+        .filter((c) => count(c))
+        .map((c) => `<button class="chip${c === techFilter ? " active" : ""}" data-lv="${c}">${c} ${count(c)}</button>`)
+        .join("")}</div>
+      <input type="search" class="tech-search" id="tech-search" placeholder="テクニックを検索（例：キャンセル、確殺、マップ名）" autocomplete="off">
+      <div id="tech-list">${groups
+        .map(
+          (g) => `
+        <section class="tech-group">
+          ${techFilter === "すべて" ? `<h2 class="sec">${esc(g.c)}<small class="count">${g.items.length}</small></h2>` : ""}
+          ${g.items.map(card).join("")}
+        </section>`
         )
         .join("")}</div>
       <p class="empty" id="tech-none" hidden>該当するテクニックはありません。</p>`;
   }
-
   const FIT = { best: "◎ 得意", ok: "○ 普通", weak: "△ 苦手" };
 
   function renderRange(r) {
