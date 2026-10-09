@@ -8,6 +8,7 @@
     { id: "techniques", label: "テクニック" },
     { id: "playstyle", label: "立ち回り" },
     { id: "matchups", label: "相性" },
+    { id: "team", label: "連携" },
     { id: "memes", label: "ミーム" },
     { id: "patches", label: "パッチ履歴" },
   ];
@@ -85,8 +86,17 @@
     renderNav(heroId);
     $("#sidebar").classList.remove("open");
     const route =
-      heroId === "select" ? "select" : heroId === "maps" || heroId === "map" ? "maps" : heroId === "patches" ? "patches" : !heroId ? "home" : "";
+      heroId === "select" ? "select" : heroId === "maps" || heroId === "map" ? "maps" : heroId === "patches" ? "patches" : heroId === "team" ? "team" : !heroId ? "home" : "";
     document.querySelectorAll(".topnav a").forEach((a) => a.classList.toggle("active", a.dataset.route === route));
+    if (heroId === "team") {
+      const t = location.hash.replace(/^#\/?/, "").split("/")[1];
+      teamTab = TEAM_TABS.some((x) => x.id === t) ? t : "ults";
+      document.title = "連携ガイド | OW Hero Guide";
+      document.documentElement.style.removeProperty("--hero");
+      view.innerHTML = renderTeam();
+      bindTeam();
+      return;
+    }
     if (heroId === "patches") {
       document.title = "パッチノート | OW Hero Guide";
       document.documentElement.style.removeProperty("--hero");
@@ -129,6 +139,165 @@
     document.documentElement.style.setProperty("--hero", hero.color);
     view.innerHTML = renderHeroHead(hero) + renderTabs(hero, tab) + `<section id="tab-body">${renderTab(hero, tab)}</section>` + renderSources(hero);
     bindTab(hero, tab);
+  }
+
+  // ---------- 連携ガイド（data/team/*.js）: #/team/<tab> とヒーローページの「連携」タブ ----------
+  const TEAM_TABS = [
+    { id: "ults", label: "ウルト対応" },
+    { id: "combos", label: "コンボ" },
+    { id: "comps", label: "構成例" },
+    { id: "basics", label: "基本" },
+  ];
+  const ANS_TYPE = { stop: "止める", negate: "無効化", survive: "受けきる", punish: "反撃" };
+  const COMBO_KIND = { ult: "ウルト同士", "ult-ability": "ウルト＋スキル", ability: "スキル連携" };
+  const COMP_STYLE = { dive: "ダイブ", brawl: "ブロール", poke: "ポーク", other: "その他" };
+  let teamTab = "ults";
+  let teamRole = "all";
+  let teamKind = "all";
+
+  const ultOf = (id) => (OW.heroes[id]?.abilities || []).find((a) => a.key === "Q" || a.ult);
+  const ultName = (id) => ultOf(id)?.name || "ウルト";
+  // 小さな顔＋名前のリンク（文中・一覧用）
+  const heroChip = (id) =>
+    `<a class="hchip" href="#/${id}/team" style="--c:${OW.heroes[id]?.color || "var(--line)"}">${avatar(id, "hchip-img")}<span>${esc(heroName(id))}</span></a>`;
+  const ultIds = () => heroIds().filter((id) => OW.ultGuide?.[id]);
+  const combosWith = (id) => (OW.combos || []).filter((c) => c.heroes.includes(id));
+  const compsWith = (id) =>
+    (OW.comps || []).filter((c) => Object.values(c.heroes).flat().includes(id) || Object.values(c.alts || {}).flat().includes(id));
+  const comboById = (cid) => (OW.combos || []).find((c) => c.id === cid);
+
+  function renderUltCard(id, opts = {}) {
+    const g = OW.ultGuide[id];
+    const order = ["stop", "negate", "survive", "punish"];
+    const answers = [...(g.answers || [])].sort((a, b) => order.indexOf(a.type) - order.indexOf(b.type));
+    const text = [heroName(id), ultName(id), ...answers.map((a) => `${heroName(a.hero)} ${a.ability}`)].join(" ").toLowerCase();
+    return `
+      <article class="ult-card" style="--c:${OW.heroes[id].color}" data-role="${heroRole(id)}" data-text="${esc(text)}">
+        ${opts.noHead ? "" : `<a class="ult-head" href="#/${id}/team">${avatar(id, "ult-ava")}<span><b>${esc(ultName(id))}</b><small>${esc(heroName(id))}</small></span></a>`}
+        <p class="ult-threat">${esc(g.threat)}</p>
+        ${g.tell ? `<p class="ult-tell"><span>兆候</span>${esc(g.tell)}</p>` : ""}
+        <h4>返し方</h4>
+        <ul class="answers">${answers
+          .map(
+            (a) => `<li class="${a.hero === opts.me ? "me" : ""}">
+              <span class="ans-type t-${esc(a.type)}">${esc(ANS_TYPE[a.type] || a.type)}</span>
+              <div>${heroChip(a.hero)}<b class="ans-ab">${esc(a.ability)}</b><p>${esc(a.how)}</p></div>
+            </li>`
+          )
+          .join("")}</ul>
+        ${g.hold ? `<p class="ult-hold"><span>温存</span>${esc(g.hold)}</p>` : ""}
+      </article>`;
+  }
+
+  function renderComboCard(c) {
+    const text = [c.name, ...c.heroes.map(heroName), ...(c.steps || [])].join(" ").toLowerCase();
+    return `
+      <article class="combo-card" data-kind="${esc(c.kind)}" data-text="${esc(text)}">
+        <div class="combo-head">
+          <div class="combo-faces">${c.heroes.map((id) => `<a href="#/${id}/team" title="${esc(heroName(id))}">${avatar(id, "combo-ava")}</a>`).join("")}</div>
+          <div><span class="combo-kind">${esc(COMBO_KIND[c.kind] || c.kind)}</span>${c.basis === "data" ? `<span class="combo-kind data">統計あり</span>` : ""}<h3>${esc(c.name)}</h3></div>
+        </div>
+        <ol class="combo-steps">${(c.steps || []).map((s) => `<li>${esc(s)}</li>`).join("")}</ol>
+        ${c.why ? `<p class="combo-why">${esc(c.why)}</p>` : ""}
+        ${c.counter ? `<p class="combo-counter"><span>返され方</span>${esc(c.counter)}</p>` : ""}
+        ${c.source ? `<a class="tech-src" href="${esc(c.source)}" target="_blank" rel="noopener">出典</a>` : ""}
+      </article>`;
+  }
+
+  function renderCompCard(c, me) {
+    const slots = ROLE_ORDER.flatMap((r) => (c.heroes[r] || []).map((id) => ({ id, r })));
+    const alts = Object.values(c.alts || {}).flat();
+    const combos = (c.combos || []).map(comboById).filter(Boolean);
+    return `
+      <article class="comp-card">
+        <div class="comp-title"><span class="combo-kind">${esc(COMP_STYLE[c.style] || c.style)}</span><h3>${esc(c.name)}</h3></div>
+        <p class="comp-plan">${esc(c.plan)}</p>
+        <ul class="comp-duties">${slots
+          .map(
+            ({ id }) => `<li class="${id === me ? "me" : ""}">${heroChip(id)}<span>${esc(c.duties?.[id] || "")}</span></li>`
+          )
+          .join("")}</ul>
+        ${alts.length ? `<p class="comp-meta"><span>入れ替え候補</span>${alts.map(heroChip).join("")}</p>` : ""}
+        ${combos.length ? `<p class="comp-meta"><span>狙うコンボ</span>${combos.map((x) => esc(x.name)).join("／")}</p>` : ""}
+        ${c.weakTo ? `<p class="comp-meta"><span>苦手</span>${esc(c.weakTo)}</p>` : ""}
+        ${c.basis ? `<p class="comp-basis">${esc(c.basis)}${(c.sources || []).map((u, i) => ` <a href="${esc(u)}" target="_blank" rel="noopener">出典${(c.sources.length > 1 ? i + 1 : "")}</a>`).join("")}</p>` : ""}
+      </article>`;
+  }
+
+  function renderTeam() {
+    const tabs = `<nav class="tabs">${TEAM_TABS.map((t) => `<a href="#/team/${t.id}" class="${t.id === teamTab ? "active" : ""}">${t.label}</a>`).join("")}</nav>`;
+    let body = "";
+    if (teamTab === "ults") {
+      const roles = { all: "すべて", ...Object.fromEntries(ROLE_ORDER.map((r) => [r, OW.roles[r].label])) };
+      body = `
+        <p class="mu-legend">相手のウルトごとに、止める・無効化する・受けきる手段を持つヒーローと、温存すべきものをまとめています。</p>
+        <div class="filter">${Object.entries(roles).map(([k, l]) => `<button class="chip${k === teamRole ? " active" : ""}" data-team-role="${k}">${l}</button>`).join("")}</div>
+        <input type="search" class="tech-search" id="team-search" placeholder="ヒーロー名・ウルト名・スキル名で検索" autocomplete="off">
+        <div class="ult-grid">${ultIds().filter((id) => teamRole === "all" || heroRole(id) === teamRole).map((id) => renderUltCard(id)).join("")}</div>`;
+    } else if (teamTab === "combos") {
+      const kinds = { all: "すべて", ...COMBO_KIND };
+      const list = (OW.combos || []).filter((c) => teamKind === "all" || c.kind === teamKind);
+      body = `
+        <p class="mu-legend">ヒーローの組み合わせで成立するコンボ。「統計あり」はデュオ勝率などの裏付けがあるもの。</p>
+        <div class="filter">${Object.entries(kinds).map(([k, l]) => `<button class="chip${k === teamKind ? " active" : ""}" data-team-kind="${k}">${l}</button>`).join("")}</div>
+        <input type="search" class="tech-search" id="team-search" placeholder="ヒーロー名・コンボ名で検索" autocomplete="off">
+        <div class="combo-grid">${list.map(renderComboCard).join("")}</div>`;
+    } else if (teamTab === "comps") {
+      body = `
+        <p class="mu-legend">シーズン5の公式統計と攻略情報をもとにした構成例。5人それぞれの仕事を書いています。</p>
+        <div class="comp-grid">${(OW.comps || []).map((c) => renderCompCard(c)).join("")}</div>`;
+    } else {
+      body = `<div class="basics">${(OW.teamBasics || [])
+        .map((b) => `<div class="box"><h3>${esc(b.title)}</h3><ul>${b.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`)
+        .join("")}</div>`;
+    }
+    return `
+      <div class="home team">
+        <h1>TEAMWORK</h1>
+        <p class="lead">相手のウルトへの返し方、ヒーロー同士のコンボ、今の環境の構成例。各ヒーローページの「連携」タブからも引けます。</p>
+        ${tabs}
+        ${body}
+        <p class="empty" id="team-none" hidden>該当する項目はありません。</p>
+      </div>`;
+  }
+
+  function bindTeam() {
+    view.querySelectorAll("[data-team-role]").forEach((b) => b.addEventListener("click", () => { teamRole = b.dataset.teamRole; render(); }));
+    view.querySelectorAll("[data-team-kind]").forEach((b) => b.addEventListener("click", () => { teamKind = b.dataset.teamKind; render(); }));
+    $("#team-search")?.addEventListener("input", (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      let shown = 0;
+      view.querySelectorAll("[data-text]").forEach((el) => {
+        const hit = !q || el.dataset.text.includes(q);
+        el.hidden = !hit;
+        if (hit) shown++;
+      });
+      $("#team-none").hidden = shown > 0;
+    });
+  }
+
+  function renderHeroTeam(h) {
+    const mine = OW.ultGuide?.[h.id];
+    const canAnswer = ultIds()
+      .filter((id) => id !== h.id)
+      .flatMap((id) => (OW.ultGuide[id].answers || []).filter((a) => a.hero === h.id).map((a) => ({ id, a })));
+    const combos = combosWith(h.id);
+    const comps = compsWith(h.id);
+    if (!mine && !canAnswer.length && !combos.length && !comps.length) return `<p class="empty">連携データはまだありません。</p>`;
+    return `
+      ${combos.length ? `<h2 class="sec">${esc(h.name)}が入るコンボ<small class="count">${combos.length}</small></h2><div class="combo-grid">${combos.map(renderComboCard).join("")}</div>` : ""}
+      ${canAnswer.length ? `<h2 class="sec">${esc(h.name)}で返せる相手のウルト<small class="count">${canAnswer.length}</small></h2>
+        <div class="can-answer">${canAnswer
+          .map(
+            ({ id, a }) => `<div class="ca-row">
+              <a class="ult-head" href="#/team/ults" title="ウルト対応表へ">${avatar(id, "ult-ava")}<span><b>${esc(ultName(id))}</b><small>${esc(heroName(id))}</small></span></a>
+              <div><span class="ans-type t-${esc(a.type)}">${esc(ANS_TYPE[a.type] || a.type)}</span><b class="ans-ab">${esc(a.ability)}</b><p>${esc(a.how)}</p></div>
+            </div>`
+          )
+          .join("")}</div>` : ""}
+      ${mine ? `<h2 class="sec">${esc(ultName(h.id))}を返してくる相手</h2><p class="mu-legend">撃つ前に吐かせておきたいスキル。相手チームから見た対策でもある。</p><div class="ult-grid single">${renderUltCard(h.id, { noHead: true, me: h.id })}</div>` : ""}
+      ${comps.length ? `<h2 class="sec">${esc(h.name)}が入る構成例<small class="count">${comps.length}</small></h2><div class="comp-grid">${comps.map((c) => renderCompCard(c, h.id)).join("")}</div>` : ""}
+      <p style="margin-top:20px"><a href="#/team">連携ガイドを見る →</a></p>`;
   }
 
   // ---------- sidebar ----------
@@ -641,6 +810,7 @@
       case "techniques": return renderTechniques(h);
       case "playstyle": return renderPlaystyle(h);
       case "matchups": return renderMatchups(h);
+      case "team": return renderHeroTeam(h);
       case "memes": return renderMemes(h);
       case "patches": return renderPatches(h);
       default: return renderOverview(h);
