@@ -12,7 +12,8 @@ param(
 $ErrorActionPreference = "Stop"
 Add-Type -AssemblyName System.Web
 $UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
-$modes = [ordered]@{ comp = 2; qp = 0 }
+# rq values from the page's mode selector (S5 changed Competitive from 2 to 1; an unknown value silently falls back to Quick Play)
+$modes = [ordered]@{ comp = 1; qp = 0 }
 $dataDir = Join-Path (Split-Path $PSScriptRoot -Parent) "data"
 $utf8 = New-Object Text.UTF8Encoding($false)
 
@@ -54,6 +55,11 @@ foreach ($m in $modes.Keys) {
     if (-not $set) { throw "allrows not found ($m-$r)" }
     $sets["$m-$r"] = $set
     Write-Host ("{0,-14} {1} heroes" -f "$m-$r", $set.Count)
+  }
+}
+foreach ($r in $Regions) {
+  if (($sets["comp-$r"] | ConvertTo-Json -Compress) -eq ($sets["qp-$r"] | ConvertTo-Json -Compress)) {
+    throw "comp-$r and qp-$r are identical - the page's rq codes probably changed (check the mode selector)"
   }
 }
 $fetched = (Get-Date).ToString("yyyy-MM-dd")
