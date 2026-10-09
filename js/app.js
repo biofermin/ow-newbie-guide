@@ -974,8 +974,15 @@
   function renderMatchups(h) {
     const entries = matchupEntries(h);
     if (!entries.length) return renderMatchupsLegacy(h);
+    // 手書きの有利／不利リストの理由は、統計の向きと一致するときだけ使う（データ更新で向きが逆転したら出さない）
+    const strongWhy = {}, weakWhy = {};
+    h.matchups.strong.forEach((m) => (strongWhy[m.hero] = m.reason));
+    h.matchups.weak.forEach((m) => (weakWhy[m.hero] = m.reason));
     const reasonOf = {};
-    [...h.matchups.strong, ...h.matchups.weak].forEach((m) => (reasonOf[m.hero] = m.reason));
+    entries.forEach((e) => {
+      const r = e.adv > 0 ? strongWhy[e.id] : e.adv < 0 ? weakWhy[e.id] : undefined;
+      if (r) reasonOf[e.id] = r;
+    });
     // 全組み合わせデータで上位に入った相手への補足理由（data/heroes/<id>.js の matchupNotes）
     Object.entries(h.matchupNotes || {}).forEach(([id, r]) => (reasonOf[id] = reasonOf[id] || r));
     const stale = OW.stats?.stale || [];
