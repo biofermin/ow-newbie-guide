@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "フランカー",
   hp: 275,
+  hpParts: { health: 200, armor: 75, shield: 0 },
   color: "#d0434f",
   quote: "I am the empire.",
   summary:

@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "スペシャリスト",
   hp: 300,
+  hpParts: { health: 225, armor: 75, shield: 0 },
   color: "#d07f6f",
   quote: "Tools in hand, brain in gear.",
   summary:

@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "フランカー",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#97ef43",
   quote: "Peace returns to those that wish for it.",
   summary:
@@ -189,7 +190,7 @@ OW.registerHero({
       key: "Q",
       name: "龍撃剣",
       nameEn: "Dragonblade",
-      ult: "約2000pt",
+      ult: "2000pt",
       desc: "刀を抜き、近接攻撃で大ダメージを与える。",
       stats: [
         ["ダメージ", "100 / 振り"],

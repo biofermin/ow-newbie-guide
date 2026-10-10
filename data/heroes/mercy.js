@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "メディック",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
   color: "#e8c35a",
   quote: "Heroes never die!",
   summary:

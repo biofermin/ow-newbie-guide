@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "ブルーザー",
   hp: 450,
+  hpParts: { health: 150, armor: 300, shield: 0 },
   color: "#5aa856",
   quote: "Only in unity will we find strength.",
   summary:

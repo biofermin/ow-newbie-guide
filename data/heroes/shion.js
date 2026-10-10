@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "フランカー",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#4fd1c5",
   quote: "Pain is mine to master.",
   summary:

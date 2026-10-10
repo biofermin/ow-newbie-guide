@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "スペシャリスト",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#8a9bc4",
   quote: "Every soldier needs a cause.",
   summary:

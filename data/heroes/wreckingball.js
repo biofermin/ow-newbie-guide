@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "イニシエーター",
   hp: 575,
+  hpParts: { health: 300, armor: 125, shield: 150 },
   color: "#d79e57",
   quote: "Weapons operational. Grapples primed. Hamster pumped.",
   summary:

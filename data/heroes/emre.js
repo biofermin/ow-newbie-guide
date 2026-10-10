@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "スペシャリスト",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#c9a227",
   quote: "I'll put it all on the line.",
   summary:

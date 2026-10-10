@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "サバイバー",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#6f9be0",
   quote: "I'll decide my own fate.",
   summary:

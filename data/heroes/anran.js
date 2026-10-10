@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "フランカー",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#e8573c",
   quote: "The fire in my heart will never burn out.",
   summary:

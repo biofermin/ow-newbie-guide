@@ -5,6 +5,8 @@ OW.registerHero({
   role: "support",
   subrole: "サバイバー",
   hp: 250,
+  hpParts: { health: 175, armor: 75, shield: 0 },
+  hpNote: "ラリー中は自分にアーマー+100（回復で戻るが自然回復はしない）。",
   color: "#cf8a6e",
   quote: "Breaking me down just builds me up.",
   summary:

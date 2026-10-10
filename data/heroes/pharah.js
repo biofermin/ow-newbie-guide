@@ -5,6 +5,8 @@ OW.registerHero({
   role: "damage",
   subrole: "リコン",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
+  hpNote: "パーク「ヘリックス・シールド」選択時は HP100＋シールド125 になる。",
   color: "#4f8fdc",
   quote: "Strike from above.",
   summary:

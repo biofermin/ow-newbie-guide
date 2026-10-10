@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "スペシャリスト",
   hp: 275,
+  hpParts: { health: 125, armor: 0, shield: 150 },
   color: "#8ebccc",
   quote: "From imperfection, we build a new world.",
   summary:

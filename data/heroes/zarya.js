@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "ブルーザー",
   hp: 400,
+  hpParts: { health: 175, armor: 0, shield: 225 },
   color: "#e77eb6",
   quote: "We will crush them!",
   summary:

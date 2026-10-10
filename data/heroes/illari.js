@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "サバイバー",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#f2b84e",
   quote: "I carry my burdens alone.",
   summary:

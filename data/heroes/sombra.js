@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "タクティシャン",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
   color: "#9273d6",
   quote: "In my world, there are no secrets.",
   summary:
@@ -189,7 +190,7 @@ OW.registerHero({
       key: "Q",
       name: "EMP",
       nameEn: "EMP",
-      ult: "約3100pt",
+      ult: "3100pt",
       desc: "周囲の敵に現在HPに応じたダメージを与え、ハックし、バリアを破壊する。",
       stats: [
         ["ダメージ", "現在HPの20%（アーマー無視）"],

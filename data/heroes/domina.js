@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "スタルワート",
   hp: 500,
+  hpParts: { health: 100, armor: 0, shield: 400 },
   color: "#a46be0",
   quote: "The perfect world is shaped by my hand.",
   summary:

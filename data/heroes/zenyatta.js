@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "タクティシャン",
   hp: 250,
+  hpParts: { health: 75, armor: 0, shield: 175 },
   color: "#ede582",
   quote: "Amid discord, we will find tranquility.",
   summary:

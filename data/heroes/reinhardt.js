@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "スタルワート",
   hp: 550,
+  hpParts: { health: 250, armor: 300, shield: 0 },
   color: "#a7b4bb",
   quote: "Together we will strike them down!",
   summary:

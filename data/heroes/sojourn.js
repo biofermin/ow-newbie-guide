@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "シャープシューター",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
   color: "#e05a4e",
   quote: "We're in this together. All of us.",
   summary:

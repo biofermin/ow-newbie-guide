@@ -5,6 +5,8 @@ OW.registerHero({
   role: "tank",
   subrole: "イニシエーター",
   hp: 475,
+  hpParts: { health: 275, armor: 200, shield: 0 },
+  hpNote: "プライマル・レイジ中は最大HP+700（合計1175、ロールキュー1325）。",
   color: "#a9b0d6",
   quote: "A better world is possible today!",
   summary:

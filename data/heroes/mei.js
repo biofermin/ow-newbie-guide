@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "スペシャリスト",
   hp: 300,
+  hpParts: { health: 300, armor: 0, shield: 0 },
   color: "#6faced",
   quote: "Come on, Snowball! They need our help!",
   summary:

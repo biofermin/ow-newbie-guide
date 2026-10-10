@@ -5,6 +5,8 @@ OW.registerHero({
   role: "tank",
   subrole: "イニシエーター",
   hp: 525,
+  hpParts: { health: 200, armor: 325, shield: 0 },
+  hpNote: "パイロット時は HP175（アーマーなし）で、メジャーパーク「シールド・システム」選択時はメックのHP100がシールドに変わる。",
   color: "#ed93c7",
   quote: "Time to save the world? Game on!",
   summary:

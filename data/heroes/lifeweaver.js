@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "メディック",
   hp: 250,
+  hpParts: { health: 200, armor: 0, shield: 50 },
   color: "#e0a3c8",
   quote: "Spend every moment growing into who you truly are.",
   summary:

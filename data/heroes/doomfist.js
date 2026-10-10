@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "イニシエーター",
   hp: 375,
+  hpParts: { health: 375, armor: 0, shield: 0 },
   color: "#c27a63",
   quote: "Our future will be forged in conflict.",
   summary:

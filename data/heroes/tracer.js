@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "フランカー",
   hp: 175,
+  hpParts: { health: 175, armor: 0, shield: 0 },
   color: "#e39a3b",
   quote: "Cheers, love! It's time to save the world!",
   summary:

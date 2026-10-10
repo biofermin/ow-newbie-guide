@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "タクティシャン",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#7f9bcc",
   quote: "I will not leave a broken world behind.",
   summary:

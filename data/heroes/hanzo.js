@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "シャープシューター",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#c4bd8a",
   quote: "Honor is all I have left.",
   summary:

@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "リコン",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
   color: "#e0a84a",
   quote: "I always deliver.",
   summary:

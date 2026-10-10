@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "イニシエーター",
   hp: 500,
+  hpParts: { health: 275, armor: 225, shield: 0 },
   color: "#8f7fe0",
   quote: "If you're in it with me, you're in it for life.",
   summary:

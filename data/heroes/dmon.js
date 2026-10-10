@@ -5,6 +5,8 @@ OW.registerHero({
   role: "tank",
   subrole: "スタルワート",
   hp: 550,
+  hpParts: { health: 275, armor: 275, shield: 0 },
+  hpNote: "パイロット時は HP175（アーマーなし）。",
   color: "#5ec4d6",
   quote: "Play together, win together!",
   summary:
@@ -209,7 +211,7 @@ OW.registerHero({
       key: "Q",
       name: "リミット・ブレイク",
       nameEn: "Limit Break",
-      ult: "不明",
+      ult: "2000pt",
       desc: "広範囲を薙ぎ払う斬撃。自身にオーバーヘルスを付与し、命中した敵の被ダメージを増加させる。",
       stats: [
         ["ダメージ", "125"],

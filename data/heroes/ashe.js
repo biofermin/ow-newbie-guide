@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "シャープシューター",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#c9c9c9",
   quote: "I'm the last one you'll ever cross.",
   summary:

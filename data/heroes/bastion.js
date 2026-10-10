@@ -5,6 +5,8 @@ OW.registerHero({
   role: "damage",
   subrole: "スペシャリスト",
   hp: 350,
+  hpParts: { health: 250, armor: 100, shield: 0 },
+  hpNote: "HPは形態で変わらないが、アサルト・アーティラリー変形中はアイアンクラッドで被ダメージ−20%。",
   color: "#8fa58d",
   quote: "(thoughtful beeps)",
   summary:

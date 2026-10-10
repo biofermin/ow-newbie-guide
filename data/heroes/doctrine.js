@@ -5,6 +5,8 @@ OW.registerHero({
   role: "support",
   subrole: "サバイバー",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
+  hpNote: "パーク「コスト・オブ・ライフ」選択時は最大HPが225に下がる。",
   color: "#c24d7a",
   quote: "Death is not my destiny.",
   summary:
@@ -190,7 +192,7 @@ OW.registerHero({
       key: "Q",
       name: "デリバランス",
       nameEn: "Deliverance",
-      ult: "約3020pt",
+      ult: "3025pt",
       desc: "ドローンの群れを放ち、敵の最大HPを減らして味方にオーバーヘルスを与える。",
       stats: [
         ["ドローン1機", "敵に5ダメージ・最大HP−5% / 味方に5回復・オーバーヘルス15"],

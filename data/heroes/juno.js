@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "サバイバー",
   hp: 225,
+  hpParts: { health: 75, armor: 0, shield: 150 },
   color: "#e88bd0",
   quote: "One small step at a time!",
   summary:

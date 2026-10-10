@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "ブルーザー",
   hp: 550,
+  hpParts: { health: 425, armor: 125, shield: 0 },
   color: "#d9502f",
   quote: "A gun in each hand and a smile on my face!",
   summary:

@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "ブルーザー",
   hp: 600,
+  hpParts: { health: 600, armor: 0, shield: 0 },
   color: "#b68c52",
   quote: "Apocalypse ain't over.",
   summary:

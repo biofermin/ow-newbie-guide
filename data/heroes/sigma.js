@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "スタルワート",
   hp: 450,
+  hpParts: { health: 200, armor: 0, shield: 250 },
   color: "#8fb3c0",
   quote: "Why seek answers when we do not know the question?",
   summary:

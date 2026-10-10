@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "スペシャリスト",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#ecbd53",
   quote: "Plenty of bombs to go around!",
   summary:

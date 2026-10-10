@@ -5,6 +5,7 @@ OW.registerHero({
   role: "tank",
   subrole: "スタルワート",
   hp: 375,
+  hpParts: { health: 375, armor: 0, shield: 0 },
   color: "#6aa8d8",
   quote: "My throne is where I say it is.",
   summary:

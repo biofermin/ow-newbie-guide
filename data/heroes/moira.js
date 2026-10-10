@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "メディック",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
   color: "#b85a8c",
   quote: "Humanity is shackled. I will find the key.",
   summary:

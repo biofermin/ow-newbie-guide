@@ -90,8 +90,8 @@
     document.querySelectorAll(".topnav a").forEach((a) => a.classList.toggle("active", a.dataset.route === route));
     if (heroId === "dps") {
       const t = location.hash.replace(/^#\/?/, "").split("/")[1];
-      dpsTab = t === "weapon" ? "weapon" : "burst";
-      document.title = "火力一覧 | OW Hero Guide";
+      dpsTab = DPS_TABS.some((x) => x.id === t) ? t : "burst";
+      document.title = "データ一覧 | OW Hero Guide";
       document.documentElement.style.removeProperty("--hero");
       view.innerHTML = renderDpsTable();
       bindDpsTable();
@@ -315,6 +315,7 @@
   const DPS_TABS = [
     { id: "burst", label: "瞬間最大DPS" },
     { id: "weapon", label: "メインウェポン" },
+    { id: "stats", label: "HP・クールダウン" },
   ];
   // パーク込みで見るか（既定はパーク込み）
   let dpsPerk = true;
@@ -354,7 +355,80 @@
     });
   }
 
+  // ---------- HP・クールダウン・ウルトコストの一覧（#/dps/stats）----------
+  let statsSort = "hp";
+  const TANK_RQ_BONUS = 150; // ロールキューのタンク共通パッシブ
+  function heroStatRow(id) {
+    const h = OW.heroes[id];
+    const p = h.hpParts || { health: h.hp, armor: 0, shield: 0 };
+    const bonus = h.role === "tank" ? TANK_RQ_BONUS : 0;
+    const parts = { health: p.health + bonus, armor: p.armor, shield: p.shield };
+    const ult = h.abilities.find((a) => a.ult);
+    const m = ult && /(\d+)\s*pt/.exec(ult.ult);
+    return {
+      id,
+      parts,
+      hp: parts.health + parts.armor + parts.shield,
+      health: parts.health,
+      armor: parts.armor,
+      shield: parts.shield,
+      ult: m ? Number(m[1]) : null,
+      ultText: ult ? ult.ult : "",
+      ultName: ult ? ult.name : "",
+      cds: h.abilities.filter((a) => a.cd && !a.ult),
+      note: h.hpNote || "",
+    };
+  }
+
+  function renderStatsTable(roleChips) {
+    const val = (r) => (r[statsSort] == null ? -1 : r[statsSort]);
+    const rows = heroIds()
+      .filter((id) => dpsRole === "all" || heroRole(id) === dpsRole)
+      .map(heroStatRow)
+      .sort((a, b) => val(b) - val(a));
+    const maxHp = Math.max(...rows.map((r) => r.hp), 1);
+    const seg = (v, cls) => (v ? `<i class="${cls}" style="width:${(v / maxHp) * 100}%"></i>` : "");
+    const num = (r, k, cls) => `<td class="${cls}${statsSort === k ? " sorted" : ""}">${r[k] || "—"}</td>`;
+    const th = (k, l) => `<th><button class="dt-sort${k === statsSort ? " active" : ""}" data-stats-sort="${k}">${l}${k === statsSort ? " ▼" : ""}</button></th>`;
+    const body = rows
+      .map(
+        (r, i) => `<tr data-go="#/${r.id}/abilities" style="--c:${OW.heroes[r.id].color}">
+          <td class="rank">${i + 1}</td>
+          <th><div class="dt-hero">${avatar(r.id, "dt-ava")}<div><b>${esc(heroName(r.id))}</b></div></div></th>
+          <td class="st-hp${statsSort === "hp" ? " sorted" : ""}">
+            <b>${r.hp}</b>
+            <div class="hp-bar">${seg(r.parts.health, "h")}${seg(r.parts.armor, "a")}${seg(r.parts.shield, "s")}</div>
+          </td>
+          ${num(r, "health", "st-h")}${num(r, "armor", "st-a")}${num(r, "shield", "st-s")}
+          <td class="st-ult${statsSort === "ult" ? " sorted" : ""}">${r.ult ?? "—"}</td>
+        </tr>
+        <tr class="st-sub" data-go="#/${r.id}/abilities"><td class="rank"></td><td colspan="6">
+          ${r.cds.map((a) => `<span class="cd-chip"><i>${esc(a.key)}</i>${esc(a.name)}<b>${esc(a.cd)}</b></span>`).join("") || `<span class="cd-none">クールダウンのあるスキルなし</span>`}
+          ${r.ultName ? `<span class="cd-chip ult"><i>Q</i>${esc(r.ultName)}<b>${esc(r.ultText)}</b></span>` : ""}
+          ${r.note ? `<span class="cd-none">${esc(r.note)}</span>` : ""}
+        </td></tr>`
+      )
+      .join("");
+    return `
+        <p class="mu-legend">HPはロールキュー（5v5）での値。タンクは共通パッシブの+${TANK_RQ_BONUS}を含みます。合計HPの内訳を、通常HP（白）・アーマー（橙）・シールド（青）の列とバーで示しています。ウルトは発動に必要なポイント。下の行は各スキルのクールダウン。</p>
+        <div class="home-tools"><div class="seg-group">${roleChips}</div></div>
+        <div class="dt-wrap"><table class="dt st">
+          <thead><tr><th class="rank">#</th><th>ヒーロー</th>${th("hp", "合計HP")}${th("health", "通常HP")}${th("armor", "アーマー")}${th("shield", "シールド")}${th("ult", "ウルト")}</tr></thead>
+          <tbody>${body}</tbody>
+        </table></div>`;
+  }
+
   function renderDpsTable() {
+    const roleChips = Object.entries({ all: "すべて", ...Object.fromEntries(ROLE_ORDER.map((r) => [r, OW.roles[r].label])) })
+      .map(([k, l]) => `<button class="chip${k === dpsRole ? " active" : ""}" data-dps-role="${k}">${l}</button>`)
+      .join("");
+    const head = `
+        <h1>DATA</h1>
+        <p class="lead">全ヒーローの数値を並べた表。列の見出しを押すとその値で並べ替え、行を押すとヒーローのアビリティ欄を開きます。</p>
+        <nav class="tabs">
+          ${DPS_TABS.map((x) => `<a href="#/dps/${x.id}" class="${x.id === dpsTab ? "active" : ""}">${x.label}</a>`).join("")}
+        </nav>`;
+    if (dpsTab === "stats") return `<div class="home dps-page">${head}${renderStatsTable(roleChips)}</div>`;
     const kind = dpsKind();
     const perked = dpsPerked();
     const cols = DPS_COLS[kind];
@@ -362,7 +436,6 @@
     const val = (r) => (r[key] == null ? -1 : r[key]);
     const rows = dpsRows().sort((a, b) => val(b) - val(a));
     const max = Math.max(...rows.map(val), 1);
-    const roles = { all: "すべて", ...Object.fromEntries(ROLE_ORDER.map((r) => [r, OW.roles[r].label])) };
     const cell = (r, k) => {
       const v = r[k];
       const txt = v == null ? "—" : k === "time" ? `${v}<small>秒</small>` : v;
@@ -385,11 +458,7 @@
       .join("");
     return `
       <div class="home dps-page">
-        <h1>DAMAGE</h1>
-        <p class="lead">全ヒーローの火力を並べた表。列の見出しを押すとその値で並べ替え、行を押すとヒーローのアビリティ欄（手順と前提）を開きます。</p>
-        <nav class="tabs">
-          ${DPS_TABS.map((x) => `<a href="#/dps/${x.id}" class="${x.id === dpsTab ? "active" : ""}">${x.label}</a>`).join("")}
-        </nav>
+        ${head}
         <p class="mu-legend">${
           kind === "burst"
             ? "ウルトと味方のバフを使わず、単体に1〜3秒で出せる最大値（チャージや変形は済ませた状態から）。壁や事前準備が必要なものは、各ヒーローの「前提」を確認。"
@@ -400,7 +469,7 @@
             : "パークなし。"
         }</p>
         <div class="home-tools">
-          <div class="seg-group">${Object.entries(roles).map(([k, l]) => `<button class="chip${k === dpsRole ? " active" : ""}" data-dps-role="${k}">${l}</button>`).join("")}</div>
+          <div class="seg-group">${roleChips}</div>
           <div class="seg-group">${[[true, "パーク込み"], [false, "パークなし"]].map(([v, l]) => `<button class="chip${v === perked ? " active" : ""}" data-dps-perk="${v ? 1 : 0}">${l}</button>`).join("")}</div>
         </div>
         <div class="dt-wrap"><table class="dt">
@@ -414,6 +483,7 @@
 
   function bindDpsTable() {
     view.querySelectorAll("[data-dps-role]").forEach((b) => b.addEventListener("click", () => { dpsRole = b.dataset.dpsRole; render(); }));
+    view.querySelectorAll("[data-stats-sort]").forEach((b) => b.addEventListener("click", () => { statsSort = b.dataset.statsSort; render(); }));
     view.querySelectorAll("[data-dps-perk]").forEach((b) => b.addEventListener("click", () => { dpsPerk = b.dataset.dpsPerk === "1"; render(); }));
     view.querySelectorAll("[data-dps-sort]").forEach((b) => b.addEventListener("click", () => { dpsSort[dpsKind()] = b.dataset.dpsSort; render(); }));
     view.querySelectorAll("tr[data-go]").forEach((tr) => tr.addEventListener("click", () => { location.hash = tr.dataset.go; }));
@@ -888,6 +958,9 @@
     const s = statOf(h.id);
     const tier = tierOf(h.id);
     const kpi = (v, l) => (v == null ? "" : `<div class="kpi"><div class="v">${v}</div><div class="l">${l}</div></div>`);
+    // HPはロールキューでの値（タンクは共通パッシブ込み）。アーマー・シールドがあれば内訳を添える
+    const hp = heroStatRow(h.id);
+    const hpParts = [hp.parts.armor ? `アーマー${hp.parts.armor}` : "", hp.parts.shield ? `シールド${hp.parts.shield}` : ""].filter(Boolean).join("・");
     return `
       <header class="hero-head" data-en="${esc(h.nameEn)}">
         ${avatar(h.id, "head-img")}
@@ -899,7 +972,7 @@
         <p class="quote">“${esc(h.quote)}”</p>
         <p class="summary">${esc(h.summary)}</p>
         <div class="kpis">
-          ${kpi(h.hp, "HP")}
+          ${kpi(hp.hp, hpParts ? `HP（うち${hpParts}）` : "HP")}
           ${kpi(tier, "Tier")}
           ${kpi(h.dps?.primary?.[0]?.body ?? null, "メインDPS")}
           ${kpi(s ? s.wr.toFixed(1) + "%" : null, "勝率")}

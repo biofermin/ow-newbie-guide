@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "サバイバー",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
   color: "#3fa7c9",
   quote: "You know what they say. Just go with the flow.",
   summary:

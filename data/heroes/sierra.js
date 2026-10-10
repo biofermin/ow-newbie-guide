@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "リコン",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#6fb36a",
   quote: "Always climb, never fall.",
   summary:

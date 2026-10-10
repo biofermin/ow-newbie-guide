@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "リコン",
   hp: 225,
+  hpParts: { health: 150, armor: 0, shield: 75 },
   color: "#89c8ff",
   quote: "I am always ready to learn!",
   summary:

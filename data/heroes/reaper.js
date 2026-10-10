@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "フランカー",
   hp: 275,
+  hpParts: { health: 275, armor: 0, shield: 0 },
   color: "#c8283c",
   quote: "Die! Die! Die!",
   summary:

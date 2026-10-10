@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "タクティシャン",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#55c1ce",
   quote: "Another day, another battlefield.",
   summary:

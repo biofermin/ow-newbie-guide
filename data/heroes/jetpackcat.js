@@ -5,6 +5,7 @@ OW.registerHero({
   role: "support",
   subrole: "タクティシャン",
   hp: 225,
+  hpParts: { health: 225, armor: 0, shield: 0 },
   color: "#f0a35e",
   quote: "Meow meow.",
   summary:

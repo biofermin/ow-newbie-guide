@@ -5,6 +5,7 @@ OW.registerHero({
   role: "damage",
   subrole: "シャープシューター",
   hp: 250,
+  hpParts: { health: 250, armor: 0, shield: 0 },
   color: "#c4686b",
   quote: "Someone needs to fill this saddle.",
   summary:

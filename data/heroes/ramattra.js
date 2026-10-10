@@ -5,6 +5,8 @@ OW.registerHero({
   role: "tank",
   subrole: "スタルワート",
   hp: 375,
+  hpParts: { health: 275, armor: 100, shield: 0 },
+  hpNote: "ネメシス・フォーム中はアーマー+275（8秒間）。",
   color: "#9a80d9",
   quote: "We will have peace at any cost.",
   summary:
