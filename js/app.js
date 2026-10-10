@@ -782,6 +782,7 @@
         <div class="kpis">
           ${kpi(h.hp, "HP")}
           ${kpi(tier, "Tier")}
+          ${kpi(h.dps?.primary?.[0]?.body ?? null, "メインDPS")}
           ${kpi(s ? s.wr.toFixed(1) + "%" : null, "勝率")}
           ${kpi(s ? s.pr + "%" : null, "ピック率")}
           ${kpi(s && s.br ? s.br + "%" : null, "BAN率")}
@@ -927,8 +928,53 @@
       </article>`;
   }
 
+  // 火力：メインウェポンのDPSと、ウルト抜きの瞬間最大DPSの出し方（data/heroes/<id>.js の dps）
+  function renderDps(h) {
+    const d = h.dps;
+    if (!d) return "";
+    const num = (v) => (v == null ? "—" : esc(v));
+    const rows = (d.primary || [])
+      .map(
+        (p) => `<div class="dps-row">
+          <div class="dps-name"><b>${esc(p.name)}</b>${p.mode ? `<small>${esc(p.mode)}</small>` : ""}</div>
+          <div class="dps-nums">
+            <div class="main"><b>${num(p.body)}</b><span>胴体DPS</span></div>
+            <div><b>${num(p.crit)}</b><span>ヘッドDPS</span></div>
+            <div><b>${num(p.sustained)}</b><span>リロード込み</span></div>
+            ${p.armor != null ? `<div class="vs-armor"><b>${num(p.armor)}</b><span>対アーマー</span></div>` : ""}
+          </div>
+          <p class="dps-calc">${esc(p.calc || "")}${p.note ? `　${esc(p.note)}` : ""}</p>
+        </div>`
+      )
+      .join("");
+    const b = d.burst;
+    return `
+      <h2 class="sec">火力</h2>
+      ${rows ? `<div class="dps-list">${rows}</div>` : ""}
+      ${b ? `<div class="burst">
+        <div class="burst-head">
+          <h3>瞬間最大DPSの出し方<small>ウルトなし・単体</small></h3>
+        </div>
+        <div class="dps-nums">
+          <div class="main"><b>${num(b.dps)}</b><span>胴体DPS</span></div>
+          <div><b>${num(b.critDps)}</b><span>ヘッドDPS</span></div>
+          <div><b>${num(b.damage)}</b><span>合計／${num(b.time)}秒</span></div>
+          <div class="vs-armor"><b>${num(b.armorDps)}</b><span>対アーマー</span></div>
+        </div>
+        <div class="burst-rows">
+        ${(b.steps || []).map((s, i) => `<p class="burst-line step"><span>手順${i + 1}</span><b>${esc(s)}</b></p>`).join("")}
+        ${b.calc ? `<p class="burst-line"><span>内訳</span><b>${esc(b.calc)}</b></p>` : ""}
+        ${b.conditions ? `<p class="burst-line"><span>前提</span><b>${esc(b.conditions)}</b></p>` : ""}
+        ${b.perk ? `<p class="burst-line"><span>パーク</span><b>${esc(b.perk)}</b></p>` : ""}
+        ${b.tip ? `<p class="burst-line"><span>使いどころ</span><b>${esc(b.tip)}</b></p>` : ""}
+        </div>
+      </div>` : ""}
+      <p class="mu-legend" style="margin:8px 0 0">単体に全弾命中・距離減衰なし・パークなしで計算。瞬間最大DPSは、ウルトと味方のバフを使わず1〜3秒で出せる最大値（チャージや変形は済ませた状態から）。対アーマーは、相手のHPがアーマーのときの値（1ヒットごとに7軽減・最大50%、ビームは30%減、継続ダメージは軽減なし）。</p>`;
+  }
+
   function renderAbilities(h) {
     return `
+      ${renderDps(h)}
       <h2 class="sec">パッシブ</h2>
       ${h.passives.map((p) => renderAbility({ ...p, key: p.key || "PASSIVE" }, h)).join("")}
       <h2 class="sec">アビリティ</h2>
