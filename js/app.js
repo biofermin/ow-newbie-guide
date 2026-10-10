@@ -322,7 +322,7 @@
   const dpsPerked = () => dpsPerk;
   const dpsSort = { burst: "body", weapon: "body" };
   const DPS_COLS = {
-    burst: [["body", "胴体DPS"], ["crit", "ヘッドDPS"], ["armor", "対アーマー"], ["total", "合計／秒"]],
+    burst: [["body", "胴体DPS"], ["crit", "ヘッドDPS"], ["armor", "対アーマー"], ["total", "合計ダメージ"], ["time", "時間"]],
     weapon: [["body", "胴体DPS"], ["crit", "ヘッドDPS"], ["sustained", "リロード込み"], ["armor", "対アーマー"]],
   };
 
@@ -365,11 +365,11 @@
     const roles = { all: "すべて", ...Object.fromEntries(ROLE_ORDER.map((r) => [r, OW.roles[r].label])) };
     const cell = (r, k) => {
       const v = r[k];
-      const txt = v == null ? "—" : k === "total" ? `${v}<small>／${r.time}秒</small>` : v;
+      const txt = v == null ? "—" : k === "time" ? `${v}<small>秒</small>` : v;
       // パーク込みのタブでは、並べ替え中の列にパークなしとの差を添える
-      const diff = perked && k === key && v != null && r.base?.[k] != null ? v - r.base[k] : 0;
+      const diff = perked && k === key && v != null && r.base?.[k] != null ? Math.round((v - r.base[k]) * 10) / 10 : 0;
       const delta = diff ? `<em class="dt-delta">${diff > 0 ? "+" : "−"}${Math.abs(diff)}</em>` : "";
-      return `<td class="${k === key ? "sorted" : ""}${k === "armor" ? " vs-armor" : ""}">${txt}${delta}</td>`;
+      return `<td class="${k === key ? "sorted" : ""}${k === "armor" ? " vs-armor" : ""}${k === "time" ? " col-time" : ""}">${txt}${delta}</td>`;
     };
     const body = rows
       .map(
@@ -405,7 +405,7 @@
         </div>
         <div class="dt-wrap"><table class="dt">
           <thead><tr><th class="rank">#</th><th>ヒーロー</th>${cols
-            .map(([k, l]) => `<th><button class="dt-sort${k === key ? " active" : ""}" data-dps-sort="${k}">${l}${k === key ? " ▼" : ""}</button></th>`)
+            .map(([k, l]) => `<th class="${k === "time" ? "col-time" : ""}"><button class="dt-sort${k === key ? " active" : ""}" data-dps-sort="${k}">${l}${k === key ? " ▼" : ""}</button></th>`)
             .join("")}</tr></thead>
           <tbody>${body}</tbody>
         </table></div>
@@ -1091,12 +1091,12 @@
         ? `<h3 class="dps-sub">パーク込み</h3>
       ${pkRows ? `<div class="dps-list">${pkRows}</div>` : ""}
       ${pb ? `<div class="burst">
-        <div class="burst-head"><h3>瞬間最大DPS（パーク込み）</h3></div>
+        <div class="burst-head"><h3>瞬間最大DPS（パーク込み）<small>${num(pb.time)}秒間</small></h3></div>
         ${chips(pb.perks)}
         <div class="dps-nums">
           <div class="main"><b>${num(pb.dps)}</b><span>胴体DPS</span></div>
           <div><b>${num(pb.critDps)}</b><span>ヘッドDPS</span></div>
-          <div><b>${num(pb.damage)}</b><span>合計／${num(pb.time)}秒</span></div>
+          <div><b>${num(pb.damage)}</b><span>合計ダメージ</span></div>
           <div class="vs-armor"><b>${num(pb.armorDps)}</b><span>対アーマー</span></div>
         </div>
         <div class="burst-rows">
@@ -1111,12 +1111,12 @@
       ${rows ? `<div class="dps-list">${rows}</div>` : ""}
       ${b ? `<div class="burst">
         <div class="burst-head">
-          <h3>瞬間最大DPSの出し方<small>ウルトなし・単体</small></h3>
+          <h3>瞬間最大DPSの出し方<small>ウルトなし・単体・${num(b.time)}秒間</small></h3>
         </div>
         <div class="dps-nums">
           <div class="main"><b>${num(b.dps)}</b><span>胴体DPS</span></div>
           <div><b>${num(b.critDps)}</b><span>ヘッドDPS</span></div>
-          <div><b>${num(b.damage)}</b><span>合計／${num(b.time)}秒</span></div>
+          <div><b>${num(b.damage)}</b><span>合計ダメージ</span></div>
           <div class="vs-armor"><b>${num(b.armorDps)}</b><span>対アーマー</span></div>
         </div>
         <div class="burst-rows">
