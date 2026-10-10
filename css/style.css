@@ -772,3 +772,11 @@ a.face:hover .face-img { transform: translateY(-2px); border-color: var(--c); }
   .dt-hero b { font-size: 13px; }
   .dt td small { display: none; }
 }
+.dt-perks { margin-top: 2px; }
+.dt-perks span { display: block; color: var(--text); }
+.dt-perks span::before { content: "＋"; color: var(--muted); }
+.dt-delta { display: block; font-family: var(--font); font-size: 11px; font-style: normal; line-height: 1.2; color: var(--buff); }
+.dps-sub { margin: 20px 0 8px; font-size: 15px; color: var(--muted); }
+.perk-chips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.perk-chips span { padding: 1px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); }
+.burst > .perk-chips { margin-top: 8px; }

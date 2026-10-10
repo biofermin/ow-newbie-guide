@@ -312,6 +312,14 @@
   // ---------- 火力一覧: #/dps/burst（瞬間最大DPS）| #/dps/weapon（メインウェポン）----------
   let dpsTab = "burst";
   let dpsRole = "all";
+  const DPS_TABS = [
+    { id: "burst", label: "瞬間最大DPS" },
+    { id: "weapon", label: "メインウェポン" },
+  ];
+  // パーク込みで見るか（既定はパーク込み）
+  let dpsPerk = true;
+  const dpsKind = () => dpsTab;
+  const dpsPerked = () => dpsPerk;
   const dpsSort = { burst: "body", weapon: "body" };
   const DPS_COLS = {
     burst: [["body", "胴体DPS"], ["crit", "ヘッドDPS"], ["armor", "対アーマー"], ["total", "合計／秒"]],
@@ -320,24 +328,37 @@
 
   function dpsRows() {
     const ids = heroIds().filter((id) => OW.heroes[id].dps && (dpsRole === "all" || heroRole(id) === dpsRole));
-    if (dpsTab === "burst") {
+    const perked = dpsPerked();
+    const bRow = (b) => ({ body: b.dps, crit: b.critDps, armor: b.armorDps, total: b.damage, time: b.time });
+    const pRow = (p) => ({ body: p.body, crit: p.crit, sustained: p.sustained, armor: p.armor });
+    if (dpsKind() === "burst") {
       return ids
         .filter((id) => OW.heroes[id].dps.burst)
         .map((id) => {
-          const b = OW.heroes[id].dps.burst;
-          return { id, label: "", body: b.dps, crit: b.critDps, armor: b.armorDps, total: b.damage, time: b.time };
+          const d = OW.heroes[id].dps;
+          const base = bRow(d.burst);
+          if (!perked) return { id, label: "", ...base };
+          const pk = d.perked?.burst;
+          return { id, label: "", ...(pk ? bRow(pk) : base), perks: pk?.perks || [], base };
         });
     }
-    return ids.flatMap((id) =>
-      (OW.heroes[id].dps.primary || []).map((p) => ({
-        id, label: p.name + (p.mode ? `（${p.mode}）` : ""), body: p.body, crit: p.crit, sustained: p.sustained, armor: p.armor,
-      }))
-    );
+    return ids.flatMap((id) => {
+      const d = OW.heroes[id].dps;
+      return (d.primary || []).map((p, i) => {
+        const label = p.name + (p.mode ? `（${p.mode}）` : "");
+        const base = pRow(p);
+        if (!perked) return { id, label, ...base };
+        const pk = d.perked?.primary?.[i];
+        return { id, label, ...(pk ? pRow(pk) : base), perks: pk?.perks || [], base };
+      });
+    });
   }
 
   function renderDpsTable() {
-    const cols = DPS_COLS[dpsTab];
-    const key = dpsSort[dpsTab];
+    const kind = dpsKind();
+    const perked = dpsPerked();
+    const cols = DPS_COLS[kind];
+    const key = dpsSort[kind];
     const val = (r) => (r[key] == null ? -1 : r[key]);
     const rows = dpsRows().sort((a, b) => val(b) - val(a));
     const max = Math.max(...rows.map(val), 1);
@@ -345,14 +366,17 @@
     const cell = (r, k) => {
       const v = r[k];
       const txt = v == null ? "—" : k === "total" ? `${v}<small>／${r.time}秒</small>` : v;
-      return `<td class="${k === key ? "sorted" : ""}${k === "armor" ? " vs-armor" : ""}">${txt}</td>`;
+      // パーク込みのタブでは、並べ替え中の列にパークなしとの差を添える
+      const diff = perked && k === key && v != null && r.base?.[k] != null ? v - r.base[k] : 0;
+      const delta = diff ? `<em class="dt-delta">${diff > 0 ? "+" : "−"}${Math.abs(diff)}</em>` : "";
+      return `<td class="${k === key ? "sorted" : ""}${k === "armor" ? " vs-armor" : ""}">${txt}${delta}</td>`;
     };
     const body = rows
       .map(
         (r, i) => `<tr data-go="#/${r.id}/abilities" style="--c:${OW.heroes[r.id].color}">
           <td class="rank">${i + 1}</td>
           <th>
-            <div class="dt-hero">${avatar(r.id, "dt-ava")}<div><b>${esc(heroName(r.id))}</b>${r.label ? `<small>${esc(r.label)}</small>` : ""}</div></div>
+            <div class="dt-hero">${avatar(r.id, "dt-ava")}<div><b>${esc(heroName(r.id))}</b>${r.label ? `<small>${esc(r.label)}</small>` : ""}${perked ? `<small class="dt-perks">${r.perks.length ? r.perks.map((p) => `<span>${esc(p)}</span>`).join("") : "パークによる変化なし"}</small>` : ""}</div></div>
             <i class="dt-bar" style="width:${(Math.max(val(r), 0) / max) * 100}%"></i>
           </th>
           ${cols.map(([k]) => cell(r, k)).join("")}
@@ -364,15 +388,21 @@
         <h1>DAMAGE</h1>
         <p class="lead">全ヒーローの火力を並べた表。列の見出しを押すとその値で並べ替え、行を押すとヒーローのアビリティ欄（手順と前提）を開きます。</p>
         <nav class="tabs">
-          <a href="#/dps/burst" class="${dpsTab === "burst" ? "active" : ""}">瞬間最大DPS</a>
-          <a href="#/dps/weapon" class="${dpsTab === "weapon" ? "active" : ""}">メインウェポン</a>
+          ${DPS_TABS.map((x) => `<a href="#/dps/${x.id}" class="${x.id === dpsTab ? "active" : ""}">${x.label}</a>`).join("")}
         </nav>
         <p class="mu-legend">${
-          dpsTab === "burst"
+          kind === "burst"
             ? "ウルトと味方のバフを使わず、単体に1〜3秒で出せる最大値（チャージや変形は済ませた状態から）。壁や事前準備が必要なものは、各ヒーローの「前提」を確認。"
             : "メインウェポンを撃ち続けたときのDPS。射撃モードや段階が複数ある武器は行を分けています。"
-        }対アーマーは相手のHPがアーマーのときの値。全弾命中・距離減衰なし・パークなし。</p>
-        <div class="filter">${Object.entries(roles).map(([k, l]) => `<button class="chip${k === dpsRole ? " active" : ""}" data-dps-role="${k}">${l}</button>`).join("")}</div>
+        }対アーマーは相手のHPがアーマーのときの値。全弾命中・距離減衰なし。${
+          perked
+            ? "マイナー1つ＋メジャー1つまでで値が最大になるパークを取った場合（キルやウルトが条件のパークは除く）。名前の下が取るパーク、並べ替え中の列の小さい数字がパークなしとの差。"
+            : "パークなし。"
+        }</p>
+        <div class="home-tools">
+          <div class="seg-group">${Object.entries(roles).map(([k, l]) => `<button class="chip${k === dpsRole ? " active" : ""}" data-dps-role="${k}">${l}</button>`).join("")}</div>
+          <div class="seg-group">${[[true, "パーク込み"], [false, "パークなし"]].map(([v, l]) => `<button class="chip${v === perked ? " active" : ""}" data-dps-perk="${v ? 1 : 0}">${l}</button>`).join("")}</div>
+        </div>
         <div class="dt-wrap"><table class="dt">
           <thead><tr><th class="rank">#</th><th>ヒーロー</th>${cols
             .map(([k, l]) => `<th><button class="dt-sort${k === key ? " active" : ""}" data-dps-sort="${k}">${l}${k === key ? " ▼" : ""}</button></th>`)
@@ -384,7 +414,8 @@
 
   function bindDpsTable() {
     view.querySelectorAll("[data-dps-role]").forEach((b) => b.addEventListener("click", () => { dpsRole = b.dataset.dpsRole; render(); }));
-    view.querySelectorAll("[data-dps-sort]").forEach((b) => b.addEventListener("click", () => { dpsSort[dpsTab] = b.dataset.dpsSort; render(); }));
+    view.querySelectorAll("[data-dps-perk]").forEach((b) => b.addEventListener("click", () => { dpsPerk = b.dataset.dpsPerk === "1"; render(); }));
+    view.querySelectorAll("[data-dps-sort]").forEach((b) => b.addEventListener("click", () => { dpsSort[dpsKind()] = b.dataset.dpsSort; render(); }));
     view.querySelectorAll("tr[data-go]").forEach((tr) => tr.addEventListener("click", () => { location.hash = tr.dataset.go; }));
   }
 
@@ -1036,6 +1067,45 @@
       )
       .join("");
     const b = d.burst;
+    // パーク込み（dps.perked）：値が変わる行だけ出す
+    const pk = d.perked;
+    const chips = (list) => `<div class="perk-chips">${list.map((x) => `<span>${esc(x)}</span>`).join("")}</div>`;
+    const pkRows = (pk?.primary || [])
+      .filter((p) => p.perks?.length)
+      .map(
+        (p) => `<div class="dps-row">
+          <div class="dps-name"><b>${esc(p.name)}</b>${p.mode ? `<small>${esc(p.mode)}</small>` : ""}${chips(p.perks)}</div>
+          <div class="dps-nums">
+            <div class="main"><b>${num(p.body)}</b><span>胴体DPS</span></div>
+            <div><b>${num(p.crit)}</b><span>ヘッドDPS</span></div>
+            <div><b>${num(p.sustained)}</b><span>リロード込み</span></div>
+            <div class="vs-armor"><b>${num(p.armor)}</b><span>対アーマー</span></div>
+          </div>
+          <p class="dps-calc">${esc(p.calc || "")}</p>
+        </div>`
+      )
+      .join("");
+    const pb = pk?.burst?.perks?.length ? pk.burst : null;
+    const pkHtml =
+      pkRows || pb
+        ? `<h3 class="dps-sub">パーク込み</h3>
+      ${pkRows ? `<div class="dps-list">${pkRows}</div>` : ""}
+      ${pb ? `<div class="burst">
+        <div class="burst-head"><h3>瞬間最大DPS（パーク込み）</h3></div>
+        ${chips(pb.perks)}
+        <div class="dps-nums">
+          <div class="main"><b>${num(pb.dps)}</b><span>胴体DPS</span></div>
+          <div><b>${num(pb.critDps)}</b><span>ヘッドDPS</span></div>
+          <div><b>${num(pb.damage)}</b><span>合計／${num(pb.time)}秒</span></div>
+          <div class="vs-armor"><b>${num(pb.armorDps)}</b><span>対アーマー</span></div>
+        </div>
+        <div class="burst-rows">
+        ${(pb.steps || []).map((s, i) => `<p class="burst-line step"><span>手順${i + 1}</span><b>${esc(s)}</b></p>`).join("")}
+        ${pb.calc ? `<p class="burst-line"><span>内訳</span><b>${esc(pb.calc)}</b></p>` : ""}
+        ${pb.conditions ? `<p class="burst-line"><span>前提</span><b>${esc(pb.conditions)}</b></p>` : ""}
+        </div>
+      </div>` : ""}`
+        : "";
     return `
       <h2 class="sec">火力</h2>
       ${rows ? `<div class="dps-list">${rows}</div>` : ""}
@@ -1053,11 +1123,12 @@
         ${(b.steps || []).map((s, i) => `<p class="burst-line step"><span>手順${i + 1}</span><b>${esc(s)}</b></p>`).join("")}
         ${b.calc ? `<p class="burst-line"><span>内訳</span><b>${esc(b.calc)}</b></p>` : ""}
         ${b.conditions ? `<p class="burst-line"><span>前提</span><b>${esc(b.conditions)}</b></p>` : ""}
-        ${b.perk ? `<p class="burst-line"><span>パーク</span><b>${esc(b.perk)}</b></p>` : ""}
+        ${b.perk && !pb ? `<p class="burst-line"><span>パーク</span><b>${esc(b.perk)}</b></p>` : ""}
         ${b.tip ? `<p class="burst-line"><span>使いどころ</span><b>${esc(b.tip)}</b></p>` : ""}
         </div>
       </div>` : ""}
-      <p class="mu-legend" style="margin:8px 0 0">単体に全弾命中・距離減衰なし・パークなしで計算。瞬間最大DPSは、ウルトと味方のバフを使わず1〜3秒で出せる最大値（チャージや変形は済ませた状態から）。対アーマーは、相手のHPがアーマーのときの値（1ヒットごとに7軽減・最大50%、ビームは30%減、継続ダメージは軽減なし）。</p>`;
+      ${pkHtml}
+      <p class="mu-legend" style="margin:8px 0 0">単体に全弾命中・距離減衰なしで計算。「パーク込み」は、マイナー1つ＋メジャー1つまでで値が最大になるパークを取った場合。瞬間最大DPSは、ウルトと味方のバフを使わず1〜3秒で出せる最大値（チャージや変形は済ませた状態から）。対アーマーは、相手のHPがアーマーのときの値（1ヒットごとに7軽減・最大50%、ビームは30%減、継続ダメージは軽減なし）。</p>`;
   }
 
   function renderAbilities(h) {
