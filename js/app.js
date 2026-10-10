@@ -86,8 +86,17 @@
     renderNav(heroId);
     $("#sidebar").classList.remove("open");
     const route =
-      heroId === "select" ? "select" : heroId === "maps" || heroId === "map" ? "maps" : heroId === "patches" ? "patches" : heroId === "team" ? "team" : !heroId ? "home" : "";
+      heroId === "select" ? "select" : heroId === "maps" || heroId === "map" ? "maps" : heroId === "patches" ? "patches" : heroId === "team" ? "team" : heroId === "dps" ? "dps" : !heroId ? "home" : "";
     document.querySelectorAll(".topnav a").forEach((a) => a.classList.toggle("active", a.dataset.route === route));
+    if (heroId === "dps") {
+      const t = location.hash.replace(/^#\/?/, "").split("/")[1];
+      dpsTab = t === "weapon" ? "weapon" : "burst";
+      document.title = "火力一覧 | OW Hero Guide";
+      document.documentElement.style.removeProperty("--hero");
+      view.innerHTML = renderDpsTable();
+      bindDpsTable();
+      return;
+    }
     if (heroId === "team") {
       const t = location.hash.replace(/^#\/?/, "").split("/")[1];
       teamTab = TEAM_TABS.some((x) => x.id === t) ? t : "ults";
@@ -298,6 +307,85 @@
       ${mine ? `<h2 class="sec">${esc(ultName(h.id))}を返してくる相手</h2><p class="mu-legend">撃つ前に吐かせておきたいスキル。相手チームから見た対策でもある。</p><div class="ult-grid single">${renderUltCard(h.id, { noHead: true, me: h.id })}</div>` : ""}
       ${comps.length ? `<h2 class="sec">${esc(h.name)}が入る構成例<small class="count">${comps.length}</small></h2><div class="comp-grid">${comps.map((c) => renderCompCard(c, h.id)).join("")}</div>` : ""}
       <p style="margin-top:20px"><a href="#/team">連携ガイドを見る →</a></p>`;
+  }
+
+  // ---------- 火力一覧: #/dps/burst（瞬間最大DPS）| #/dps/weapon（メインウェポン）----------
+  let dpsTab = "burst";
+  let dpsRole = "all";
+  const dpsSort = { burst: "body", weapon: "body" };
+  const DPS_COLS = {
+    burst: [["body", "胴体DPS"], ["crit", "ヘッドDPS"], ["armor", "対アーマー"], ["total", "合計／秒"]],
+    weapon: [["body", "胴体DPS"], ["crit", "ヘッドDPS"], ["sustained", "リロード込み"], ["armor", "対アーマー"]],
+  };
+
+  function dpsRows() {
+    const ids = heroIds().filter((id) => OW.heroes[id].dps && (dpsRole === "all" || heroRole(id) === dpsRole));
+    if (dpsTab === "burst") {
+      return ids
+        .filter((id) => OW.heroes[id].dps.burst)
+        .map((id) => {
+          const b = OW.heroes[id].dps.burst;
+          return { id, label: "", body: b.dps, crit: b.critDps, armor: b.armorDps, total: b.damage, time: b.time };
+        });
+    }
+    return ids.flatMap((id) =>
+      (OW.heroes[id].dps.primary || []).map((p) => ({
+        id, label: p.name + (p.mode ? `（${p.mode}）` : ""), body: p.body, crit: p.crit, sustained: p.sustained, armor: p.armor,
+      }))
+    );
+  }
+
+  function renderDpsTable() {
+    const cols = DPS_COLS[dpsTab];
+    const key = dpsSort[dpsTab];
+    const val = (r) => (r[key] == null ? -1 : r[key]);
+    const rows = dpsRows().sort((a, b) => val(b) - val(a));
+    const max = Math.max(...rows.map(val), 1);
+    const roles = { all: "すべて", ...Object.fromEntries(ROLE_ORDER.map((r) => [r, OW.roles[r].label])) };
+    const cell = (r, k) => {
+      const v = r[k];
+      const txt = v == null ? "—" : k === "total" ? `${v}<small>／${r.time}秒</small>` : v;
+      return `<td class="${k === key ? "sorted" : ""}${k === "armor" ? " vs-armor" : ""}">${txt}</td>`;
+    };
+    const body = rows
+      .map(
+        (r, i) => `<tr data-go="#/${r.id}/abilities" style="--c:${OW.heroes[r.id].color}">
+          <td class="rank">${i + 1}</td>
+          <th>
+            <div class="dt-hero">${avatar(r.id, "dt-ava")}<div><b>${esc(heroName(r.id))}</b>${r.label ? `<small>${esc(r.label)}</small>` : ""}</div></div>
+            <i class="dt-bar" style="width:${(Math.max(val(r), 0) / max) * 100}%"></i>
+          </th>
+          ${cols.map(([k]) => cell(r, k)).join("")}
+        </tr>`
+      )
+      .join("");
+    return `
+      <div class="home dps-page">
+        <h1>DAMAGE</h1>
+        <p class="lead">全ヒーローの火力を並べた表。列の見出しを押すとその値で並べ替え、行を押すとヒーローのアビリティ欄（手順と前提）を開きます。</p>
+        <nav class="tabs">
+          <a href="#/dps/burst" class="${dpsTab === "burst" ? "active" : ""}">瞬間最大DPS</a>
+          <a href="#/dps/weapon" class="${dpsTab === "weapon" ? "active" : ""}">メインウェポン</a>
+        </nav>
+        <p class="mu-legend">${
+          dpsTab === "burst"
+            ? "ウルトと味方のバフを使わず、単体に1〜3秒で出せる最大値（チャージや変形は済ませた状態から）。壁や事前準備が必要なものは、各ヒーローの「前提」を確認。"
+            : "メインウェポンを撃ち続けたときのDPS。射撃モードや段階が複数ある武器は行を分けています。"
+        }対アーマーは相手のHPがアーマーのときの値。全弾命中・距離減衰なし・パークなし。</p>
+        <div class="filter">${Object.entries(roles).map(([k, l]) => `<button class="chip${k === dpsRole ? " active" : ""}" data-dps-role="${k}">${l}</button>`).join("")}</div>
+        <div class="dt-wrap"><table class="dt">
+          <thead><tr><th class="rank">#</th><th>ヒーロー</th>${cols
+            .map(([k, l]) => `<th><button class="dt-sort${k === key ? " active" : ""}" data-dps-sort="${k}">${l}${k === key ? " ▼" : ""}</button></th>`)
+            .join("")}</tr></thead>
+          <tbody>${body}</tbody>
+        </table></div>
+      </div>`;
+  }
+
+  function bindDpsTable() {
+    view.querySelectorAll("[data-dps-role]").forEach((b) => b.addEventListener("click", () => { dpsRole = b.dataset.dpsRole; render(); }));
+    view.querySelectorAll("[data-dps-sort]").forEach((b) => b.addEventListener("click", () => { dpsSort[dpsTab] = b.dataset.dpsSort; render(); }));
+    view.querySelectorAll("tr[data-go]").forEach((tr) => tr.addEventListener("click", () => { location.hash = tr.dataset.go; }));
   }
 
   // ---------- sidebar ----------

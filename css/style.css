@@ -730,3 +730,45 @@ a.face:hover .face-img { transform: translateY(-2px); border-color: var(--c); }
 .burst-line.step span { color: var(--bg); background: var(--hero); }
 .dps-nums .vs-armor b { color: #f0a94a; }
 .burst > .dps-nums { margin-top: 12px; }
+
+/* ---------- 火力一覧 ---------- */
+.dps-page .tabs { margin: 20px 0 12px; }
+.dt-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); background: var(--panel); }
+.dt { width: 100%; border-collapse: collapse; font-size: 14px; }
+.dt th, .dt td { padding: 8px 10px; text-align: right; white-space: nowrap; }
+.dt thead th { background: var(--panel-2); font-size: 12px; }
+.dt thead th:nth-child(2), .dt tbody th { text-align: left; }
+.dt tbody tr { cursor: pointer; border-top: 1px solid var(--line); }
+.dt tbody tr:hover { background: var(--panel-2); }
+.dt .rank { width: 32px; padding-right: 0; color: var(--muted); font-family: var(--font); font-size: 12px; text-align: right; }
+.dt-sort { padding: 0; border: 0; background: none; font: inherit; font-weight: 700; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.dt-sort.active { color: var(--orange); }
+.dt td { font-family: var(--display); font-size: 18px; color: var(--muted); }
+.dt td.sorted { color: var(--text); }
+.dt td.vs-armor { color: color-mix(in srgb, #f0a94a 60%, var(--muted)); }
+.dt td.vs-armor.sorted { color: #f0a94a; }
+.dt td small { font-family: var(--font); font-size: 11px; color: var(--muted); }
+.dt tbody th { font-weight: 400; white-space: normal; }
+.dt-hero { display: flex; align-items: center; gap: 8px; }
+.dt-hero b { display: block; font-size: 14px; }
+.dt-hero small { display: block; font-size: 11px; color: var(--muted); white-space: normal; }
+.dt-ava { width: 30px; height: 30px; border-radius: 6px; object-fit: cover; object-position: center top; flex: none; background: var(--panel-2); border: 1px solid color-mix(in srgb, var(--c) 60%, transparent); font-size: 12px; }
+.dt-bar { display: block; height: 3px; margin-top: 5px; border-radius: 2px; background: var(--c); opacity: .8; }
+@media (max-width: 820px) {
+  .dt th, .dt td { padding: 8px 6px; }
+  .dt td { font-size: 16px; }
+  .dt-ava { width: 26px; height: 26px; }
+}
+@media (max-width: 480px) {
+  .dt th, .dt td { padding: 8px 4px; }
+  .dt th:last-child, .dt td:last-child { padding-right: 8px; }
+  .dt td { font-size: 15px; }
+  .dt thead th { font-size: 10px; white-space: normal; line-height: 1.25; vertical-align: bottom; }
+  .dt thead th:not(:nth-child(2)) { width: 44px; }
+  .dt-sort { white-space: normal; text-align: right; }
+  .dt .rank { display: none; }
+  .dt tbody th, .dt thead th:nth-child(2) { padding-left: 8px; }
+  .dt-hero { gap: 6px; }
+  .dt-hero b { font-size: 13px; }
+  .dt td small { display: none; }
+}
